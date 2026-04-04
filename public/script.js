@@ -12,13 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 loadHomePage();
                 break;
             case '#bancuri':
-                loadContentPage('bancuri', '../api/bancuri.json', displayBancuri);
+                loadContentPage('bancuri', 'bancuri.json', displayBancuri);
                 break;
             case '#imagini':
-                loadContentPage('imagini', '../api/imagini.json', displayImagini);
+                loadContentPage('imagini', 'imagini.json', displayImagini);
                 break;
             case '#reels':
-                loadContentPage('reels', '../api/reels.json', displayReels);
+                loadContentPage('reels', 'reels.json', displayReels);
                 break;
             case '#contact':
                 loadContactPage();
