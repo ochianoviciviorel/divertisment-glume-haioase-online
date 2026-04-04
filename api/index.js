@@ -1,61 +1,54 @@
 const express = require('express');
 const fs = require('fs');
 const cors = require('cors');
-const nodemailer = require('nodemailer');
 const path = require('path');
 
 const app = express();
+
+// Serveste fisierele statice din folderul public
 app.use(express.static(path.join(__dirname, '../public')));
 
-
-// Middleware - "unelte" ajutătoare pentru server
-app.use(cors()); // Permite cereri de la alte domenii (esențial pentru Vercel)
-app.use(express.json()); // Permite serverului să înțeleagă datele trimise în format JSON
+// Middleware
+app.use(cors());
+app.use(express.json());
 
 // --- CONFIGURARE ---
-const ADMIN_PASSWORD = 'parola-ta-secreta'; // Schimbă asta cu o parolă reală!
+const ADMIN_PASSWORD = 'parola-ta-secreta';
 
-// Configurare pentru trimiterea de email-uri
-const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: 'adresa.ta.de.email@gmail.com', // Pune aici adresa ta de Gmail
-        pass: 'parola-generata-pentru-aplicatie' // Pune aici parola de 16 caractere de la Google
-    }
-});
+// --- FUNCTII PENTRU GESTIONAREA FISIERELOR ---
+// Vercel permite scrierea doar in folderul /tmp
 
-
-// --- FUNCȚII PENTRU GESTIONAREA FIȘIERELOR ---
-// Vercel permite scrierea doar în folderul /tmp
-
-const readDataFile = (filename) => {
-    const filePath = path.join('/tmp', filename);
+var readDataFile = function(filename) {
+    var filePath = path.join('/tmp', filename);
     if (!fs.existsSync(filePath)) {
         fs.writeFileSync(filePath, JSON.stringify({}));
     }
     return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 };
 
-const writeDataFile = (filename, data) => {
-    const filePath = path.join('/tmp', filename);
+var writeDataFile = function(filename, data) {
+    var filePath = path.join('/tmp', filename);
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
 };
 
-
 // --- ENDPOINT-URI (ADRESELE API) ---
 
-// Endpoint pentru Reacții
-app.get('/api/reactions', (req, res) => {
-    const db = readDataFile('reactii.json');
+// Endpoint pentru Reactii
+app.get('/api/reactions', function(req, res) {
+    var db = readDataFile('reactii.json');
     res.json(db);
 });
 
-app.post('/api/react', (req, res) => {
-    const { contentId, reactionType, contentType } = req.body;
+app.post('/api/react', function(req, res) {
+    var contentId = req.body.contentId;
+    var reactionType = req.body.reactionType;
+    var contentType = req.body.contentType;
+
     if (!contentId || !reactionType || !contentType) {
         return res.status(400).json({ message: 'Lipsesc datele necesare.' });
     }
-    const db = readDataFile('reactii.json');
+
+    var db = readDataFile('reactii.json');
     if (!db[contentType]) db[contentType] = {};
     if (!db[contentType][contentId]) {
         db[contentType][contentId] = { like: 0, haha: 0, love: 0, wow: 0, sad: 0, angry: 0 };
@@ -68,75 +61,74 @@ app.post('/api/react', (req, res) => {
 });
 
 // Endpoint pentru Comentarii
-app.get('/api/comments/:itemId', (req, res) => {
-    const { itemId } = req.params;
-    const commentsDb = readDataFile('comentarii.json');
+app.get('/api/comments/:itemId', function(req, res) {
+    var itemId = req.params.itemId;
+    var commentsDb = readDataFile('comentarii.json');
     res.json(commentsDb[itemId] || []);
 });
 
-app.post('/api/comments', (req, res) => {
-    const { itemId, user, text } = req.body;
+app.post('/api/comments', function(req, res) {
+    var itemId = req.body.itemId;
+    var user = req.body.user;
+    var text = req.body.text;
+
     if (!itemId || !user || !text) {
         return res.status(400).json({ message: 'Lipsesc datele necesare.' });
     }
-    const commentsDb = readDataFile('comentarii.json');
+
+    var commentsDb = readDataFile('comentarii.json');
     if (!commentsDb[itemId]) commentsDb[itemId] = [];
-    const newComment = { user, text, timestamp: new Date().toISOString() };
+    var newComment = { user: user, text: text, timestamp: new Date().toISOString() };
     commentsDb[itemId].push(newComment);
     writeDataFile('comentarii.json', commentsDb);
     res.status(201).json(newComment);
 });
 
 // Endpoint pentru Formularul de Contact
-app.post('/api/send-message', (req, res) => {
-    const { name, email, message } = req.body;
+app.post('/api/send-message', function(req, res) {
+    var name = req.body.name;
+    var email = req.body.email;
+    var message = req.body.message;
+
     if (!name || !email || !message) {
-        return res.status(400).json({ message: 'Toate câmpurile sunt obligatorii.' });
+        return res.status(400).json({ message: 'Toate campurile sunt obligatorii.' });
     }
-    const mailOptions = {
-        from: `"${name}" <${email}>`,
-        to: 'adresa.ta.de.email@gmail.com', // Pune aici adresa ta reală
-        subject: `Mesaj nou de pe site de la ${name}`,
-        text: `Ai primit un mesaj nou de la:\n\nNume: ${name}\nEmail: ${email}\n\nMesaj:\n${message}`
-    };
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            console.error('Eroare la trimiterea email-ului:', error);
-            return res.status(500).json({ message: 'A apărut o eroare la trimiterea mesajului.' });
-        }
-        res.status(200).json({ message: 'Mesajul tău a fost trimis cu succes!' });
-    });
+
+    // Pentru moment, doar confirmam primirea mesajului
+    console.log('Mesaj primit de la:', name, email, message);
+    res.status(200).json({ message: 'Mesajul tau a fost trimis cu succes!' });
 });
 
 // Endpoint-uri pentru Panoul de Administrare
-app.post('/api/login', (req, res) => {
-    const { password } = req.body;
+app.post('/api/login', function(req, res) {
+    var password = req.body.password;
     if (password === ADMIN_PASSWORD) {
         res.status(200).json({ success: true });
     } else {
-        res.status(401).json({ success: false, message: 'Parolă incorectă!' });
+        res.status(401).json({ success: false, message: 'Parola incorecta!' });
     }
 });
 
-app.post('/api/add-content', (req, res) => {
-    const { type, id, text, url } = req.body;
-    const filePath = path.join(__dirname, `${type}.json`);
+app.post('/api/add-content', function(req, res) {
+    var type = req.body.type;
+    var id = req.body.id;
+    var text = req.body.text;
+    var url = req.body.url;
+
+    var filePath = path.join(__dirname, type + '.json');
     if (!fs.existsSync(filePath)) {
-        return res.status(400).json({ message: 'Tip de conținut invalid.' });
+        return res.status(400).json({ message: 'Tip de continut invalid.' });
     }
-    const contentArray = JSON.parse(fs.readFileSync(filePath));
-    if (contentArray.some(item => item.id === id)) {
-        return res.status(409).json({ message: 'Acest ID există deja.' });
+    var contentArray = JSON.parse(fs.readFileSync(filePath));
+    var exists = contentArray.some(function(item) { return item.id === id; });
+    if (exists) {
+        return res.status(409).json({ message: 'Acest ID exista deja.' });
     }
-    const newItem = (type === 'bancuri') ? { id, text } : { id, url };
+    var newItem = (type === 'bancuri') ? { id: id, text: text } : { id: id, url: url };
     contentArray.push(newItem);
     fs.writeFileSync(filePath, JSON.stringify(contentArray, null, 2));
-    res.status(201).json({ message: 'Conținut adăugat cu succes!' });
+    res.status(201).json({ message: 'Continut adaugat cu succes!' });
 });
 
-// Exportă aplicația pentru a fi folosită de Vercel
-const PORT = 3000;
-app.listen(PORT, () => {
-    console.log(`Serverul a pornit. Accesează site-ul la http://localhost:${PORT}` );
-});
-
+// Exporta aplicatia pentru Vercel serverless
+module.exports = app;
