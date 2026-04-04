@@ -147,10 +147,24 @@ document.addEventListener('DOMContentLoaded', function() {
             var card = document.createElement('div');
             card.className = 'item-card';
             var title = reel.title || 'Reel';
-            card.innerHTML = '<h3>' + title + '</h3>' +
-                '<div class="video-container">' +
-                '<iframe src="' + reel.url + '" title="' + title + '" frameborder="0" allowfullscreen loading="lazy"></iframe>' +
-                '</div>';
+
+            if (reel.type === 'facebook') {
+                // Facebook reels - afiseaza ca link clickabil
+                card.innerHTML = '<h3>' + title + '</h3>' +
+                    '<a href="' + reel.url + '" target="_blank" rel="noopener noreferrer" class="reel-link">' +
+                    '<div class="reel-facebook-card">' +
+                    '<div class="reel-play-icon">\u25B6</div>' +
+                    '<p>Apasa pentru a viziona pe Facebook</p>' +
+                    '</div>' +
+                    '</a>';
+            } else {
+                // YouTube sau alte surse - afiseaza ca iframe
+                card.innerHTML = '<h3>' + title + '</h3>' +
+                    '<div class="video-container">' +
+                    '<iframe src="' + reel.url + '" title="' + title + '" frameborder="0" allowfullscreen loading="lazy"></iframe>' +
+                    '</div>';
+            }
+
             card.appendChild(createReactionsUI(reel.id, contentType));
             container.appendChild(card);
         });

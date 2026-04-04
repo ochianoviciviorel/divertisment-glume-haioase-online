@@ -96,6 +96,42 @@ main {
 }
 
 
+/* Facebook Reel Cards */
+.reel-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.reel-link:hover {
+    text-decoration: none;
+}
+
+.reel-facebook-card {
+    background: linear-gradient(135deg, #1877f2, #42a5f5);
+    border-radius: 12px;
+    padding: 40px 20px;
+    text-align: center;
+    color: white;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.reel-facebook-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 15px rgba(24, 119, 242, 0.4);
+}
+
+.reel-play-icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.reel-facebook-card p {
+    font-size: 16px;
+    margin: 0;
+    font-weight: 500;
+}
+
 /* Sistem de Reacții */
 .reactions-wrapper {
     margin-top: 15px;
