@@ -116,10 +116,24 @@
         .fb-card-header svg { width: 28px; height: 28px; flex-shrink: 0; }
         .fb-card-header .fb-card-title { font-family: 'Fredoka', sans-serif; font-size: 18px; font-weight: 700; }
         .fb-card-header .fb-card-sub { font-size: 12px; opacity: 0.85; }
-        .fb-card-body { padding: 20px; display: flex; justify-content: center; align-items: flex-start; min-height: 500px; }
+        .fb-card-body { padding: 24px; }
         .fb-card-footer { padding: 12px 20px; border-top: 2px solid var(--foreground); background: var(--comic-cream); display: flex; justify-content: center; }
         .fb-follow-btn { display: inline-flex; align-items: center; gap: 8px; background: #1877F2; color: #fff; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 14px; padding: 10px 24px; border: 2px solid var(--foreground); box-shadow: 3px 3px var(--foreground); transition: all 0.15s; }
         .fb-follow-btn:hover { box-shadow: none; transform: translate(3px, 3px); }
+        .fb-info-row { display: flex; align-items: center; gap: 10px; padding: 12px 0; border-bottom: 1px solid #eee; font-size: 14px; }
+        .fb-info-row:last-child { border-bottom: none; }
+        .fb-info-icon { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; }
+        .fb-info-label { font-weight: 700; font-size: 13px; color: #555; }
+        .fb-info-value { font-size: 14px; color: var(--foreground); }
+        .fb-post-preview { background: var(--comic-cream); border: 1px solid #ddd; border-radius: 4px; padding: 14px; margin: 16px 0; font-size: 14px; line-height: 1.6; color: #333; }
+        .fb-post-preview .post-date { font-size: 12px; color: #888; margin-bottom: 6px; }
+        .fb-post-preview .post-text { margin-bottom: 8px; }
+        .fb-post-preview .post-reactions { font-size: 12px; color: #555; }
+        .fb-cta-box { background: linear-gradient(135deg, #1877F2, #0061be); color: #fff; padding: 20px; text-align: center; margin-top: 16px; border: 2px solid var(--foreground); }
+        .fb-cta-box h3 { font-family: 'Fredoka', sans-serif; font-size: 20px; margin-bottom: 8px; }
+        .fb-cta-box p { font-size: 13px; opacity: 0.9; margin-bottom: 14px; }
+        .fb-cta-btn { display: inline-flex; align-items: center; gap: 8px; background: #fff; color: #1877F2; font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 15px; padding: 10px 24px; border: 2px solid var(--foreground); box-shadow: 3px 3px rgba(0,0,0,0.3); transition: all 0.15s; }
+        .fb-cta-btn:hover { box-shadow: none; transform: translate(3px, 3px); }
 
         /* STATS STRIP */
         .stats-strip { background: var(--comic-yellow); border-top: 3px solid var(--foreground); border-bottom: 3px solid var(--foreground); padding: 20px 0; margin: 0 0 48px; }
@@ -253,23 +267,36 @@
                         <div class="fb-card-sub">Divertisment și Glume Haioase — postări zilnice</div>
                     </div>
                 </div>
-                <div class="fb-card-body" style="padding:0;">
-                    <iframe
-                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FGlumehaioaseRo&tabs=timeline&width=500&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=217082905736028"
-                        width="100%"
-                        height="600"
-                        style="border:none;overflow:hidden;width:100%;"
-                        scrolling="no"
-                        frameborder="0"
-                        allowfullscreen="true"
-                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-                    </iframe>
-                </div>
-                <div class="fb-card-footer">
-                    <a href="https://www.facebook.com/GlumehaioaseRo" target="_blank" class="fb-follow-btn">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                        👍 Urmărește Pagina
-                    </a>
+                <div class="fb-card-body">
+                    <div class="fb-info-row">
+                        <div class="fb-info-icon" style="background:#e8f0fe;">📄</div>
+                        <div><div class="fb-info-label">TIP PAGINĂ</div><div class="fb-info-value">Entertainment Website</div></div>
+                    </div>
+                    <div class="fb-info-row">
+                        <div class="fb-info-icon" style="background:#e8f0fe;">📍</div>
+                        <div><div class="fb-info-label">LOCAȚIE</div><div class="fb-info-value">Galați, România</div></div>
+                    </div>
+                    <div class="fb-info-row">
+                        <div class="fb-info-icon" style="background:#e8f0fe;">🌐</div>
+                        <div><div class="fb-info-label">WEBSITE</div><div class="fb-info-value">divertismentsiglumehaioase.com</div></div>
+                    </div>
+                    <div class="fb-info-row">
+                        <div class="fb-info-icon" style="background:#e8f0fe;">📅</div>
+                        <div><div class="fb-info-label">POSTĂRI</div><div class="fb-info-value">Conținut nou în fiecare zi</div></div>
+                    </div>
+                    <div class="fb-post-preview">
+                        <div class="post-date">📌 Ultima postare</div>
+                        <div class="post-text">😂 Bancuri, meme-uri, reeluri amuzante și nostalgie românească — totul pe pagina noastră! Dă Like și nu rata niciun conținut haios!</div>
+                        <div class="post-reactions">👍 Like &nbsp;💬 Comentariu &nbsp;↗️ Distribuie</div>
+                    </div>
+                    <div class="fb-cta-box">
+                        <h3>👍 Urmărește Pagina!</h3>
+                        <p>Fii primul care vede conținut nou. Dă Like paginii și activează notificările!</p>
+                        <a href="https://www.facebook.com/GlumehaioaseRo" target="_blank" rel="noopener noreferrer" class="fb-cta-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            Deschide Pagina pe Facebook
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -282,17 +309,36 @@
                         <div class="fb-card-sub">Comunitatea de umor românesc — alătură-te!</div>
                     </div>
                 </div>
-                <div class="fb-card-body" style="padding:0;">
-                    <iframe
-                        src="https://www.facebook.com/plugins/group.php?href=https%3A%2F%2Fwww.facebook.com%2Fgroups%2F322386916991477&width=500&show_metadata=false&appId"
-                        width="100%"
-                        height="600"
-                        style="border:none;overflow:hidden;width:100%;"
-                        scrolling="no"
-                        frameborder="0"
-                        allowfullscreen="true"
-                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-                    </iframe>
+                <div class="fb-card-body">
+                    <div class="fb-info-row">
+                        <div class="fb-info-icon" style="background:#eef0fb;">👥</div>
+                        <div><div class="fb-info-label">TIP GRUP</div><div class="fb-info-value">Grup public de umor românesc</div></div>
+                    </div>
+                    <div class="fb-info-row">
+                        <div class="fb-info-icon" style="background:#eef0fb;">🔓</div>
+                        <div><div class="fb-info-label">VIZIBILITATE</div><div class="fb-info-value">Public — oricine poate vedea postările</div></div>
+                    </div>
+                    <div class="fb-info-row">
+                        <div class="fb-info-icon" style="background:#eef0fb;">💬</div>
+                        <div><div class="fb-info-label">ACTIVITATE</div><div class="fb-info-value">Postări și comentarii zilnice</div></div>
+                    </div>
+                    <div class="fb-info-row">
+                        <div class="fb-info-icon" style="background:#eef0fb;">😂</div>
+                        <div><div class="fb-info-label">CONȚINUT</div><div class="fb-info-value">Bancuri, meme-uri, glume românești</div></div>
+                    </div>
+                    <div class="fb-post-preview">
+                        <div class="post-date">📌 Ultima activitate</div>
+                        <div class="post-text">🎉 Alătură-te comunității noastre de umor! Postează bancuri, meme-uri și glume haioase. Împreună râdem mai tare! 😄</div>
+                        <div class="post-reactions">👍 Like &nbsp;💬 Comentariu &nbsp;👥 Membri noi</div>
+                    </div>
+                    <div class="fb-cta-box" style="background: linear-gradient(135deg, #4267B2, #2d4a8a);">
+                        <h3>👥 Alătură-te Grupului!</h3>
+                        <p>Fă parte din comunitatea noastră! Postează glume și râzi cu alți români.</p>
+                        <a href="https://www.facebook.com/groups/322386916991477" target="_blank" rel="noopener noreferrer" class="fb-cta-btn" style="color:#4267B2;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            Deschide Grupul pe Facebook
+                        </a>
+                    </div>
                 </div>
                 <div class="fb-card-footer">
                     <a href="https://www.facebook.com/groups/322386916991477" target="_blank" class="fb-follow-btn" style="background:#4267B2;">
