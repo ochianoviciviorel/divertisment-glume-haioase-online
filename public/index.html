@@ -1174,6 +1174,7 @@ function toggleJoke(btn) {
 <script>
 (function() {
     var consent = localStorage.getItem('gdpr_consent');
+    if (!consent) {
         document.getElementById('gdpr-banner').style.display = 'flex';
     }
 })();
