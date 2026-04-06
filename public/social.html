@@ -21,12 +21,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap&subset=latin-ext" rel="stylesheet">
 
-    <!-- Facebook SDK -->
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous"
-        src="https://connect.facebook.net/ro_RO/sdk.js#xfbml=1&version=v19.0&appId=217082905736028"
-        nonce="social123">
-    </script>
+    <!-- Facebook embed styles -->
+    <style>
+        .fb-iframe-container { width: 100%; min-height: 500px; border: none; }
+    </style>
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DVRWDJEZ3M"></script>
@@ -255,17 +253,17 @@
                         <div class="fb-card-sub">Divertisment și Glume Haioase — postări zilnice</div>
                     </div>
                 </div>
-                <div class="fb-card-body">
-                    <div class="fb-page"
-                        data-href="https://www.facebook.com/profile.php?id=61580730311971"
-                        data-tabs="timeline"
-                        data-width="500"
-                        data-height="600"
-                        data-small-header="false"
-                        data-adapt-container-width="true"
-                        data-hide-cover="false"
-                        data-show-facepile="true">
-                    </div>
+                <div class="fb-card-body" style="padding:0;">
+                    <iframe
+                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D61580730311971&tabs=timeline&width=500&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                        width="100%"
+                        height="600"
+                        style="border:none;overflow:hidden;width:100%;"
+                        scrolling="no"
+                        frameborder="0"
+                        allowfullscreen="true"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                    </iframe>
                 </div>
                 <div class="fb-card-footer">
                     <a href="https://www.facebook.com/profile.php?id=61580730311971" target="_blank" class="fb-follow-btn">
@@ -284,13 +282,17 @@
                         <div class="fb-card-sub">Comunitatea de umor românesc — alătură-te!</div>
                     </div>
                 </div>
-                <div class="fb-card-body">
-                    <div class="fb-group"
-                        data-href="https://www.facebook.com/groups/322386916991477"
-                        data-width="500"
-                        data-show-social-context="true"
-                        data-show-metadata="false">
-                    </div>
+                <div class="fb-card-body" style="padding:0;">
+                    <iframe
+                        src="https://www.facebook.com/plugins/group.php?href=https%3A%2F%2Fwww.facebook.com%2Fgroups%2F322386916991477&width=500&show_metadata=false&appId"
+                        width="100%"
+                        height="600"
+                        style="border:none;overflow:hidden;width:100%;"
+                        scrolling="no"
+                        frameborder="0"
+                        allowfullscreen="true"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                    </iframe>
                 </div>
                 <div class="fb-card-footer">
                     <a href="https://www.facebook.com/groups/322386916991477" target="_blank" class="fb-follow-btn" style="background:#4267B2;">
