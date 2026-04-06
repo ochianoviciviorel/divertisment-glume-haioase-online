@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Social Media | Divertisment și Glume Haioase</title>
+    <meta name="description" content="Urmărește-ne pe Facebook! Postări noi zilnic cu bancuri, meme-uri și conținut amuzant românesc.">
+    <meta name="theme-color" content="#E53935">
+    <link rel="canonical" href="https://www.divertismentsiglumehaioase.com/social">
+    <meta property="og:site_name" content="Divertisment și Glume Haioase">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.divertismentsiglumehaioase.com/social">
+    <meta property="og:title" content="Social Media | Divertisment și Glume Haioase">
+    <meta property="og:description" content="Urmărește-ne pe Facebook! Postări noi zilnic cu bancuri, meme-uri și conținut amuzant românesc.">
+    <meta property="og:locale" content="ro_RO">
+    <meta property="og:image" content="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/FhpRMpBhfdDCgpPE.png">
+    <meta name="author" content="Viorel Ochianu">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap&subset=latin-ext" rel="stylesheet">
+
+    <!-- Facebook SDK -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/ro_RO/sdk.js#xfbml=1&version=v19.0"
+        nonce="social123">
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DVRWDJEZ3M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-DVRWDJEZ3M');
+    </script>
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+        body { font-family: 'Nunito', sans-serif; background: #f5edd8; color: #1a1a19; line-height: 1.5; }
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; height: auto; display: block; }
+        button { cursor: pointer; border: none; background: none; font: inherit; }
+        .font-comic { font-family: 'Fredoka', sans-serif; font-weight: 600; letter-spacing: 0.03em; }
+        :root {
+            --comic-red: #df202e;
+            --comic-blue: #0061be;
+            --comic-green: #008a23;
+            --comic-yellow: #ffd16b;
+            --comic-orange: #f68000;
+            --comic-cream: #f8f1e3;
+            --foreground: #1a1a19;
+            --background: #f5edd8;
+        }
+        .scroll-top-btn { position: fixed; bottom: 24px; left: 24px; width: 44px; height: 44px; background: var(--foreground); color: #fff; border: 2px solid var(--comic-yellow); border-radius: 50%; display: none; align-items: center; justify-content: center; cursor: pointer; z-index: 90; box-shadow: 0 2px 8px rgba(0,0,0,0.3); transition: all 0.2s; }
+        .scroll-top-btn:hover { background: var(--comic-yellow); color: var(--foreground); }
+        .scroll-top-btn.show { display: flex; }
+        .messenger-float { position: fixed; bottom: 24px; right: 24px; width: 50px; height: 50px; background: #0084FF; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 90; box-shadow: 0 3px 12px rgba(0,132,255,0.4); transition: transform 0.2s; }
+        .messenger-float:hover { transform: scale(1.1); }
+        .messenger-float svg { width: 26px; height: 26px; }
+        .footer-social-btn { display: inline-flex; align-items: center; gap: 6px; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 11px; padding: 5px 12px; border: 2px solid rgba(255,255,255,0.3); border-radius: 4px; color: #fff; margin: 3px 4px 3px 0; transition: all 0.15s; }
+        .footer-social-btn:hover { border-color: var(--comic-yellow); }
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+        @media (min-width: 768px) { .container { padding: 0 24px; } }
+        .comic-panel { background: #fff; border: 2px solid var(--foreground); position: relative; box-shadow: 3px 3px var(--foreground); }
+        .comic-btn { font-family: 'Fredoka', sans-serif; font-weight: 600; letter-spacing: 0.03em; border: 2px solid var(--foreground); box-shadow: 3px 3px var(--foreground); transition: all 0.15s; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+        .comic-btn:hover { box-shadow: none; transform: translate(3px, 3px); }
+        .halftone-bg { background-image: radial-gradient(circle, rgba(14,10,7,0.06) 1px, transparent 1px); background-size: 12px 12px; }
+
+        /* HEADER */
+        .site-header { position: sticky; top: 0; z-index: 100; background: var(--comic-yellow); border-bottom: 3px solid var(--foreground); }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 8px 0; gap: 8px; }
+        .logo-link { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+        .logo-img { width: 36px; height: 36px; border-radius: 50%; border: 2px solid var(--foreground); box-shadow: 2px 2px 0 var(--foreground); object-fit: cover; }
+        .logo-text { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 14px; color: var(--foreground); letter-spacing: 0.02em; line-height: 1.2; }
+        .logo-text .red { color: var(--comic-red); }
+        .social-header { display: none; align-items: center; gap: 4px; }
+        .social-icon-btn { width: 34px; height: 34px; border: 2px solid var(--foreground); box-shadow: 2px 2px 0 var(--foreground); display: flex; align-items: center; justify-content: center; color: #fff; transition: all 0.15s; }
+        .social-icon-btn:hover { box-shadow: none; transform: translate(2px, 2px); }
+        .social-icon-btn svg { width: 16px; height: 16px; }
+        .desktop-nav { display: none; align-items: center; gap: 2px; }
+        .nav-link { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 12px; padding: 6px 12px; letter-spacing: 0.05em; border: 2px solid transparent; transition: all 0.15s; }
+        .nav-link:hover { background: rgba(223, 32, 46, 0.1); border-color: var(--foreground); }
+        .nav-link.active { background: var(--comic-red); color: #fff; border-color: var(--foreground); box-shadow: 2px 2px 0 var(--foreground); }
+        .hamburger-btn { width: 36px; height: 36px; background: var(--comic-red); color: #fff; border: 2px solid var(--foreground); box-shadow: 2px 2px 0 var(--foreground); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .hamburger-btn svg { width: 18px; height: 18px; }
+        @media (min-width: 1024px) { .social-header { display: flex; } .desktop-nav { display: flex; } .hamburger-btn { display: none; } .logo-text { font-size: 16px; } .logo-img { width: 40px; height: 40px; } }
+
+        /* MOBILE MENU */
+        .mobile-menu { position: fixed; inset: 0; z-index: 200; display: none; }
+        .mobile-menu.open { display: block; }
+        .mobile-menu-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
+        .mobile-menu-panel { position: absolute; top: 0; right: 0; width: min(320px, 90vw); height: 100%; background: var(--comic-cream); border-left: 3px solid var(--foreground); overflow-y: auto; padding: 20px; }
+        .mobile-menu-close { width: 36px; height: 36px; background: var(--comic-red); color: #fff; border: 2px solid var(--foreground); display: flex; align-items: center; justify-content: center; margin-left: auto; margin-bottom: 20px; }
+        .mobile-nav-link { display: block; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 18px; padding: 12px 0; border-bottom: 2px solid var(--foreground); letter-spacing: 0.05em; }
+        .mobile-nav-link.active { color: var(--comic-red); }
+
+        /* HERO SECTION */
+        .page-hero { background: linear-gradient(135deg, #1877F2 0%, #0061be 50%, #1a1a19 100%); border-bottom: 3px solid var(--foreground); padding: 48px 0 40px; position: relative; overflow: hidden; }
+        .page-hero::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 20px 20px; }
+        .page-hero-content { position: relative; z-index: 2; text-align: center; }
+        .page-hero h1 { font-family: 'Fredoka', sans-serif; font-size: clamp(28px, 5vw, 48px); color: #fff; margin-bottom: 12px; }
+        .page-hero p { font-size: 16px; color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto 24px; }
+        .fb-badge { display: inline-flex; align-items: center; gap: 8px; background: #fff; color: #1877F2; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 14px; padding: 8px 20px; border: 2px solid var(--foreground); box-shadow: 3px 3px var(--foreground); }
+
+        /* SOCIAL SECTION */
+        .social-section { padding: 48px 0; }
+        .section-title { font-family: 'Fredoka', sans-serif; font-size: clamp(22px, 4vw, 32px); font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+        .section-subtitle { font-size: 15px; color: #555; margin-bottom: 28px; }
+        .fb-feed-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
+        @media (min-width: 900px) { .fb-feed-grid { grid-template-columns: 1fr 1fr; } }
+
+        .fb-card { background: #fff; border: 2px solid var(--foreground); box-shadow: 4px 4px var(--foreground); overflow: hidden; }
+        .fb-card-header { background: #1877F2; color: #fff; padding: 16px 20px; display: flex; align-items: center; gap: 12px; border-bottom: 2px solid var(--foreground); }
+        .fb-card-header svg { width: 28px; height: 28px; flex-shrink: 0; }
+        .fb-card-header .fb-card-title { font-family: 'Fredoka', sans-serif; font-size: 18px; font-weight: 700; }
+        .fb-card-header .fb-card-sub { font-size: 12px; opacity: 0.85; }
+        .fb-card-body { padding: 20px; display: flex; justify-content: center; align-items: flex-start; min-height: 500px; }
+        .fb-card-footer { padding: 12px 20px; border-top: 2px solid var(--foreground); background: var(--comic-cream); display: flex; justify-content: center; }
+        .fb-follow-btn { display: inline-flex; align-items: center; gap: 8px; background: #1877F2; color: #fff; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 14px; padding: 10px 24px; border: 2px solid var(--foreground); box-shadow: 3px 3px var(--foreground); transition: all 0.15s; }
+        .fb-follow-btn:hover { box-shadow: none; transform: translate(3px, 3px); }
+
+        /* STATS STRIP */
+        .stats-strip { background: var(--comic-yellow); border-top: 3px solid var(--foreground); border-bottom: 3px solid var(--foreground); padding: 20px 0; margin: 0 0 48px; }
+        .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; text-align: center; }
+        @media (min-width: 640px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
+        .stat-item .stat-num { font-family: 'Fredoka', sans-serif; font-size: 28px; font-weight: 700; color: var(--comic-red); }
+        .stat-item .stat-label { font-size: 13px; font-weight: 600; color: var(--foreground); }
+
+        /* FOOTER */
+        .site-footer { background: var(--foreground); color: var(--comic-cream); padding: 40px 0 20px; border-top: 3px solid var(--foreground); }
+        .footer-grid { display: grid; grid-template-columns: 1fr; gap: 24px; margin-bottom: 24px; }
+        @media (min-width: 640px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .footer-grid { grid-template-columns: repeat(3, 1fr); } }
+        .footer-title { font-family: 'Fredoka', sans-serif; font-size: 14px; letter-spacing: 0.1em; color: var(--comic-yellow); margin-bottom: 10px; }
+        .footer-link { display: block; font-size: 13px; color: rgba(248,241,227,0.7); padding: 3px 0; transition: color 0.15s; }
+        .footer-link:hover { color: var(--comic-yellow); }
+        .footer-social-link { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(248,241,227,0.7); padding: 4px 0; transition: color 0.15s; }
+        .footer-social-link:hover { color: var(--comic-yellow); }
+        .footer-social-link svg { width: 14px; height: 14px; flex-shrink: 0; }
+        .footer-bottom { border-top: 1px solid rgba(248,241,227,0.15); padding-top: 16px; display: flex; flex-direction: column; gap: 6px; }
+        .footer-copy { font-size: 13px; color: rgba(248,241,227,0.5); }
+        .footer-legal { font-size: 12px; color: rgba(248,241,227,0.4); }
+        .footer-legal a { color: inherit; text-decoration: underline; }
+        .footer-legal a:hover { color: var(--comic-yellow); }
+        .footer-disclaimer { font-size: 11px; color: rgba(248,241,227,0.3); font-style: italic; }
+    </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            <a href="/" class="logo-link">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/FhpRMpBhfdDCgpPE.png" alt="Logo" class="logo-img">
+                <div class="logo-text">Glume <span class="red">Haioase</span><br><span style="font-size:10px;opacity:0.7;">divertismentsiglumehaioase.com</span></div>
+            </a>
+            <div class="social-header">
+                <a href="https://www.facebook.com/profile.php?id=61580730311971" target="_blank" rel="noopener noreferrer" class="social-icon-btn" style="background:#1877F2;" title="Facebook Pagina">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <a href="https://www.facebook.com/groups/322386916991477" target="_blank" rel="noopener noreferrer" class="social-icon-btn" style="background:#1877F2;" title="Grup Facebook">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </a>
+            </div>
+            <nav class="desktop-nav">
+                <a href="/" class="nav-link">ACASA</a>
+                <a href="/bancuri" class="nav-link">BANCURI</a>
+                <a href="/meme" class="nav-link">MEME</a>
+                <a href="/reeluri" class="nav-link">REELURI</a>
+                <a href="/nostalgie" class="nav-link">NOSTALGIE</a>
+                <a href="/despre" class="nav-link">DESPRE</a>
+                <a href="/magazin" class="nav-link">MAGAZIN</a>
+                <a href="/social" class="nav-link active">SOCIAL</a>
+            </nav>
+            <button class="hamburger-btn" aria-label="Meniu" onclick="openMobileMenu()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-overlay" onclick="closeMobileMenu()"></div>
+    <div class="mobile-menu-panel">
+        <button class="mobile-menu-close" onclick="closeMobileMenu()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <a href="/" class="mobile-nav-link">🏠 ACASA</a>
+        <a href="/bancuri" class="mobile-nav-link">😂 BANCURI</a>
+        <a href="/meme" class="mobile-nav-link">🖼️ MEME</a>
+        <a href="/reeluri" class="mobile-nav-link">🎬 REELURI</a>
+        <a href="/nostalgie" class="mobile-nav-link">📺 NOSTALGIE</a>
+        <a href="/despre" class="mobile-nav-link">ℹ️ DESPRE</a>
+        <a href="/magazin" class="mobile-nav-link">🛍️ MAGAZIN</a>
+        <a href="/social" class="mobile-nav-link active">📱 SOCIAL</a>
+        <a href="/sustine" class="mobile-nav-link">⭐ SUSTINE-NE</a>
+    </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="page-hero">
+    <div class="container">
+        <div class="page-hero-content">
+            <span class="fb-badge">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                LIVE PE FACEBOOK
+            </span>
+            <h1>📱 Urmărește-ne pe Facebook!</h1>
+            <p>Postări noi zilnic cu bancuri, meme-uri, reeluri și nostalgie românească. Alătură-te comunității noastre!</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<div class="stats-strip">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-num">+58K</div>
+                <div class="stat-label">Vizualizări reel</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">Zilnic</div>
+                <div class="stat-label">Conținut nou</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">100%</div>
+                <div class="stat-label">Conținut românesc</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num">Gratuit</div>
+                <div class="stat-label">Acces total</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== FEED-URI FACEBOOK ===== -->
+<section class="social-section">
+    <div class="container">
+        <div class="fb-feed-grid">
+
+            <!-- PAGINA FACEBOOK -->
+            <div class="fb-card">
+                <div class="fb-card-header">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    <div>
+                        <div class="fb-card-title">Pagina Noastră</div>
+                        <div class="fb-card-sub">Divertisment și Glume Haioase — postări zilnice</div>
+                    </div>
+                </div>
+                <div class="fb-card-body">
+                    <div class="fb-page"
+                        data-href="https://www.facebook.com/profile.php?id=61580730311971"
+                        data-tabs="timeline"
+                        data-width="500"
+                        data-height="600"
+                        data-small-header="false"
+                        data-adapt-container-width="true"
+                        data-hide-cover="false"
+                        data-show-facepile="true">
+                    </div>
+                </div>
+                <div class="fb-card-footer">
+                    <a href="https://www.facebook.com/profile.php?id=61580730311971" target="_blank" class="fb-follow-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        👍 Urmărește Pagina
+                    </a>
+                </div>
+            </div>
+
+            <!-- GRUPUL FACEBOOK -->
+            <div class="fb-card">
+                <div class="fb-card-header" style="background:#4267B2;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    <div>
+                        <div class="fb-card-title">Grupul Nostru</div>
+                        <div class="fb-card-sub">Comunitatea de umor românesc — alătură-te!</div>
+                    </div>
+                </div>
+                <div class="fb-card-body">
+                    <div class="fb-group"
+                        data-href="https://www.facebook.com/groups/322386916991477"
+                        data-width="500"
+                        data-show-social-context="true"
+                        data-show-metadata="false">
+                    </div>
+                </div>
+                <div class="fb-card-footer">
+                    <a href="https://www.facebook.com/groups/322386916991477" target="_blank" class="fb-follow-btn" style="background:#4267B2;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        👥 Alătură-te Grupului
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/FhpRMpBhfdDCgpPE.png" alt="Logo" style="width:28px;height:28px;border-radius:50%;border:2px solid var(--comic-yellow);">
+                    <span class="font-comic" style="font-size:16px;color:var(--comic-yellow);">Glume Haioase</span>
+                </div>
+                <p style="font-size:13px;color:rgba(248,241,227,0.6);margin-bottom:4px;">Cel mai haios colt al internetului romanesc!</p>
+                <p style="font-size:12px;color:rgba(248,241,227,0.5);margin-bottom:10px;">Viorel Ochianu</p>
+                <div style="display:flex;flex-wrap:wrap;gap:4px;">
+                    <a href="https://www.facebook.com/profile.php?id=61580730311971" target="_blank" class="footer-social-btn" style="background:#1877F2;">&#128266; PAGINA</a>
+                    <a href="https://www.facebook.com/groups/322386916991477" target="_blank" class="footer-social-btn" style="background:#1877F2;">&#128101; GRUP</a>
+                    <a href="https://m.me/ViorelOchianu" target="_blank" class="footer-social-btn" style="background:#0084FF;">&#128172; MESAJ</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer-title">NAVIGARE</h4>
+                <a href="/" class="footer-link">Acasa</a>
+                <a href="/bancuri" class="footer-link">Bancuri</a>
+                <a href="/meme" class="footer-link">Meme</a>
+                <a href="/reeluri" class="footer-link">Reeluri</a>
+                <a href="/nostalgie" class="footer-link">Nostalgie</a>
+                <a href="/despre" class="footer-link">Despre</a>
+                <a href="/magazin" class="footer-link">Magazin</a>
+                <a href="/social" class="footer-link">Social Media</a>
+                <a href="/confidentialitate" class="footer-link">Confidentialitate</a>
+                <a href="/termeni" class="footer-link">Termeni si Conditii</a>
+            </div>
+            <div>
+                <h4 class="footer-title">URMARESTE-NE!</h4>
+                <a href="https://www.facebook.com/profile.php?id=61580730311971" target="_blank" class="footer-social-link">
+                    <svg viewBox="0 0 24 24" fill="currentColor" style="color:#1877F2;"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    Pagina: Divertisment si glume haioase
+                </a>
+                <a href="https://www.facebook.com/groups/322386916991477" target="_blank" class="footer-social-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:#1877F2;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                    Grupul nostru de umor
+                </a>
+                <a href="https://www.instagram.com/viorelochianu/" target="_blank" class="footer-social-link">
+                    <svg viewBox="0 0 24 24" fill="currentColor" style="color:#E4405F;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    @viorelochianu pe Instagram
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copy">Facut cu &#10084; pentru rasul romanesc &copy; 2026</p>
+            <p class="footer-legal">
+                <a href="/confidentialitate">Confidentialitate</a> &middot;
+                <a href="/termeni">Termeni si Conditii</a>
+            </p>
+            <p class="footer-disclaimer">Orice asemanare cu persoane reale este pur intamplatoare. Continutul este creat exclusiv in scop de divertisment.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating Messenger -->
+<a href="https://m.me/ViorelOchianu" target="_blank" rel="noopener noreferrer" class="messenger-float" title="Trimite-ne un mesaj!">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.908 1.434 5.503 3.678 7.199V22l3.378-1.874c.9.252 1.855.388 2.944.388 5.523 0 10-4.145 10-9.243S17.523 2 12 2zm1.062 12.476l-2.545-2.724-4.97 2.724 5.467-5.804 2.607 2.724 4.907-2.724-5.466 5.804z"/></svg>
+</a>
+
+<!-- Scroll to top -->
+<button class="scroll-top-btn" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Sus">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 15-6-6-6 6"/></svg>
+</button>
+
+<script>
+function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow='hidden'; }
+function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow=''; }
+window.addEventListener('scroll', function() {
+    var btn = document.getElementById('scrollTopBtn');
+    if (window.scrollY > 300) btn.classList.add('show'); else btn.classList.remove('show');
+});
+</script>
+
+</body>
+</html>
