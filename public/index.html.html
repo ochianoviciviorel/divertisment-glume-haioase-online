@@ -160,6 +160,16 @@
         .reel-card-title { font-size: 12px; display: block; }
         .reel-views { font-size: 11px; color: #666; margin-top: 2px; }
 
+        /* Videos grid */
+        .videos-grid { display: grid; grid-template-columns: repeat(1, 1fr); gap: 16px; }
+        @media (min-width: 768px) { .videos-grid { grid-template-columns: repeat(3, 1fr); } }
+        .video-card { overflow: hidden; }
+        .video-embed { position: relative; width: 100%; padding-bottom: 56.25%; }
+        .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 8px 8px 0 0; }
+        .video-card-body { padding: 8px 10px; }
+        .video-card-title { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 13px; display: block; }
+        .video-views { font-size: 11px; color: #666; margin-top: 2px; }
+
         /* Nostalgie grid */
         .nostalgie-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
         @media (min-width: 640px) { .nostalgie-grid { grid-template-columns: repeat(2, 1fr); } }
@@ -256,6 +266,7 @@
                 <a href="/bancuri" class="nav-link" data-i18n="nav_jokes">BANCURI</a>
                 <a href="/meme" class="nav-link" data-i18n="nav_memes">MEME</a>
                 <a href="/reeluri" class="nav-link" data-i18n="nav_reels">REELURI</a>
+                <a href="/noutati" class="nav-link" data-i18n="nav_news">NOUTATI</a>
                 <a href="/nostalgie" class="nav-link" data-i18n="nav_nostalgia">NOSTALGIE</a>
                 <a href="/despre" class="nav-link" data-i18n="nav_about">DESPRE</a>
                 <a href="/magazin" class="nav-link" data-i18n="nav_shop">MAGAZIN</a>
@@ -400,32 +411,60 @@
             <h2 class="section-title" data-i18n-html="reels_title">Reeluri <span style="color:var(--comic-blue);">Virale</span></h2>
         </div>
         <div class="reels-grid">
-            <a href="https://www.facebook.com/reel/1234567890" target="_blank" rel="noopener noreferrer" class="comic-panel reel-card">
-                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/gifsiuzFgBcFPwyT.webp" alt="Reel Viral de pe Facebook" loading="lazy">
+            <a href="https://www.youtube.com/shorts/vkI9k4eNljw" target="_blank" rel="noopener noreferrer" class="comic-panel reel-card">
+                <img src="https://i.ytimg.com/vi/vkI9k4eNljw/hq720.jpg" alt="Pretul benzinei in 2026" loading="lazy">
                 <div class="reel-card-body">
-                    <span class="reel-card-title font-comic" data-i18n="reel1_title">Reel Viral de pe Facebook</span>
-                    <p class="reel-views font-bubble" data-i18n="reel1_views">45.900 vizualizari</p>
+                    <span class="reel-card-title font-comic" data-i18n="reel1_title">Pretul benzinei in 2026</span>
+                    <p class="reel-views font-bubble" data-i18n="reel1_views">22K vizualizari</p>
                 </div>
             </a>
-            <a href="https://www.facebook.com/reel/1234567891" target="_blank" rel="noopener noreferrer" class="comic-panel reel-card">
-                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/UgevSAvUoLiwFbJz.webp" alt="Cele 5 Faze ale Miercurii" loading="lazy">
+            <a href="https://www.youtube.com/shorts/2wQQaP2Xmc0" target="_blank" rel="noopener noreferrer" class="comic-panel reel-card">
+                <img src="https://i.ytimg.com/vi/2wQQaP2Xmc0/hq720.jpg" alt="Alegeri in Romania" loading="lazy">
                 <div class="reel-card-body">
-                    <span class="reel-card-title font-comic" data-i18n="reel2_title">Cele 5 Faze ale Miercurii</span>
-                    <p class="reel-views font-bubble" data-i18n="reel2_views">12.300 vizualizari</p>
+                    <span class="reel-card-title font-comic" data-i18n="reel2_title">Alegeri in Romania</span>
+                    <p class="reel-views font-bubble" data-i18n="reel2_views">12K vizualizari</p>
                 </div>
             </a>
-            <a href="https://www.facebook.com/reel/1234567892" target="_blank" rel="noopener noreferrer" class="comic-panel reel-card">
-                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/DzXUffaEWMVZhkkG.webp" alt="Compilatie Haioasa" loading="lazy">
+            <a href="https://www.youtube.com/shorts/qjXw2NtmoDE" target="_blank" rel="noopener noreferrer" class="comic-panel reel-card">
+                <img src="https://i.ytimg.com/vi/qjXw2NtmoDE/hq720.jpg" alt="Romanul la coada la supermarket" loading="lazy">
                 <div class="reel-card-body">
-                    <span class="reel-card-title font-comic" data-i18n="reel3_title">Compilatie Haioasa</span>
-                    <p class="reel-views font-bubble" data-i18n="reel3_views">8.700 vizualizari</p>
+                    <span class="reel-card-title font-comic" data-i18n="reel3_title">Romanul la coada la supermarket</span>
+                    <p class="reel-views font-bubble" data-i18n="reel3_views">11K vizualizari</p>
                 </div>
             </a>
-            <a href="https://www.facebook.com/reel/1234567893" target="_blank" rel="noopener noreferrer" class="comic-panel reel-card">
-                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/FYirdpmjmQZGunJv.webp" alt="Logica Nu Da Gres" loading="lazy">
+            <a href="https://www.youtube.com/shorts/W25reYItnKY" target="_blank" rel="noopener noreferrer" class="comic-panel reel-card">
+                <img src="https://i.ytimg.com/vi/W25reYItnKY/hq720.jpg" alt="Mielul de Paste a ajuns la Bursa" loading="lazy">
                 <div class="reel-card-body">
-                    <span class="reel-card-title font-comic" data-i18n="reel4_title">Logica Nu Da Gres</span>
-                    <p class="reel-views font-bubble" data-i18n="reel4_views">6.200 vizualizari</p>
+                    <span class="reel-card-title font-comic" data-i18n="reel4_title">Mielul de Paste a ajuns la Bursa</span>
+                    <p class="reel-views font-bubble" data-i18n="reel4_views">10K vizualizari</p>
+                </div>
+            </a>
+            <a href="https://www.youtube.com/shorts/9BtEAO5ZMHY" target="_blank" rel="noopener noreferrer" class="comic-panel reel-card">
+                <img src="https://i.ytimg.com/vi/9BtEAO5ZMHY/hq720.jpg" alt="Prezentare proiect D&GH" loading="lazy">
+                <div class="reel-card-body">
+                    <span class="reel-card-title font-comic" data-i18n="reel5_title">Prezentare proiect D&GH</span>
+                    <p class="reel-views font-bubble" data-i18n="reel5_views">7.5K vizualizari</p>
+                </div>
+            </a>
+            <a href="https://www.youtube.com/shorts/ms3MHtYN_uA" target="_blank" rel="noopener noreferrer" class="comic-panel reel-card">
+                <img src="https://i.ytimg.com/vi/ms3MHtYN_uA/hq720.jpg" alt="13 aprilie 2026" loading="lazy">
+                <div class="reel-card-body">
+                    <span class="reel-card-title font-comic" data-i18n="reel6_title">13 aprilie 2026</span>
+                    <p class="reel-views font-bubble" data-i18n="reel6_views">1.4K vizualizari</p>
+                </div>
+            </a>
+            <a href="https://www.youtube.com/shorts/Qn7ZVRlUtbQ" target="_blank" rel="noopener noreferrer" class="comic-panel reel-card">
+                <img src="https://i.ytimg.com/vi/Qn7ZVRlUtbQ/hq720.jpg" alt="Ceva haios" loading="lazy">
+                <div class="reel-card-body">
+                    <span class="reel-card-title font-comic" data-i18n="reel7_title">Ceva haios..</span>
+                    <p class="reel-views font-bubble" data-i18n="reel7_views">1K vizualizari</p>
+                </div>
+            </a>
+            <a href="https://www.youtube.com/shorts/1mNNBp-BBxI" target="_blank" rel="noopener noreferrer" class="comic-panel reel-card">
+                <img src="https://i.ytimg.com/vi/1mNNBp-BBxI/hq720.jpg" alt="Evolutia vinerii" loading="lazy">
+                <div class="reel-card-body">
+                    <span class="reel-card-title font-comic" data-i18n="reel8_title">Evolutia vinerii</span>
+                    <p class="reel-views font-bubble" data-i18n="reel8_views">600 vizualizari</p>
                 </div>
             </a>
         </div>
@@ -433,6 +472,81 @@
             <a href="/reeluri" class="comic-btn see-more-btn" style="background:var(--comic-blue);color:#fff;font-size:13px;padding:10px 24px;">
                 <span data-i18n="see_all_reels">VEZI TOATE REELURILE</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== VIDEOCLIPURI YOUTUBE ===== -->
+<section class="content-section" style="background:rgba(255,0,0,0.05);">
+    <div class="container">
+        <div class="section-header">
+            <span class="comic-badge" style="background:#FF0000;color:#fff;font-size:11px;padding:4px 14px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                <span data-i18n="videos_badge">VIDEOCLIPURI</span>
+            </span>
+            <h2 class="section-title" data-i18n-html="videos_title">Videoclipuri <span style="color:#FF0000;">YouTube</span></h2>
+        </div>
+        <div class="videos-grid">
+            <div class="comic-panel video-card">
+                <div class="video-embed">
+                    <iframe src="https://www.youtube.com/embed/yMuWjxoqH6w" title="Galati, Danube, Ro" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="video-card-body">
+                    <span class="video-card-title font-comic" data-i18n="vid1_title">Galati, Danube, Ro</span>
+                    <p class="video-views font-bubble" data-i18n="vid1_views">1.3K vizualizari</p>
+                </div>
+            </div>
+            <div class="comic-panel video-card">
+                <div class="video-embed">
+                    <iframe src="https://www.youtube.com/embed/2baxgI-eYHs" title="Concert aniversar, la Galați" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="video-card-body">
+                    <span class="video-card-title font-comic" data-i18n="vid2_title">Concert aniversar, la Galati</span>
+                    <p class="video-views font-bubble" data-i18n="vid2_views">265 vizualizari</p>
+                </div>
+            </div>
+            <div class="comic-panel video-card">
+                <div class="video-embed">
+                    <iframe src="https://www.youtube.com/embed/42s8BYgBbA4" title="Bine ai venit pe D&GH!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="video-card-body">
+                    <span class="video-card-title font-comic" data-i18n="vid3_title">Bine ai venit pe D&GH!</span>
+                    <p class="video-views font-bubble" data-i18n="vid3_views">56 vizualizari</p>
+                </div>
+            </div>
+            <div class="comic-panel video-card">
+                <div class="video-embed">
+                    <iframe src="https://www.youtube.com/embed/pfxG53ay_-E" title="Nostalgia amintirilor copilăriei" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="video-card-body">
+                    <span class="video-card-title font-comic" data-i18n="vid4_title">Nostalgia amintirilor copilariei</span>
+                    <p class="video-views font-bubble" data-i18n="vid4_views">16 vizualizari</p>
+                </div>
+            </div>
+            <div class="comic-panel video-card">
+                <div class="video-embed">
+                    <iframe src="https://www.youtube.com/embed/RCuWx6JvCh8" title="Relaxare la mare" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="video-card-body">
+                    <span class="video-card-title font-comic" data-i18n="vid5_title">Relaxare la mare</span>
+                    <p class="video-views font-bubble" data-i18n="vid5_views">7 vizualizari</p>
+                </div>
+            </div>
+            <div class="comic-panel video-card">
+                <div class="video-embed">
+                    <iframe src="https://www.youtube.com/embed/A1MIeNJldHA" title="Doar eu, un pic îngândurat" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="video-card-body">
+                    <span class="video-card-title font-comic" data-i18n="vid6_title">Doar eu, un pic ingandurat</span>
+                    <p class="video-views font-bubble" data-i18n="vid6_views">10 vizualizari</p>
+                </div>
+            </div>
+        </div>
+        <div style="text-align:center;margin-top:20px;">
+            <a href="https://www.youtube.com/@divertismentsiglumehaioase" target="_blank" rel="noopener noreferrer" class="comic-btn see-more-btn" style="background:#FF0000;color:#fff;font-size:13px;padding:10px 24px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                <span data-i18n="see_all_videos">VEZI TOATE PE YOUTUBE</span>
             </a>
         </div>
     </div>
@@ -533,6 +647,7 @@
                 <a href="/bancuri" class="footer-link" data-i18n="nav_jokes_lc">Bancuri</a>
                 <a href="/meme" class="footer-link" data-i18n="nav_memes_lc">Meme</a>
                 <a href="/reeluri" class="footer-link" data-i18n="nav_reels_lc">Reeluri</a>
+                <a href="/noutati" class="footer-link" data-i18n="nav_news_lc">Noutati</a>
                 <a href="/nostalgie" class="footer-link" data-i18n="nav_nostalgia_lc">Nostalgie</a>
                 <a href="/despre" class="footer-link" data-i18n="nav_about_lc">Despre</a>
                 <a href="/magazin" class="footer-link" data-i18n="nav_shop_lc">Magazin & Newsletter</a>
@@ -592,6 +707,7 @@
     <a href="/bancuri" data-i18n="nav_jokes">BANCURI</a>
     <a href="/meme" data-i18n="nav_memes">MEME</a>
     <a href="/reeluri" data-i18n="nav_reels">REELURI</a>
+    <a href="/noutati" data-i18n="nav_news">NOUTATI</a>
     <a href="/nostalgie" data-i18n="nav_nostalgia">NOSTALGIE</a>
     <a href="/despre" data-i18n="nav_about">DESPRE</a>
     <a href="/magazin" data-i18n="nav_shop">MAGAZIN</a>
@@ -610,7 +726,7 @@ var translations = {
     ro: {
         logo: 'Divertisment și<br><span class="red">Glume Haioase</span>',
         nav_home: 'ACASA', nav_jokes: 'BANCURI', nav_memes: 'MEME', nav_reels: 'REELURI',
-        nav_nostalgia: 'NOSTALGIE', nav_about: 'DESPRE', nav_shop: 'MAGAZIN',
+        nav_news: 'NOUTATI', nav_nostalgia: 'NOSTALGIE', nav_about: 'DESPRE', nav_shop: 'MAGAZIN',
         stars_badge: 'STARS - MULTUMIM PENTRU SUSTINERE!',
         stars_fb: 'Stars via Facebook', yt_wip: 'YouTube',
         free_access: '\u2714 Acces gratuit la tot continutul, fara autentificare',
@@ -626,11 +742,23 @@ var translations = {
         see_all_memes: 'VEZI TOATE MEME-URILE',
         reels_badge: 'REELURI NOI',
         reels_title: 'Reeluri <span style="color:var(--comic-blue);">Virale</span>',
-        reel1_title: 'Reel Viral de pe Facebook', reel1_views: '45.900 vizualizari',
-        reel2_title: 'Cele 5 Faze ale Miercurii', reel2_views: '12.300 vizualizari',
-        reel3_title: 'Compilatie Haioasa', reel3_views: '8.700 vizualizari',
-        reel4_title: 'Logica Nu Da Gres', reel4_views: '6.200 vizualizari',
+        reel1_title: 'Pretul benzinei in 2026', reel1_views: '22K vizualizari',
+        reel2_title: 'Alegeri in Romania', reel2_views: '12K vizualizari',
+        reel3_title: 'Romanul la coada la supermarket', reel3_views: '11K vizualizari',
+        reel4_title: 'Mielul de Paste a ajuns la Bursa', reel4_views: '10K vizualizari',
+        reel5_title: 'Prezentare proiect D&GH', reel5_views: '7.5K vizualizari',
+        reel6_title: '13 aprilie 2026', reel6_views: '1.4K vizualizari',
+        reel7_title: 'Ceva haios..', reel7_views: '1K vizualizari',
+        reel8_title: 'Evolutia vinerii', reel8_views: '600 vizualizari',
         see_all_reels: 'VEZI TOATE REELURILE',
+        videos_badge: 'VIDEOCLIPURI', videos_title: 'Videoclipuri <span style="color:#FF0000;">YouTube</span>',
+        vid1_title: 'Galati, Danube, Ro', vid1_views: '1.3K vizualizari',
+        vid2_title: 'Concert aniversar, la Galati', vid2_views: '265 vizualizari',
+        vid3_title: 'Bine ai venit pe D&GH!', vid3_views: '56 vizualizari',
+        vid4_title: 'Nostalgia amintirilor copilariei', vid4_views: '16 vizualizari',
+        vid5_title: 'Relaxare la mare', vid5_views: '7 vizualizari',
+        vid6_title: 'Doar eu, un pic ingandurat', vid6_views: '10 vizualizari',
+        see_all_videos: 'VEZI TOATE PE YOUTUBE',
         nostalgia_badge: 'NOSTALGIE',
         nostalgia_title: 'Atunci vs. <span style="color:var(--comic-orange);">Acum</span>',
         nost1_title: 'Copilaria de Altadata',
@@ -645,7 +773,7 @@ var translations = {
         f_page: 'PAGINA', f_group: 'GRUP', f_msg: 'MESAJ',
         footer_nav: 'NAVIGARE',
         nav_home_lc: 'Acasa', nav_jokes_lc: 'Bancuri', nav_memes_lc: 'Meme', nav_reels_lc: 'Reeluri',
-        nav_nostalgia_lc: 'Nostalgie', nav_about_lc: 'Despre', nav_shop_lc: 'Magazin & Newsletter',
+        nav_news_lc: 'Noutati', nav_nostalgia_lc: 'Nostalgie', nav_about_lc: 'Despre', nav_shop_lc: 'Magazin & Newsletter',
         nav_privacy: 'Confidentialitate', nav_terms: 'Termeni si Conditii', nav_support: 'Sustine-ne',
         footer_about_site: 'DESPRE SITE',
         footer_about_desc: 'Un proiect dedicat umorului romanesc. Toate glumele sunt pentru distractie si buna dispozitie!',
@@ -661,7 +789,7 @@ var translations = {
     en: {
         logo: 'Entertainment &<br><span class="red">Funny Jokes</span>',
         nav_home: 'HOME', nav_jokes: 'JOKES', nav_memes: 'MEMES', nav_reels: 'REELS',
-        nav_nostalgia: 'NOSTALGIA', nav_about: 'ABOUT', nav_shop: 'SHOP',
+        nav_news: 'NEWS', nav_nostalgia: 'NOSTALGIA', nav_about: 'ABOUT', nav_shop: 'SHOP',
         stars_badge: 'STARS - THANK YOU FOR YOUR SUPPORT!',
         stars_fb: 'Stars via Facebook', yt_wip: 'YouTube',
         free_access: '\u2714 Free access to all content, no login required',
@@ -677,11 +805,23 @@ var translations = {
         see_all_memes: 'SEE ALL MEMES',
         reels_badge: 'NEW REELS',
         reels_title: 'Viral <span style="color:var(--comic-blue);">Reels</span>',
-        reel1_title: 'Viral Reel from Facebook', reel1_views: '45,900 views',
-        reel2_title: 'The 5 Stages of Wednesday', reel2_views: '12,300 views',
-        reel3_title: 'Funny Compilation', reel3_views: '8,700 views',
-        reel4_title: 'Logic Never Fails', reel4_views: '6,200 views',
+        reel1_title: 'Gas prices in 2026', reel1_views: '22K views',
+        reel2_title: 'Elections in Romania', reel2_views: '12K views',
+        reel3_title: 'Romanian at the supermarket queue', reel3_views: '11K views',
+        reel4_title: 'Easter Lamb hits the Stock Market', reel4_views: '10K views',
+        reel5_title: 'D&GH Project Presentation', reel5_views: '7.5K views',
+        reel6_title: 'April 13, 2026', reel6_views: '1.4K views',
+        reel7_title: 'Something funny..', reel7_views: '1K views',
+        reel8_title: 'Friday evolution', reel8_views: '600 views',
         see_all_reels: 'SEE ALL REELS',
+        videos_badge: 'VIDEOS', videos_title: 'YouTube <span style="color:#FF0000;">Videos</span>',
+        vid1_title: 'Galati, Danube, Ro', vid1_views: '1.3K views',
+        vid2_title: 'Anniversary Concert, Galati', vid2_views: '265 views',
+        vid3_title: 'Welcome to D&GH!', vid3_views: '56 views',
+        vid4_title: 'Childhood Nostalgia', vid4_views: '16 views',
+        vid5_title: 'Relaxing at the Sea', vid5_views: '7 views',
+        vid6_title: 'Just me, a bit pensive', vid6_views: '10 views',
+        see_all_videos: 'SEE ALL ON YOUTUBE',
         nostalgia_badge: 'NOSTALGIA',
         nostalgia_title: 'Then vs. <span style="color:var(--comic-orange);">Now</span>',
         nost1_title: 'Childhood of the Past',
@@ -693,10 +833,10 @@ var translations = {
         popular_title: 'The <span style="color:var(--comic-red);">Funniest</span> Photos',
         pop1: 'The 5 Stages of Wednesday', pop2: 'Challenge of the Day #2', pop3: 'Logic Never Fails', pop4: 'Meme Overload!',
         footer_desc: 'The funniest corner of the Romanian internet! Jokes, memes, nostalgia and funny reels.',
-        f_page: 'PAGE', f_group: 'GROUP', f_msg: 'MESSAGE', f_wip: 'WIP', f_wip_small: '(Coming soon)',
+        f_page: 'PAGE', f_group: 'GROUP', f_msg: 'MESSAGE',
         footer_nav: 'NAVIGATE',
         nav_home_lc: 'Home', nav_jokes_lc: 'Jokes', nav_memes_lc: 'Memes', nav_reels_lc: 'Reels',
-        nav_nostalgia_lc: 'Nostalgia', nav_about_lc: 'About', nav_shop_lc: 'Shop & Newsletter',
+        nav_news_lc: 'News', nav_nostalgia_lc: 'Nostalgia', nav_about_lc: 'About', nav_shop_lc: 'Shop & Newsletter',
         nav_privacy: 'Privacy Policy', nav_terms: 'Terms & Conditions', nav_support: 'Support Us',
         footer_about_site: 'ABOUT THE SITE',
         footer_about_desc: 'A project dedicated to Romanian humor. All jokes are meant for fun and good vibes!',
