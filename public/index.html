@@ -60,144 +60,40 @@
         @media (min-width: 768px) { .container { padding: 0 24px; } }
 
         /* === COMIC COMPONENTS === */
-        .comic-panel {
-            background: #fff;
-            border: 2px solid var(--foreground);
-            position: relative;
-            box-shadow: 3px 3px var(--foreground);
-        }
-        .comic-btn {
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 600;
-            letter-spacing: 0.03em;
-            border: 2px solid var(--foreground);
-            box-shadow: 3px 3px var(--foreground);
-            transition: all 0.15s;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            cursor: pointer;
-        }
-        .comic-btn:hover {
-            box-shadow: none;
-            transform: translate(3px, 3px);
-        }
-        .comic-badge {
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 600;
-            letter-spacing: 0.03em;
-            border: 2px solid var(--foreground);
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            box-shadow: 2px 2px var(--foreground);
-        }
-        .halftone-bg {
-            background-image: radial-gradient(circle, rgba(14,10,7,0.06) 1px, transparent 1px);
-            background-size: 12px 12px;
-        }
+        .comic-panel { background: #fff; border: 2px solid var(--foreground); position: relative; box-shadow: 3px 3px var(--foreground); }
+        .comic-btn { font-family: 'Fredoka', sans-serif; font-weight: 600; letter-spacing: 0.03em; border: 2px solid var(--foreground); box-shadow: 3px 3px var(--foreground); transition: all 0.15s; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+        .comic-btn:hover { box-shadow: none; transform: translate(3px, 3px); }
+        .comic-badge { font-family: 'Fredoka', sans-serif; font-weight: 600; letter-spacing: 0.03em; border: 2px solid var(--foreground); display: inline-flex; align-items: center; gap: 6px; box-shadow: 2px 2px var(--foreground); }
+        .halftone-bg { background-image: radial-gradient(circle, rgba(14,10,7,0.06) 1px, transparent 1px); background-size: 12px 12px; }
 
         /* === HEADER === */
-        .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: var(--comic-yellow);
-            border-bottom: 3px solid var(--foreground);
-        }
-        .header-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 8px 0;
-            gap: 8px;
-        }
-        .logo-link {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            flex-shrink: 0;
-        }
-        .logo-img {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            border: 2px solid var(--foreground);
-            box-shadow: 2px 2px 0 var(--foreground);
-            object-fit: cover;
-        }
-        .logo-text {
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 600;
-            font-size: 14px;
-            color: var(--foreground);
-            letter-spacing: 0.02em;
-            line-height: 1.2;
-        }
+        .site-header { position: sticky; top: 0; z-index: 100; background: var(--comic-yellow); border-bottom: 3px solid var(--foreground); }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 8px 0; gap: 8px; }
+        .logo-link { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+        .logo-img { width: 36px; height: 36px; border-radius: 50%; border: 2px solid var(--foreground); box-shadow: 2px 2px 0 var(--foreground); object-fit: cover; }
+        .logo-text { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 14px; color: var(--foreground); letter-spacing: 0.02em; line-height: 1.2; }
         .logo-text .red { color: var(--comic-red); }
 
         /* Social icons in header */
-        .social-header {
-            display: none;
-            align-items: center;
-            gap: 4px;
-        }
-        .social-icon-btn {
-            width: 34px;
-            height: 34px;
-            border: 2px solid var(--foreground);
-            box-shadow: 2px 2px 0 var(--foreground);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            transition: all 0.15s;
-        }
-        .social-icon-btn:hover {
-            box-shadow: none;
-            transform: translate(2px, 2px);
-        }
+        .social-header { display: none; align-items: center; gap: 4px; }
+        .social-icon-btn { width: 34px; height: 34px; border: 2px solid var(--foreground); box-shadow: 2px 2px 0 var(--foreground); display: flex; align-items: center; justify-content: center; color: #fff; transition: all 0.15s; }
+        .social-icon-btn:hover { box-shadow: none; transform: translate(2px, 2px); }
         .social-icon-btn svg { width: 16px; height: 16px; }
 
         /* Desktop nav */
-        .desktop-nav {
-            display: none;
-            align-items: center;
-            gap: 2px;
-        }
-        .nav-link {
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 600;
-            font-size: 12px;
-            padding: 6px 12px;
-            letter-spacing: 0.05em;
-            border: 2px solid transparent;
-            transition: all 0.15s;
-        }
-        .nav-link:hover {
-            background: rgba(223, 32, 46, 0.1);
-            border-color: var(--foreground);
-        }
-        .nav-link.active {
-            background: var(--comic-red);
-            color: #fff;
-            border-color: var(--foreground);
-            box-shadow: 2px 2px 0 var(--foreground);
-        }
+        .desktop-nav { display: none; align-items: center; gap: 2px; }
+        .nav-link { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 12px; padding: 6px 12px; letter-spacing: 0.05em; border: 2px solid transparent; transition: all 0.15s; }
+        .nav-link:hover { background: rgba(223, 32, 46, 0.1); border-color: var(--foreground); }
+        .nav-link.active { background: var(--comic-red); color: #fff; border-color: var(--foreground); box-shadow: 2px 2px 0 var(--foreground); }
+
+        /* Language toggle */
+        .lang-toggle { display: flex; align-items: center; border: 2px solid var(--foreground); box-shadow: 2px 2px 0 var(--foreground); overflow: hidden; flex-shrink: 0; }
+        .lang-btn { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 11px; padding: 5px 8px; background: #fff; color: var(--foreground); cursor: pointer; transition: all 0.15s; display: flex; align-items: center; gap: 3px; border: none; }
+        .lang-btn.active { background: var(--comic-red); color: #fff; }
+        .lang-btn:not(.active):hover { background: rgba(223, 32, 46, 0.1); }
 
         /* Hamburger */
-        .hamburger-btn {
-            width: 36px;
-            height: 36px;
-            background: var(--comic-red);
-            color: #fff;
-            border: 2px solid var(--foreground);
-            box-shadow: 2px 2px 0 var(--foreground);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
+        .hamburger-btn { width: 36px; height: 36px; background: var(--comic-red); color: #fff; border: 2px solid var(--foreground); box-shadow: 2px 2px 0 var(--foreground); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
         .hamburger-btn svg { width: 18px; height: 18px; }
 
         @media (min-width: 1024px) {
@@ -209,439 +105,96 @@
         }
 
         /* === HERO SECTION - FULL SCREEN === */
-        .hero-section {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-            border-bottom: 3px solid var(--foreground);
-        }
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-        }
-        .hero-bg img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .hero-bg .overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, rgba(255,209,107,0.92) 0%, rgba(255,209,107,0.7) 40%, rgba(255,209,107,0.3) 100%);
-        }
-        @media (min-width: 640px) {
-            .hero-bg .overlay {
-                background: linear-gradient(to right, rgba(255,209,107,0.88) 0%, rgba(255,209,107,0.55) 50%, rgba(255,209,107,0.15) 100%);
-            }
-        }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            padding: 40px 0 60px;
-            max-width: 580px;
-        }
-        @media (min-width: 768px) {
-            .hero-content { padding: 60px 0 80px; }
-        }
+        .hero-section { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; border-bottom: 3px solid var(--foreground); }
+        .hero-bg { position: absolute; inset: 0; z-index: 0; }
+        .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-bg .overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(255,209,107,0.92) 0%, rgba(255,209,107,0.7) 40%, rgba(255,209,107,0.3) 100%); }
+        @media (min-width: 640px) { .hero-bg .overlay { background: linear-gradient(to right, rgba(255,209,107,0.88) 0%, rgba(255,209,107,0.55) 50%, rgba(255,209,107,0.15) 100%); } }
+        .hero-content { position: relative; z-index: 2; padding: 40px 0 60px; max-width: 580px; }
+        @media (min-width: 768px) { .hero-content { padding: 60px 0 80px; } }
 
         /* Stars banner */
-        .stars-badge {
-            background: var(--comic-red);
-            color: #fff;
-            font-size: 11px;
-            padding: 4px 12px;
-            margin-bottom: 12px;
-        }
-        .support-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 12px;
-        }
-        .support-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 600;
-            font-size: 10px;
-            padding: 4px 10px;
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-        .free-access {
-            font-family: 'Fredoka', sans-serif;
-            font-size: 11px;
-            color: var(--foreground);
-            background: rgba(255,255,255,0.4);
-            backdrop-filter: blur(4px);
-            padding: 4px 12px;
-            border: 1px solid rgba(0,0,0,0.15);
-            display: inline-block;
-            margin-bottom: 16px;
-        }
-        .hero-title {
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 700;
-            font-size: 28px;
-            line-height: 1.15;
-            color: var(--foreground);
-            margin-bottom: 12px;
-        }
+        .stars-badge { background: var(--comic-red); color: #fff; font-size: 11px; padding: 4px 12px; margin-bottom: 12px; }
+        .support-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+        .support-btn { display: inline-flex; align-items: center; gap: 4px; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 11px; padding: 4px 10px; border: 2px solid var(--foreground); box-shadow: 2px 2px 0 var(--foreground); }
+        .free-access { font-size: 12px; color: var(--foreground); margin-bottom: 16px; background: rgba(255,255,255,0.6); display: inline-block; padding: 4px 10px; border: 1px solid rgba(0,0,0,0.1); }
+        .hero-title { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: clamp(28px, 6vw, 48px); line-height: 1.1; margin-bottom: 12px; color: var(--foreground); }
         .hero-title .red { color: var(--comic-red); }
         .hero-title .blue { color: var(--comic-blue); }
-        .hero-subtitle {
-            font-family: 'Nunito', sans-serif;
-            font-weight: 700;
-            font-size: 14px;
-            color: var(--foreground);
-            background: rgba(255,255,255,0.5);
-            backdrop-filter: blur(4px);
-            padding: 8px 14px;
-            border: 1px solid rgba(0,0,0,0.15);
-            max-width: 400px;
-            margin-bottom: 20px;
-        }
-        .hero-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        .hero-buttons .comic-btn {
-            font-size: 11px;
-            padding: 8px 16px;
-        }
-        .hero-buttons .comic-btn svg { width: 14px; height: 14px; }
-
-        @media (min-width: 640px) {
-            .hero-title { font-size: 36px; }
-            .hero-subtitle { font-size: 15px; }
-            .hero-buttons .comic-btn { font-size: 12px; padding: 10px 20px; }
-            .stars-badge { font-size: 12px; }
-            .support-btn { font-size: 11px; }
-            .free-access { font-size: 12px; }
-        }
-        @media (min-width: 768px) {
-            .hero-title { font-size: 44px; }
-            .hero-subtitle { font-size: 16px; }
-            .hero-buttons .comic-btn { font-size: 14px; padding: 12px 24px; }
-            .hero-buttons .comic-btn svg { width: 18px; height: 18px; }
-        }
-        @media (min-width: 1024px) {
-            .hero-title { font-size: 56px; }
-        }
+        .hero-subtitle { font-size: clamp(14px, 2.5vw, 17px); color: var(--foreground); margin-bottom: 24px; max-width: 460px; }
+        .hero-buttons { display: flex; flex-wrap: wrap; gap: 8px; }
+        .hero-buttons .comic-btn { font-size: 12px; padding: 8px 16px; }
 
         /* === CONTENT SECTIONS === */
-        .content-section {
-            padding: 32px 0;
-        }
-        @media (min-width: 768px) {
-            .content-section { padding: 48px 0; }
-        }
-        .section-header {
-            text-align: center;
-            margin-bottom: 24px;
-        }
-        .section-title {
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 700;
-            font-size: 24px;
-            color: var(--foreground);
-            margin-top: 8px;
-        }
-        @media (min-width: 768px) {
-            .section-title { font-size: 36px; }
-        }
+        .content-section { padding: 40px 0; }
+        .section-header { margin-bottom: 20px; }
+        .section-title { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: clamp(22px, 4vw, 30px); margin-top: 8px; }
+        .section-blue { background: rgba(0, 97, 190, 0.05); }
 
-        /* Gluma Zilei */
-        .joke-card {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 20px;
-            text-align: center;
-        }
-        @media (min-width: 768px) {
-            .joke-card { padding: 32px; }
-        }
-        .joke-text {
-            font-family: 'Nunito', sans-serif;
-            font-weight: 700;
-            font-size: 16px;
-            color: var(--foreground);
-        }
-        @media (min-width: 768px) {
-            .joke-text { font-size: 20px; }
-        }
-        .joke-answer {
-            display: none;
-            margin-top: 16px;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 700;
-            font-size: 16px;
-            color: var(--comic-red);
-        }
+        /* Joke card */
+        .joke-card { padding: 24px; }
+        .joke-text { font-size: 16px; line-height: 1.6; }
+        .joke-answer { display: none; margin-top: 16px; padding: 16px; background: var(--comic-cream); border: 2px dashed var(--comic-yellow); font-size: 16px; line-height: 1.6; }
         .joke-answer.show { display: block; }
 
         /* Image grid */
-        .image-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-        @media (min-width: 768px) {
-            .image-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; }
-        }
-        .image-card {
-            overflow: hidden;
-            transition: transform 0.2s;
-        }
-        .image-card:hover { transform: translateY(-4px); }
-        .image-card img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-        }
-        @media (min-width: 768px) {
-            .image-card img { height: 200px; }
-        }
-        .image-card-body {
-            padding: 8px 10px;
-        }
-        .image-card-title {
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 600;
-            font-size: 12px;
-            color: var(--foreground);
-        }
+        .image-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        @media (min-width: 768px) { .image-grid { grid-template-columns: repeat(4, 1fr); } }
+        .image-card img { aspect-ratio: 1; object-fit: cover; }
+        .image-card-body { padding: 8px 10px; }
+        .image-card-title { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 12px; }
 
-        /* Reels section */
-        .reels-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-        @media (min-width: 768px) {
-            .reels-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; }
-        }
-        .reel-card {
-            overflow: hidden;
-            transition: transform 0.2s;
-        }
-        .reel-card:hover { transform: translateY(-4px); }
-        .reel-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-        @media (min-width: 768px) {
-            .reel-card img { height: 220px; }
-        }
-        .reel-card-body {
-            padding: 8px 10px;
-        }
-        .reel-card-title {
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 600;
-            font-size: 12px;
-        }
-        .reel-views {
-            font-size: 10px;
-            color: #666;
-            margin-top: 2px;
-        }
+        /* Reels grid */
+        .reels-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        @media (min-width: 768px) { .reels-grid { grid-template-columns: repeat(4, 1fr); } }
+        .reel-card { overflow: hidden; }
+        .reel-card img { aspect-ratio: 9/16; object-fit: cover; max-height: 280px; width: 100%; }
+        .reel-card-body { padding: 8px 10px; }
+        .reel-card-title { font-size: 12px; display: block; }
+        .reel-views { font-size: 11px; color: #666; margin-top: 2px; }
 
-        /* Nostalgie */
-        .nostalgie-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 16px;
-        }
-        @media (min-width: 768px) {
-            .nostalgie-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        .nostalgie-card {
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-        .nostalgie-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        .nostalgie-card-body {
-            padding: 12px;
-        }
-
-        /* Section with colored bg */
-        .section-blue { background: rgba(0,97,190,0.08); border-top: 3px solid var(--foreground); border-bottom: 3px solid var(--foreground); }
-        .section-alt { border-top: 3px solid var(--foreground); border-bottom: 3px solid var(--foreground); }
+        /* Nostalgie grid */
+        .nostalgie-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+        @media (min-width: 640px) { .nostalgie-grid { grid-template-columns: repeat(2, 1fr); } }
+        .nostalgie-card { overflow: hidden; }
+        .nostalgie-card img { aspect-ratio: 16/9; object-fit: cover; }
+        .nostalgie-card-body { padding: 12px; }
 
         /* See more button */
-        .see-more-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            margin-top: 20px;
-        }
+        .see-more-btn { font-size: 13px; padding: 10px 24px; }
 
         /* === FOOTER === */
-        .site-footer {
-            background: var(--foreground);
-            color: var(--comic-cream);
-            padding: 32px 0 20px;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 24px;
-            margin-bottom: 24px;
-        }
-        @media (min-width: 640px) {
-            .footer-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (min-width: 768px) {
-            .footer-grid { grid-template-columns: repeat(4, 1fr); }
-        }
-        .footer-title {
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 600;
-            font-size: 14px;
-            color: var(--comic-yellow);
-            margin-bottom: 10px;
-            letter-spacing: 0.05em;
-        }
-        .footer-link {
-            display: block;
-            font-size: 13px;
-            color: rgba(248,241,227,0.7);
-            padding: 3px 0;
-            transition: color 0.15s;
-        }
+        .site-footer { background: var(--foreground); color: var(--comic-cream); padding: 32px 0 20px; border-top: 3px solid var(--comic-yellow); }
+        .footer-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+        @media (min-width: 640px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 768px) { .footer-grid { grid-template-columns: repeat(4, 1fr); } }
+        .footer-title { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 14px; color: var(--comic-yellow); margin-bottom: 10px; letter-spacing: 0.05em; }
+        .footer-link { display: block; font-size: 13px; color: rgba(248,241,227,0.7); padding: 3px 0; transition: color 0.15s; }
         .footer-link:hover { color: var(--comic-yellow); }
-        .footer-social-link {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 12px;
-            color: rgba(248,241,227,0.7);
-            padding: 3px 0;
-            transition: color 0.15s;
-        }
+        .footer-social-link { display: flex; align-items: center; gap: 6px; font-size: 12px; color: rgba(248,241,227,0.7); padding: 3px 0; transition: color 0.15s; }
         .footer-social-link:hover { color: var(--comic-yellow); }
         .footer-social-link svg { width: 14px; height: 14px; flex-shrink: 0; }
-        .footer-bottom {
-            border-top: 1px solid rgba(248,241,227,0.2);
-            padding-top: 16px;
-            text-align: center;
-        }
-        .footer-copy {
-            font-family: 'Nunito', sans-serif;
-            font-size: 13px;
-            color: rgba(248,241,227,0.5);
-        }
-        .footer-legal {
-            font-size: 12px;
-            color: rgba(248,241,227,0.4);
-            margin-top: 6px;
-        }
-        .footer-legal a {
-            text-decoration: underline;
-            transition: color 0.15s;
-        }
+        .footer-bottom { border-top: 1px solid rgba(248,241,227,0.2); padding-top: 16px; text-align: center; }
+        .footer-copy { font-family: 'Nunito', sans-serif; font-size: 13px; color: rgba(248,241,227,0.5); }
+        .footer-legal { font-size: 12px; color: rgba(248,241,227,0.4); margin-top: 6px; }
+        .footer-legal a { text-decoration: underline; transition: color 0.15s; }
         .footer-legal a:hover { color: var(--comic-yellow); }
-        .footer-disclaimer {
-            font-size: 10px;
-            color: rgba(248,241,227,0.3);
-            margin-top: 8px;
-            font-style: italic;
-        }
+        .footer-disclaimer { font-size: 10px; color: rgba(248,241,227,0.3); margin-top: 8px; font-style: italic; }
 
         /* === MOBILE MENU === */
-        .mobile-menu-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.5);
-            z-index: 998;
-        }
+        .mobile-menu-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 998; }
         .mobile-menu-overlay.active { display: block; }
-        .mobile-nav {
-            display: none;
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 260px;
-            height: 100vh;
-            background: var(--comic-yellow);
-            z-index: 999;
-            flex-direction: column;
-            padding: 60px 20px 20px;
-            gap: 4px;
-            box-shadow: -4px 0 20px rgba(0,0,0,0.2);
-            overflow-y: auto;
-            transform: translateX(100%);
-            transition: transform 0.3s ease;
-        }
-        .mobile-nav.active {
-            display: flex;
-            transform: translateX(0);
-        }
-        .mobile-nav a {
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 600;
-            font-size: 15px;
-            color: var(--foreground);
-            padding: 10px 16px;
-            border-radius: 6px;
-            letter-spacing: 0.5px;
-            transition: background 0.15s;
-        }
-        .mobile-nav a:hover, .mobile-nav a.active-page {
-            background: var(--comic-red);
-            color: #fff;
-        }
-        .mobile-nav .close-btn {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            font-size: 28px;
-            width: 36px;
-            height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--foreground);
-        }
-        .mobile-nav .mob-social {
-            display: flex;
-            gap: 8px;
-            padding: 10px 16px;
-            margin-top: 8px;
-            border-top: 2px solid rgba(0,0,0,0.1);
-        }
-        .mobile-nav .mob-social a {
-            padding: 0;
-            width: 36px;
-            height: 36px;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            font-weight: 700;
-        }
+        .mobile-nav { display: none; position: fixed; top: 0; right: 0; width: 260px; height: 100vh; background: var(--comic-yellow); z-index: 999; flex-direction: column; padding: 60px 20px 20px; gap: 4px; box-shadow: -4px 0 20px rgba(0,0,0,0.2); overflow-y: auto; transform: translateX(100%); transition: transform 0.3s ease; }
+        .mobile-nav.active { display: flex; transform: translateX(0); }
+        .mobile-nav a { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 15px; color: var(--foreground); padding: 10px 16px; border-radius: 6px; letter-spacing: 0.5px; transition: background 0.15s; }
+        .mobile-nav a:hover, .mobile-nav a.active-page { background: var(--comic-red); color: #fff; }
+        .mobile-nav .close-btn { position: absolute; top: 12px; right: 12px; font-size: 28px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; color: var(--foreground); }
+        .mobile-nav .mob-social { display: flex; gap: 8px; padding: 10px 16px; margin-top: 8px; border-top: 2px solid rgba(0,0,0,0.1); }
+        .mobile-nav .mob-social a { padding: 0; width: 36px; height: 36px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; }
 
         /* === ANIMATIONS === */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-in {
-            animation: fadeInUp 0.5s ease forwards;
-        }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-in { animation: fadeInUp 0.5s ease forwards; }
     </style>
 </head>
 <body>
@@ -653,7 +206,7 @@
             <!-- Logo -->
             <a href="/" class="logo-link">
                 <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/FhpRMpBhfdDCgpPE.png" alt="Logo Divertisment și Glume Haioase" class="logo-img">
-                <span class="logo-text">Divertisment și<br><span class="red">Glume Haioase</span></span>
+                <span class="logo-text" data-i18n="logo">Divertisment și<br><span class="red">Glume Haioase</span></span>
             </a>
 
             <!-- Social Icons (desktop) -->
@@ -676,15 +229,21 @@
                 </a>
             </div>
 
+            <!-- Language Toggle -->
+            <div class="lang-toggle">
+                <button class="lang-btn active" id="langRO" onclick="setLang('ro')">RO</button>
+                <button class="lang-btn" id="langEN" onclick="setLang('en')">EN</button>
+            </div>
+
             <!-- Desktop Navigation -->
             <nav class="desktop-nav">
-                <a href="/" class="nav-link active">ACASA</a>
-                <a href="/bancuri" class="nav-link">BANCURI</a>
-                <a href="/meme" class="nav-link">MEME</a>
-                <a href="/reeluri" class="nav-link">REELURI</a>
-                <a href="/nostalgie" class="nav-link">NOSTALGIE</a>
-                <a href="/despre" class="nav-link">DESPRE</a>
-                <a href="/magazin" class="nav-link">MAGAZIN</a>
+                <a href="/" class="nav-link active" data-i18n="nav_home">ACASA</a>
+                <a href="/bancuri" class="nav-link" data-i18n="nav_jokes">BANCURI</a>
+                <a href="/meme" class="nav-link" data-i18n="nav_memes">MEME</a>
+                <a href="/reeluri" class="nav-link" data-i18n="nav_reels">REELURI</a>
+                <a href="/nostalgie" class="nav-link" data-i18n="nav_nostalgia">NOSTALGIE</a>
+                <a href="/despre" class="nav-link" data-i18n="nav_about">DESPRE</a>
+                <a href="/magazin" class="nav-link" data-i18n="nav_shop">MAGAZIN</a>
             </nav>
 
             <!-- Hamburger (mobile) -->
@@ -706,50 +265,50 @@
             <!-- Stars badge -->
             <span class="comic-badge stars-badge">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                STARS - MULTUMIM PENTRU SUSTINERE!
+                <span data-i18n="stars_badge">STARS - MULTUMIM PENTRU SUSTINERE!</span>
             </span>
 
             <!-- Support buttons -->
             <div class="support-buttons">
                 <a href="/sustine" class="support-btn" style="background:#1877F2;color:#fff;">
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                    Stars via Facebook
+                    <span data-i18n="stars_fb">Stars via Facebook</span>
                 </a>
                 <span class="support-btn" style="background:rgba(26,26,25,0.6);color:rgba(255,255,255,0.7);">
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18"/><path d="M3 7.5h4"/><path d="M3 12h18"/><path d="M3 16.5h4"/><path d="M17 3v18"/><path d="M17 7.5h4"/><path d="M17 16.5h4"/></svg>
-                    YouTube - In lucru
+                    <span data-i18n="yt_wip">YouTube - In lucru</span>
                 </span>
             </div>
 
             <!-- Free access -->
-            <p class="free-access">&#10004; Acces gratuit la tot continutul, fara autentificare</p>
+            <p class="free-access" data-i18n="free_access">&#10004; Acces gratuit la tot continutul, fara autentificare</p>
 
             <!-- Title -->
-            <h1 class="hero-title">Divertisment si <span class="red">Glume</span> <span class="blue">Haioase</span></h1>
+            <h1 class="hero-title" data-i18n-html="hero_title">Divertisment si <span class="red">Glume</span> <span class="blue">Haioase</span></h1>
 
             <!-- Subtitle -->
-            <p class="hero-subtitle">Cel mai haios colt al internetului romanesc! Bancuri, meme-uri, nostalgie, reeluri si continut de divertisment zilnic.</p>
+            <p class="hero-subtitle" data-i18n="hero_subtitle">Cel mai haios colt al internetului romanesc! Bancuri, meme-uri, nostalgie, reeluri si continut de divertisment zilnic.</p>
 
             <!-- Navigation buttons -->
             <div class="hero-buttons">
                 <a href="/bancuri" class="comic-btn" style="background:var(--comic-red);color:#fff;">
-                    BANCURI
+                    <span data-i18n="nav_jokes">BANCURI</span>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </a>
                 <a href="/reeluri" class="comic-btn" style="background:var(--comic-blue);color:#fff;">
-                    REELURI
+                    <span data-i18n="nav_reels">REELURI</span>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18"/><path d="M3 7.5h4"/><path d="M3 12h18"/><path d="M3 16.5h4"/><path d="M17 3v18"/><path d="M17 7.5h4"/><path d="M17 16.5h4"/></svg>
                 </a>
                 <a href="/meme" class="comic-btn" style="background:var(--comic-green);color:#fff;">
-                    MEME
+                    <span data-i18n="nav_memes">MEME</span>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
                 </a>
                 <a href="/nostalgie" class="comic-btn" style="background:var(--comic-yellow);color:var(--foreground);">
-                    NOSTALGIE
+                    <span data-i18n="nav_nostalgia">NOSTALGIE</span>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                 </a>
                 <a href="/despre" class="comic-btn" style="background:var(--foreground);color:#fff;">
-                    DESPRE
+                    <span data-i18n="nav_about">DESPRE</span>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
                 </a>
             </div>
@@ -763,16 +322,16 @@
         <div class="comic-panel joke-card animate-in">
             <span class="comic-badge" style="background:var(--comic-blue);color:#fff;font-size:11px;padding:4px 14px;">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M18 13a6 6 0 0 1-6 5 6 6 0 0 1-6-5h12Z"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/></svg>
-                GLUMA ZILEI
+                <span data-i18n="joke_badge">GLUMA ZILEI</span>
             </span>
-            <h2 class="section-title" style="margin-top:8px;">Sot si Sotie</h2>
+            <h2 class="section-title" style="margin-top:8px;" data-i18n="joke_title">Sot si Sotie</h2>
             <div style="margin-top:16px;">
-                <p class="joke-text">Sotia: -- Draga, daca as fi bolnava, ai sta langa mine?</p>
+                <p class="joke-text" data-i18n="joke_text">Sotia: -- Draga, daca as fi bolnava, ai sta langa mine?</p>
                 <button class="comic-btn" style="background:var(--comic-yellow);color:var(--foreground);font-size:13px;padding:10px 24px;margin-top:16px;" onclick="toggleJoke(this)">
-                    VEZI RASPUNSUL
+                    <span data-i18n="joke_btn_show">VEZI RASPUNSUL</span>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
                 </button>
-                <p class="joke-answer" id="jokeAnswer">Sotul: -- Sigur ca da! Unde sa ma duc? La spital nu ma lasa!</p>
+                <p class="joke-answer" id="jokeAnswer" data-i18n="joke_answer">Sotul: -- Sigur ca da! Unde sa ma duc? La spital nu ma lasa!</p>
             </div>
         </div>
     </div>
@@ -784,31 +343,31 @@
         <div class="section-header">
             <span class="comic-badge" style="background:var(--comic-blue);color:#fff;font-size:11px;padding:4px 14px;">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
-                IMAGINI HAIOASE
+                <span data-i18n="meme_badge">IMAGINI HAIOASE</span>
             </span>
-            <h2 class="section-title">Meme-uri <span style="color:var(--comic-red);">Romanesti</span></h2>
+            <h2 class="section-title" data-i18n-html="meme_title">Meme-uri <span style="color:var(--comic-red);">Romanesti</span></h2>
         </div>
         <div class="image-grid">
             <div class="comic-panel image-card">
                 <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/UgevSAvUoLiwFbJz.webp" alt="Luni vs. Vineri" loading="lazy">
-                <div class="image-card-body"><span class="image-card-title">Luni vs. Vineri</span></div>
+                <div class="image-card-body"><span class="image-card-title" data-i18n="meme1">Luni vs. Vineri</span></div>
             </div>
             <div class="comic-panel image-card">
                 <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/tItEolrNEkkYEYSl.webp" alt="Meme Overload!" loading="lazy">
-                <div class="image-card-body"><span class="image-card-title">Meme Overload!</span></div>
+                <div class="image-card-body"><span class="image-card-title" data-i18n="meme2">Meme Overload!</span></div>
             </div>
             <div class="comic-panel image-card">
                 <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/DzXUffaEWMVZhkkG.webp" alt="Provocarea Zilei" loading="lazy">
-                <div class="image-card-body"><span class="image-card-title">Provocarea Zilei</span></div>
+                <div class="image-card-body"><span class="image-card-title" data-i18n="meme3">Provocarea Zilei</span></div>
             </div>
             <div class="comic-panel image-card">
                 <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/wJmoDBCTvaDRnYaj.webp" alt="La Doctor - Banc Ilustrat" loading="lazy">
-                <div class="image-card-body"><span class="image-card-title">La Doctor - Banc Ilustrat</span></div>
+                <div class="image-card-body"><span class="image-card-title" data-i18n="meme4">La Doctor - Banc Ilustrat</span></div>
             </div>
         </div>
         <div style="text-align:center;margin-top:20px;">
             <a href="/meme" class="comic-btn see-more-btn" style="background:var(--comic-green);color:#fff;font-size:13px;padding:10px 24px;">
-                VEZI TOATE MEME-URILE
+                <span data-i18n="see_all_memes">VEZI TOATE MEME-URILE</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
         </div>
@@ -821,43 +380,43 @@
         <div class="section-header">
             <span class="comic-badge" style="background:var(--comic-blue);color:#fff;font-size:11px;padding:4px 14px;">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18"/><path d="M3 7.5h4"/><path d="M3 12h18"/><path d="M3 16.5h4"/><path d="M17 3v18"/><path d="M17 7.5h4"/><path d="M17 16.5h4"/></svg>
-                REELURI NOI
+                <span data-i18n="reels_badge">REELURI NOI</span>
             </span>
-            <h2 class="section-title">Reeluri <span style="color:var(--comic-blue);">Virale</span></h2>
+            <h2 class="section-title" data-i18n-html="reels_title">Reeluri <span style="color:var(--comic-blue);">Virale</span></h2>
         </div>
         <div class="reels-grid">
             <a href="https://www.facebook.com/reel/1234567890" target="_blank" rel="noopener noreferrer" class="comic-panel reel-card">
                 <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/gifsiuzFgBcFPwyT.webp" alt="Reel Viral de pe Facebook" loading="lazy">
                 <div class="reel-card-body">
-                    <span class="reel-card-title font-comic">Reel Viral de pe Facebook</span>
-                    <p class="reel-views font-bubble">45.900 vizualizari</p>
+                    <span class="reel-card-title font-comic" data-i18n="reel1_title">Reel Viral de pe Facebook</span>
+                    <p class="reel-views font-bubble" data-i18n="reel1_views">45.900 vizualizari</p>
                 </div>
             </a>
             <a href="https://www.facebook.com/reel/1234567891" target="_blank" rel="noopener noreferrer" class="comic-panel reel-card">
                 <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/UgevSAvUoLiwFbJz.webp" alt="Cele 5 Faze ale Miercurii" loading="lazy">
                 <div class="reel-card-body">
-                    <span class="reel-card-title font-comic">Cele 5 Faze ale Miercurii</span>
-                    <p class="reel-views font-bubble">12.300 vizualizari</p>
+                    <span class="reel-card-title font-comic" data-i18n="reel2_title">Cele 5 Faze ale Miercurii</span>
+                    <p class="reel-views font-bubble" data-i18n="reel2_views">12.300 vizualizari</p>
                 </div>
             </a>
             <a href="https://www.facebook.com/reel/1234567892" target="_blank" rel="noopener noreferrer" class="comic-panel reel-card">
-                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/DzXUffaEWMVZhkkG.webp" alt="Vezi Toate Reelurile" loading="lazy">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/DzXUffaEWMVZhkkG.webp" alt="Compilatie Haioasa" loading="lazy">
                 <div class="reel-card-body">
-                    <span class="reel-card-title font-comic">Compilatie Haioasa</span>
-                    <p class="reel-views font-bubble">8.700 vizualizari</p>
+                    <span class="reel-card-title font-comic" data-i18n="reel3_title">Compilatie Haioasa</span>
+                    <p class="reel-views font-bubble" data-i18n="reel3_views">8.700 vizualizari</p>
                 </div>
             </a>
             <a href="https://www.facebook.com/reel/1234567893" target="_blank" rel="noopener noreferrer" class="comic-panel reel-card">
                 <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/FYirdpmjmQZGunJv.webp" alt="Logica Nu Da Gres" loading="lazy">
                 <div class="reel-card-body">
-                    <span class="reel-card-title font-comic">Logica Nu Da Gres</span>
-                    <p class="reel-views font-bubble">6.200 vizualizari</p>
+                    <span class="reel-card-title font-comic" data-i18n="reel4_title">Logica Nu Da Gres</span>
+                    <p class="reel-views font-bubble" data-i18n="reel4_views">6.200 vizualizari</p>
                 </div>
             </a>
         </div>
         <div style="text-align:center;margin-top:20px;">
             <a href="/reeluri" class="comic-btn see-more-btn" style="background:var(--comic-blue);color:#fff;font-size:13px;padding:10px 24px;">
-                VEZI TOATE REELURILE
+                <span data-i18n="see_all_reels">VEZI TOATE REELURILE</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
         </div>
@@ -870,18 +429,18 @@
         <div class="section-header">
             <span class="comic-badge" style="background:var(--comic-orange);color:#fff;font-size:11px;padding:4px 14px;">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                NOSTALGIE
+                <span data-i18n="nostalgia_badge">NOSTALGIE</span>
             </span>
-            <h2 class="section-title">Atunci vs. <span style="color:var(--comic-orange);">Acum</span></h2>
+            <h2 class="section-title" data-i18n-html="nostalgia_title">Atunci vs. <span style="color:var(--comic-orange);">Acum</span></h2>
         </div>
         <div class="nostalgie-grid">
             <div class="comic-panel nostalgie-card">
                 <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/gbhqBJvZWKnvpNmP.webp" alt="Nostalgie - Copilaria de Altadata" loading="lazy">
                 <div class="nostalgie-card-body">
-                    <h3 class="font-comic" style="font-size:16px;margin-bottom:4px;">Copilaria de Altadata</h3>
-                    <p class="font-bubble" style="font-size:13px;color:#555;">Cand vara insemna joaca afara pana seara, nu scroll pe telefon. Iti amintesti?</p>
+                    <h3 class="font-comic" style="font-size:16px;margin-bottom:4px;" data-i18n="nost1_title">Copilaria de Altadata</h3>
+                    <p class="font-bubble" style="font-size:13px;color:#555;" data-i18n="nost1_desc">Cand vara insemna joaca afara pana seara, nu scroll pe telefon. Iti amintesti?</p>
                     <a href="/nostalgie" class="comic-btn" style="background:var(--comic-orange);color:#fff;font-size:11px;padding:6px 14px;margin-top:10px;">
-                        CITESTE MAI MULT
+                        <span data-i18n="read_more">CITESTE MAI MULT</span>
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                     </a>
                 </div>
@@ -889,10 +448,10 @@
             <div class="comic-panel nostalgie-card">
                 <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/nbCNRcfWZfYeZTKi.webp" alt="Bula la Scoala" loading="lazy">
                 <div class="nostalgie-card-body">
-                    <h3 class="font-comic" style="font-size:16px;margin-bottom:4px;">Bula la Scoala</h3>
-                    <p class="font-bubble" style="font-size:13px;color:#555;">Bancurile cu Bula - o traditie romaneasca ce nu moare niciodata. Clasicele mereu fac bine!</p>
+                    <h3 class="font-comic" style="font-size:16px;margin-bottom:4px;" data-i18n="nost2_title">Bula la Scoala</h3>
+                    <p class="font-bubble" style="font-size:13px;color:#555;" data-i18n="nost2_desc">Bancurile cu Bula - o traditie romaneasca ce nu moare niciodata. Clasicele mereu fac bine!</p>
                     <a href="/nostalgie" class="comic-btn" style="background:var(--comic-orange);color:#fff;font-size:11px;padding:6px 14px;margin-top:10px;">
-                        CITESTE MAI MULT
+                        <span data-i18n="read_more">CITESTE MAI MULT</span>
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                     </a>
                 </div>
@@ -907,26 +466,26 @@
         <div class="section-header">
             <span class="comic-badge" style="background:var(--comic-red);color:#fff;font-size:11px;padding:4px 14px;">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-                POSTARI POPULARE
+                <span data-i18n="popular_badge">POSTARI POPULARE</span>
             </span>
-            <h2 class="section-title">Cele Mai <span style="color:var(--comic-red);">Haioase</span> Poze</h2>
+            <h2 class="section-title" data-i18n-html="popular_title">Cele Mai <span style="color:var(--comic-red);">Haioase</span> Poze</h2>
         </div>
         <div class="image-grid">
             <div class="comic-panel image-card">
                 <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/UgevSAvUoLiwFbJz.webp" alt="Cele 5 Faze ale Miercurii" loading="lazy">
-                <div class="image-card-body"><span class="image-card-title">Cele 5 Faze ale Miercurii</span></div>
+                <div class="image-card-body"><span class="image-card-title" data-i18n="pop1">Cele 5 Faze ale Miercurii</span></div>
             </div>
             <div class="comic-panel image-card">
-                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/DzXUffaEWMVZhkkG.webp" alt="Vezi Toate Reelurile" loading="lazy">
-                <div class="image-card-body"><span class="image-card-title">Provocarea Zilei #2</span></div>
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/DzXUffaEWMVZhkkG.webp" alt="Provocarea Zilei #2" loading="lazy">
+                <div class="image-card-body"><span class="image-card-title" data-i18n="pop2">Provocarea Zilei #2</span></div>
             </div>
             <div class="comic-panel image-card">
                 <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/FYirdpmjmQZGunJv.webp" alt="Logica Nu Da Gres" loading="lazy">
-                <div class="image-card-body"><span class="image-card-title">Logica Nu Da Gres</span></div>
+                <div class="image-card-body"><span class="image-card-title" data-i18n="pop3">Logica Nu Da Gres</span></div>
             </div>
             <div class="comic-panel image-card">
                 <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/tItEolrNEkkYEYSl.webp" alt="Meme Overload!" loading="lazy">
-                <div class="image-card-body"><span class="image-card-title">Meme Overload!</span></div>
+                <div class="image-card-body"><span class="image-card-title" data-i18n="pop4">Meme Overload!</span></div>
             </div>
         </div>
     </div>
@@ -942,62 +501,62 @@
                     <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/FhpRMpBhfdDCgpPE.png" alt="Logo" style="width:28px;height:28px;border-radius:50%;border:2px solid var(--comic-yellow);">
                     <span class="font-comic" style="font-size:16px;color:var(--comic-yellow);">Glume Haioase</span>
                 </div>
-                <p style="font-size:13px;color:rgba(248,241,227,0.6);margin-bottom:4px;">Cel mai haios colt al internetului romanesc! Bancuri, meme-uri, nostalgie si reeluri amuzante.</p>
+                <p style="font-size:13px;color:rgba(248,241,227,0.6);margin-bottom:4px;" data-i18n="footer_desc">Cel mai haios colt al internetului romanesc! Bancuri, meme-uri, nostalgie si reeluri amuzante.</p>
                 <p style="font-size:12px;color:rgba(248,241,227,0.5);margin-bottom:10px;">Viorel Ochianu</p>
                 <div style="display:flex;flex-wrap:wrap;gap:4px;">
-                    <a href="https://www.facebook.com/share/1CkszCSb6U/" target="_blank" class="footer-social-btn" style="background:#1877F2;"><span style="font-size:13px;">&#128266;</span> PAGINA</a>
-                    <a href="https://www.facebook.com/share/g/1CZAM1XhgS/" target="_blank" class="footer-social-btn" style="background:#1877F2;"><span style="font-size:13px;">&#128101;</span> GRUP</a>
-                    <a href="https://m.me/ViorelOchianu" target="_blank" class="footer-social-btn" style="background:#0084FF;"><span style="font-size:13px;">&#128172;</span> MESAJ</a>
+                    <a href="https://www.facebook.com/share/1CkszCSb6U/" target="_blank" class="footer-social-btn" style="background:#1877F2;"><span style="font-size:13px;">&#128266;</span> <span data-i18n="f_page">PAGINA</span></a>
+                    <a href="https://www.facebook.com/share/g/1CZAM1XhgS/" target="_blank" class="footer-social-btn" style="background:#1877F2;"><span style="font-size:13px;">&#128101;</span> <span data-i18n="f_group">GRUP</span></a>
+                    <a href="https://m.me/ViorelOchianu" target="_blank" class="footer-social-btn" style="background:#0084FF;"><span style="font-size:13px;">&#128172;</span> <span data-i18n="f_msg">MESAJ</span></a>
                     <a href="https://www.instagram.com/viorelochianu/" target="_blank" class="footer-social-btn" style="background:linear-gradient(135deg,#F58529,#DD2A7B,#8134AF);"><span style="font-size:13px;">&#128247;</span> INSTAGRAM</a>
-                    <a href="https://www.youtube.com/@ViorelOchianu" target="_blank" class="footer-social-btn" style="background:#FF0000;"><span style="font-size:13px;">&#9654;</span> YOUTUBE <span style="font-size:9px;opacity:0.7;">IN LUCRU</span></a>
+                    <a href="https://www.youtube.com/@ViorelOchianu" target="_blank" class="footer-social-btn" style="background:#FF0000;"><span style="font-size:13px;">&#9654;</span> YOUTUBE <span style="font-size:9px;opacity:0.7;" data-i18n="f_wip">IN LUCRU</span></a>
                 </div>
             </div>
             <!-- Navigare -->
             <div>
-                <h4 class="footer-title">NAVIGARE</h4>
-                <a href="/" class="footer-link">Acasa</a>
-                <a href="/bancuri" class="footer-link">Bancuri</a>
-                <a href="/meme" class="footer-link">Meme</a>
-                <a href="/reeluri" class="footer-link">Reeluri</a>
-                <a href="/nostalgie" class="footer-link">Nostalgie</a>
-                <a href="/despre" class="footer-link">Despre</a>
-                <a href="/magazin" class="footer-link">Magazin & Newsletter</a>
-                <a href="/confidentialitate" class="footer-link">Confidentialitate</a>
-                <a href="/termeni" class="footer-link">Termeni si Conditii</a>
-                <a href="/sustine" class="footer-link">Sustine-ne</a>
+                <h4 class="footer-title" data-i18n="footer_nav">NAVIGARE</h4>
+                <a href="/" class="footer-link" data-i18n="nav_home_lc">Acasa</a>
+                <a href="/bancuri" class="footer-link" data-i18n="nav_jokes_lc">Bancuri</a>
+                <a href="/meme" class="footer-link" data-i18n="nav_memes_lc">Meme</a>
+                <a href="/reeluri" class="footer-link" data-i18n="nav_reels_lc">Reeluri</a>
+                <a href="/nostalgie" class="footer-link" data-i18n="nav_nostalgia_lc">Nostalgie</a>
+                <a href="/despre" class="footer-link" data-i18n="nav_about_lc">Despre</a>
+                <a href="/magazin" class="footer-link" data-i18n="nav_shop_lc">Magazin & Newsletter</a>
+                <a href="/confidentialitate" class="footer-link" data-i18n="nav_privacy">Confidentialitate</a>
+                <a href="/termeni" class="footer-link" data-i18n="nav_terms">Termeni si Conditii</a>
+                <a href="/sustine" class="footer-link" data-i18n="nav_support">Sustine-ne</a>
             </div>
             <!-- Despre Site + Urmareste-ne -->
             <div>
-                <h4 class="footer-title">DESPRE SITE</h4>
-                <p style="font-size:13px;color:rgba(248,241,227,0.6);margin-bottom:8px;">Un proiect dedicat umorului romanesc. Toate glumele sunt pentru distractie si buna dispozitie!</p>
+                <h4 class="footer-title" data-i18n="footer_about_site">DESPRE SITE</h4>
+                <p style="font-size:13px;color:rgba(248,241,227,0.6);margin-bottom:8px;" data-i18n="footer_about_desc">Un proiect dedicat umorului romanesc. Toate glumele sunt pentru distractie si buna dispozitie!</p>
                 <p style="font-size:12px;color:rgba(248,241,227,0.5);margin-bottom:12px;">Admin: <strong style="color:var(--comic-yellow);">Viorel Ochianu</strong></p>
-                <h4 class="footer-title">URMARESTE-NE!</h4>
+                <h4 class="footer-title" data-i18n="footer_follow">URMARESTE-NE!</h4>
                 <a href="https://www.facebook.com/share/1CkszCSb6U/" target="_blank" class="footer-social-link">
                     <svg viewBox="0 0 24 24" fill="currentColor" style="color:#1877F2;width:14px;height:14px;"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                    Pagina: Divertisment si glume haioase
+                    <span data-i18n="follow_page">Pagina: Divertisment si glume haioase</span>
                 </a>
                 <a href="https://www.facebook.com/share/g/1CZAM1XhgS/" target="_blank" class="footer-social-link">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:#1877F2;width:14px;height:14px;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-                    Grupul nostru de umor
+                    <span data-i18n="follow_group">Grupul nostru de umor</span>
                 </a>
                 <a href="https://www.instagram.com/viorelochianu/" target="_blank" class="footer-social-link">
                     <svg viewBox="0 0 24 24" fill="currentColor" style="color:#E4405F;width:14px;height:14px;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                    @viorelochianu pe Instagram
+                    <span data-i18n="follow_ig">@viorelochianu pe Instagram</span>
                 </a>
                 <a href="https://www.youtube.com/@ViorelOchianu" target="_blank" class="footer-social-link">
                     <svg viewBox="0 0 24 24" fill="currentColor" style="color:#FF0000;width:14px;height:14px;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                    Ne gasiti si pe YouTube! <span style="color:var(--comic-yellow);font-size:10px;">(In lucru)</span>
+                    <span data-i18n="follow_yt">Ne gasiti si pe YouTube!</span> <span style="color:var(--comic-yellow);font-size:10px;" data-i18n="f_wip_small">(In lucru)</span>
                 </a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p class="footer-copy">Facut cu &#10084; pentru rasul romanesc &copy; 2026</p>
+            <p class="footer-copy" data-i18n-html="footer_copy">Facut cu &#10084; pentru rasul romanesc &copy; 2026</p>
             <p class="footer-legal">
-                <a href="/confidentialitate">Confidentialitate</a> &middot;
-                <a href="/termeni">Termeni si Conditii</a> &middot;
-                <button style="color:inherit;text-decoration:underline;font-size:inherit;">Preferinte Cookie</button>
+                <a href="/confidentialitate" data-i18n="nav_privacy">Confidentialitate</a> &middot;
+                <a href="/termeni" data-i18n="nav_terms">Termeni si Conditii</a> &middot;
+                <button style="color:inherit;text-decoration:underline;font-size:inherit;" data-i18n="cookie_prefs">Preferinte Cookie</button>
             </p>
-            <p class="footer-disclaimer">Orice asemanare cu persoane reale este pur intamplatoare. Continutul este creat exclusiv in scop de divertisment.</p>
+            <p class="footer-disclaimer" data-i18n="footer_disclaimer">Orice asemanare cu persoane reale este pur intamplatoare. Continutul este creat exclusiv in scop de divertisment.</p>
         </div>
     </div>
 </footer>
@@ -1014,13 +573,13 @@
 <div class="mobile-menu-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
 <div class="mobile-nav" id="mobileNav">
     <button class="close-btn" onclick="closeMobileMenu()">&times;</button>
-    <a href="/" class="active-page">ACASA</a>
-    <a href="/bancuri">BANCURI</a>
-    <a href="/meme">MEME</a>
-    <a href="/reeluri">REELURI</a>
-    <a href="/nostalgie">NOSTALGIE</a>
-    <a href="/despre">DESPRE</a>
-    <a href="/magazin">MAGAZIN</a>
+    <a href="/" class="active-page" data-i18n="nav_home">ACASA</a>
+    <a href="/bancuri" data-i18n="nav_jokes">BANCURI</a>
+    <a href="/meme" data-i18n="nav_memes">MEME</a>
+    <a href="/reeluri" data-i18n="nav_reels">REELURI</a>
+    <a href="/nostalgie" data-i18n="nav_nostalgia">NOSTALGIE</a>
+    <a href="/despre" data-i18n="nav_about">DESPRE</a>
+    <a href="/magazin" data-i18n="nav_shop">MAGAZIN</a>
     <div class="mob-social">
         <a href="https://www.facebook.com/share/1CkszCSb6U/" target="_blank" style="background:#1877F2;color:#fff;">f</a>
         <a href="https://m.me/ViorelOchianu" target="_blank" style="background:#0084FF;color:#fff;">&#128172;</a>
@@ -1029,8 +588,162 @@
     </div>
 </div>
 
-<!-- ===== SCRIPTS ===== -->
+<!-- ===== TRANSLATION SYSTEM + SCRIPTS ===== -->
 <script>
+// === TRANSLATION DICTIONARY ===
+var translations = {
+    ro: {
+        logo: 'Divertisment și<br><span class="red">Glume Haioase</span>',
+        nav_home: 'ACASA', nav_jokes: 'BANCURI', nav_memes: 'MEME', nav_reels: 'REELURI',
+        nav_nostalgia: 'NOSTALGIE', nav_about: 'DESPRE', nav_shop: 'MAGAZIN',
+        stars_badge: 'STARS - MULTUMIM PENTRU SUSTINERE!',
+        stars_fb: 'Stars via Facebook', yt_wip: 'YouTube - In lucru',
+        free_access: '\u2714 Acces gratuit la tot continutul, fara autentificare',
+        hero_title: 'Divertisment si <span class="red">Glume</span> <span class="blue">Haioase</span>',
+        hero_subtitle: 'Cel mai haios colt al internetului romanesc! Bancuri, meme-uri, nostalgie, reeluri si continut de divertisment zilnic.',
+        joke_badge: 'GLUMA ZILEI', joke_title: 'Sot si Sotie',
+        joke_text: 'Sotia: -- Draga, daca as fi bolnava, ai sta langa mine?',
+        joke_btn_show: 'VEZI RASPUNSUL', joke_btn_hide: 'ASCUNDE RASPUNSUL',
+        joke_answer: 'Sotul: -- Sigur ca da! Unde sa ma duc? La spital nu ma lasa!',
+        meme_badge: 'IMAGINI HAIOASE',
+        meme_title: 'Meme-uri <span style="color:var(--comic-red);">Romanesti</span>',
+        meme1: 'Luni vs. Vineri', meme2: 'Meme Overload!', meme3: 'Provocarea Zilei', meme4: 'La Doctor - Banc Ilustrat',
+        see_all_memes: 'VEZI TOATE MEME-URILE',
+        reels_badge: 'REELURI NOI',
+        reels_title: 'Reeluri <span style="color:var(--comic-blue);">Virale</span>',
+        reel1_title: 'Reel Viral de pe Facebook', reel1_views: '45.900 vizualizari',
+        reel2_title: 'Cele 5 Faze ale Miercurii', reel2_views: '12.300 vizualizari',
+        reel3_title: 'Compilatie Haioasa', reel3_views: '8.700 vizualizari',
+        reel4_title: 'Logica Nu Da Gres', reel4_views: '6.200 vizualizari',
+        see_all_reels: 'VEZI TOATE REELURILE',
+        nostalgia_badge: 'NOSTALGIE',
+        nostalgia_title: 'Atunci vs. <span style="color:var(--comic-orange);">Acum</span>',
+        nost1_title: 'Copilaria de Altadata',
+        nost1_desc: 'Cand vara insemna joaca afara pana seara, nu scroll pe telefon. Iti amintesti?',
+        nost2_title: 'Bula la Scoala',
+        nost2_desc: 'Bancurile cu Bula - o traditie romaneasca ce nu moare niciodata. Clasicele mereu fac bine!',
+        read_more: 'CITESTE MAI MULT',
+        popular_badge: 'POSTARI POPULARE',
+        popular_title: 'Cele Mai <span style="color:var(--comic-red);">Haioase</span> Poze',
+        pop1: 'Cele 5 Faze ale Miercurii', pop2: 'Provocarea Zilei #2', pop3: 'Logica Nu Da Gres', pop4: 'Meme Overload!',
+        footer_desc: 'Cel mai haios colt al internetului romanesc! Bancuri, meme-uri, nostalgie si reeluri amuzante.',
+        f_page: 'PAGINA', f_group: 'GRUP', f_msg: 'MESAJ', f_wip: 'IN LUCRU', f_wip_small: '(In lucru)',
+        footer_nav: 'NAVIGARE',
+        nav_home_lc: 'Acasa', nav_jokes_lc: 'Bancuri', nav_memes_lc: 'Meme', nav_reels_lc: 'Reeluri',
+        nav_nostalgia_lc: 'Nostalgie', nav_about_lc: 'Despre', nav_shop_lc: 'Magazin & Newsletter',
+        nav_privacy: 'Confidentialitate', nav_terms: 'Termeni si Conditii', nav_support: 'Sustine-ne',
+        footer_about_site: 'DESPRE SITE',
+        footer_about_desc: 'Un proiect dedicat umorului romanesc. Toate glumele sunt pentru distractie si buna dispozitie!',
+        footer_follow: 'URMARESTE-NE!',
+        follow_page: 'Pagina: Divertisment si glume haioase',
+        follow_group: 'Grupul nostru de umor',
+        follow_ig: '@viorelochianu pe Instagram',
+        follow_yt: 'Ne gasiti si pe YouTube!',
+        footer_copy: 'Facut cu &#10084; pentru rasul romanesc &copy; 2026',
+        cookie_prefs: 'Preferinte Cookie',
+        footer_disclaimer: 'Orice asemanare cu persoane reale este pur intamplatoare. Continutul este creat exclusiv in scop de divertisment.'
+    },
+    en: {
+        logo: 'Entertainment &<br><span class="red">Funny Jokes</span>',
+        nav_home: 'HOME', nav_jokes: 'JOKES', nav_memes: 'MEMES', nav_reels: 'REELS',
+        nav_nostalgia: 'NOSTALGIA', nav_about: 'ABOUT', nav_shop: 'SHOP',
+        stars_badge: 'STARS - THANK YOU FOR YOUR SUPPORT!',
+        stars_fb: 'Stars via Facebook', yt_wip: 'YouTube - Coming soon',
+        free_access: '\u2714 Free access to all content, no login required',
+        hero_title: 'Entertainment & <span class="red">Funny</span> <span class="blue">Jokes</span>',
+        hero_subtitle: 'The funniest corner of the Romanian internet! Jokes, memes, nostalgia, reels and daily entertainment content.',
+        joke_badge: 'JOKE OF THE DAY', joke_title: 'Husband and Wife',
+        joke_text: 'Wife: -- Honey, if I were sick, would you stay by my side?',
+        joke_btn_show: 'SEE THE ANSWER', joke_btn_hide: 'HIDE THE ANSWER',
+        joke_answer: 'Husband: -- Of course! Where would I go? The hospital won\'t let me in!',
+        meme_badge: 'FUNNY IMAGES',
+        meme_title: 'Romanian <span style="color:var(--comic-red);">Memes</span>',
+        meme1: 'Monday vs. Friday', meme2: 'Meme Overload!', meme3: 'Challenge of the Day', meme4: 'At the Doctor - Illustrated Joke',
+        see_all_memes: 'SEE ALL MEMES',
+        reels_badge: 'NEW REELS',
+        reels_title: 'Viral <span style="color:var(--comic-blue);">Reels</span>',
+        reel1_title: 'Viral Reel from Facebook', reel1_views: '45,900 views',
+        reel2_title: 'The 5 Stages of Wednesday', reel2_views: '12,300 views',
+        reel3_title: 'Funny Compilation', reel3_views: '8,700 views',
+        reel4_title: 'Logic Never Fails', reel4_views: '6,200 views',
+        see_all_reels: 'SEE ALL REELS',
+        nostalgia_badge: 'NOSTALGIA',
+        nostalgia_title: 'Then vs. <span style="color:var(--comic-orange);">Now</span>',
+        nost1_title: 'Childhood of the Past',
+        nost1_desc: 'When summer meant playing outside until dark, not scrolling on your phone. Remember?',
+        nost2_title: 'Bula at School',
+        nost2_desc: 'Bula jokes - a Romanian tradition that never dies. The classics always hit the spot!',
+        read_more: 'READ MORE',
+        popular_badge: 'POPULAR POSTS',
+        popular_title: 'The <span style="color:var(--comic-red);">Funniest</span> Photos',
+        pop1: 'The 5 Stages of Wednesday', pop2: 'Challenge of the Day #2', pop3: 'Logic Never Fails', pop4: 'Meme Overload!',
+        footer_desc: 'The funniest corner of the Romanian internet! Jokes, memes, nostalgia and funny reels.',
+        f_page: 'PAGE', f_group: 'GROUP', f_msg: 'MESSAGE', f_wip: 'WIP', f_wip_small: '(Coming soon)',
+        footer_nav: 'NAVIGATE',
+        nav_home_lc: 'Home', nav_jokes_lc: 'Jokes', nav_memes_lc: 'Memes', nav_reels_lc: 'Reels',
+        nav_nostalgia_lc: 'Nostalgia', nav_about_lc: 'About', nav_shop_lc: 'Shop & Newsletter',
+        nav_privacy: 'Privacy Policy', nav_terms: 'Terms & Conditions', nav_support: 'Support Us',
+        footer_about_site: 'ABOUT THE SITE',
+        footer_about_desc: 'A project dedicated to Romanian humor. All jokes are meant for fun and good vibes!',
+        footer_follow: 'FOLLOW US!',
+        follow_page: 'Page: Entertainment & Funny Jokes',
+        follow_group: 'Our humor group',
+        follow_ig: '@viorelochianu on Instagram',
+        follow_yt: 'Find us on YouTube too!',
+        footer_copy: 'Made with &#10084; for Romanian laughter &copy; 2026',
+        cookie_prefs: 'Cookie Preferences',
+        footer_disclaimer: 'Any resemblance to real persons is purely coincidental. Content is created exclusively for entertainment purposes.'
+    }
+};
+
+// === LANGUAGE FUNCTIONS ===
+var currentLang = localStorage.getItem('siteLang') || 'ro';
+
+function setLang(lang) {
+    currentLang = lang;
+    localStorage.setItem('siteLang', lang);
+    document.documentElement.lang = lang;
+    applyTranslations(lang);
+    // Update toggle buttons
+    document.getElementById('langRO').classList.toggle('active', lang === 'ro');
+    document.getElementById('langEN').classList.toggle('active', lang === 'en');
+}
+
+function applyTranslations(lang) {
+    var t = translations[lang];
+    // Text-only translations
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) {
+            el.textContent = t[key];
+        }
+    });
+    // HTML translations (for elements with styled spans inside)
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n-html');
+        if (t[key] !== undefined) {
+            el.innerHTML = t[key];
+        }
+    });
+    // Also update the logo (which uses innerHTML)
+    var logoEl = document.querySelector('[data-i18n="logo"]');
+    if (logoEl && t['logo']) {
+        logoEl.innerHTML = t['logo'];
+    }
+    // Update page title
+    if (lang === 'en') {
+        document.title = 'Entertainment & Funny Jokes';
+    } else {
+        document.title = 'Divertisment și Glume Haioase';
+    }
+}
+
+// Apply saved language on page load
+document.addEventListener('DOMContentLoaded', function() {
+    setLang(currentLang);
+});
+
+// === MOBILE MENU ===
 function openMobileMenu() {
     document.getElementById('mobileNav').classList.add('active');
     document.getElementById('mobileOverlay').classList.add('active');
@@ -1041,18 +754,25 @@ function closeMobileMenu() {
     document.getElementById('mobileOverlay').classList.remove('active');
     document.body.style.overflow = '';
 }
+
+// === SCROLL TO TOP ===
 window.addEventListener('scroll', function() {
     var btn = document.getElementById('scrollTopBtn');
     if (window.scrollY > 400) { btn.classList.add('show'); } else { btn.classList.remove('show'); }
 });
+
+// === JOKE TOGGLE ===
 function toggleJoke(btn) {
     var answer = document.getElementById('jokeAnswer');
+    var t = translations[currentLang];
     if (answer.classList.contains('show')) {
         answer.classList.remove('show');
-        btn.innerHTML = 'VEZI RASPUNSUL <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>';
+        btn.querySelector('[data-i18n]').textContent = t.joke_btn_show;
+        btn.querySelector('[data-i18n]').setAttribute('data-i18n', 'joke_btn_show');
     } else {
         answer.classList.add('show');
-        btn.innerHTML = 'ASCUNDE RASPUNSUL <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 15-6-6-6 6"/></svg>';
+        btn.querySelector('[data-i18n]').textContent = t.joke_btn_hide;
+        btn.querySelector('[data-i18n]').setAttribute('data-i18n', 'joke_btn_hide');
     }
 }
 </script>
