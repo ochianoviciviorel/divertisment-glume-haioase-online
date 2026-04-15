@@ -50,6 +50,12 @@
             background-size: 12px 12px;
         }
 
+        /* LANG TOGGLE */
+        .lang-toggle { display: flex; align-items: center; border: 2px solid var(--foreground); box-shadow: 2px 2px 0 var(--foreground); overflow: hidden; flex-shrink: 0; }
+        .lang-btn { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 11px; padding: 5px 8px; background: #fff; color: var(--foreground); cursor: pointer; transition: all 0.15s; display: flex; align-items: center; gap: 3px; border: none; }
+        .lang-btn.active { background: var(--comic-red); color: #fff; }
+        .lang-btn:not(.active):hover { background: rgba(223, 32, 46, 0.1); }
+
         /* HEADER */
         .site-header { position: sticky; top: 0; z-index: 100; background: var(--comic-yellow); border-bottom: 3px solid var(--foreground); }
         .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 8px 0; gap: 8px; }
@@ -219,21 +225,6 @@
         .mobile-nav .mob-social { display: flex; gap: 8px; padding: 10px 16px; margin-top: 8px; border-top: 2px solid rgba(0,0,0,0.1); flex-wrap: wrap; }
         .mobile-nav .mob-social a { padding: 0; width: 36px; height: 36px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; }
     </style>
-    <meta property="og:image" content="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/FhpRMpBhfdDCgpPE.png">
-    <meta property="og:image:width" content="400">
-    <meta property="og:image:height" content="400">
-    <meta property="og:image:alt" content="Susține-ne | Divertisment și Glume Haioase">
-    <meta name="twitter:image" content="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/FhpRMpBhfdDCgpPE.png">
-    <meta name="twitter:site" content="@viorelochianu">
-    <meta name="author" content="Viorel Ochianu">
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DVRWDJEZ3M"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-DVRWDJEZ3M');
-    </script>
 </head>
 <body>
 
@@ -243,24 +234,28 @@
         <div class="header-inner">
             <a href="/" class="logo-link">
                 <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/FhpRMpBhfdDCgpPE.png" alt="Logo" class="logo-img">
-                <span class="logo-text">Divertisment si<br><span class="red">Glume Haioase</span></span>
+                <span class="logo-text" data-i18n="logo">Divertisment si<br><span class="red">Glume Haioase</span></span>
             </a>
             <div class="social-header">
                 <a href="https://www.facebook.com/share/1CkszCSb6U/" target="_blank" class="social-icon-btn" style="background:#1877F2;" title="Pagina Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
                 <a href="https://www.facebook.com/share/g/1CZAM1XhgS/" target="_blank" class="social-icon-btn" style="background:#1877F2;" title="Grupul Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></a>
                 <a href="https://m.me/ViorelOchianu" target="_blank" class="social-icon-btn" style="background:#0084FF;" title="Messenger"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.908 1.434 5.503 3.678 7.199V22l3.378-1.874c.9.252 1.855.388 2.944.388 5.523 0 10-4.145 10-9.243S17.523 2 12 2zm1.062 12.476l-2.545-2.724-4.97 2.724 5.467-5.804 2.607 2.724 4.907-2.724-5.466 5.804z"/></svg></a>
                 <a href="https://www.instagram.com/viorelochianu/" target="_blank" class="social-icon-btn" style="background:linear-gradient(135deg,#F58529,#DD2A7B,#8134AF);" title="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-                <a href="https://www.youtube.com/@ViorelOchianu" target="_blank" class="social-icon-btn" style="background:#FF0000;position:relative;" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg><span style="position:absolute;top:-3px;right:-3px;width:8px;height:8px;background:var(--comic-yellow);border:1px solid var(--foreground);border-radius:50%;"></span></a>
+                <a href="https://www.youtube.com/@divertismentsiglumehaioase" target="_blank" class="social-icon-btn" style="background:#FF0000;position:relative;" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg><span style="position:absolute;top:-3px;right:-3px;width:8px;height:8px;background:var(--comic-yellow);border:1px solid var(--foreground);border-radius:50%;"></span></a>
+            </div>
+            <div class="lang-toggle">
+                <button class="lang-btn active" id="langRO" onclick="setLang('ro')">RO</button>
+                <button class="lang-btn" id="langEN" onclick="setLang('en')">EN</button>
             </div>
             <nav class="desktop-nav">
-                <a href="/" class="nav-link">ACASA</a>
-                <a href="/bancuri" class="nav-link">BANCURI</a>
-                <a href="/meme" class="nav-link">MEME</a>
-                <a href="/reeluri" class="nav-link">REELURI</a>
-                <a href="/nostalgie" class="nav-link">NOSTALGIE</a>
-                <a href="/despre" class="nav-link">DESPRE</a>
-                <a href="/magazin" class="nav-link">MAGAZIN</a>
-                <a href="/social" class="nav-link">SOCIAL</a>
+                <a href="/" class="nav-link" data-i18n="nav_home">ACASA</a>
+                <a href="/bancuri" class="nav-link" data-i18n="nav_jokes">BANCURI</a>
+                <a href="/meme" class="nav-link" data-i18n="nav_memes">MEME</a>
+                <a href="/reeluri" class="nav-link" data-i18n="nav_reels">REELURI</a>
+                <a href="/noutati" class="nav-link" data-i18n="nav_news">NOUTATI</a>
+                <a href="/nostalgie" class="nav-link" data-i18n="nav_nostalgia">NOSTALGIE</a>
+                <a href="/despre" class="nav-link" data-i18n="nav_about">DESPRE</a>
+                <a href="/magazin" class="nav-link" data-i18n="nav_shop">MAGAZIN</a>
             </nav>
             <button class="hamburger-btn" aria-label="Meniu" onclick="openMobileMenu()">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
@@ -272,13 +267,13 @@
 <!-- HERO -->
 <section class="hero-sustine">
     <div class="container">
-        <span class="comic-badge" style="background:var(--comic-yellow);color:var(--foreground);font-size:12px;padding:5px 16px;">GHID PAS CU PAS</span>
-        <h1>Cum Ne Poti <span class="red">Sustine?</span></h1>
-        <p class="hero-subtitle">Multi ne-ati intrebat cum puteti ajuta. Am pregatit acest ghid simplu cu <strong>7 metode concrete</strong> &mdash; de la cele mai usoare (2 secunde) pana la cele mai impactante. Fiecare gest <strong>conteaza</strong>!</p>
+        <span class="comic-badge" style="background:var(--comic-yellow);color:var(--foreground);font-size:12px;padding:5px 16px;" data-i18n="s_badge">GHID PAS CU PAS</span>
+        <h1 data-i18n-html="s_hero_title">Cum Ne Poti <span class="red">Sustine?</span></h1>
+        <p class="hero-subtitle" data-i18n-html="s_hero_sub">Multi ne-ati intrebat cum puteti ajuta. Am pregatit acest ghid simplu cu <strong>7 metode concrete</strong> &mdash; de la cele mai usoare (2 secunde) pana la cele mai impactante. Fiecare gest <strong>conteaza</strong>!</p>
         <div class="info-badges">
-            <span class="info-badge" style="background:#e8f5e9;color:var(--comic-green);">&#9201; Timp total: ~10 minute</span>
-            <span class="info-badge" style="background:#fff3e0;color:var(--comic-orange);">&#9733; Cost: 0 lei (Stars e optional)</span>
-            <span class="info-badge" style="background:#f3e5f5;color:#7b1fa2;">&#9829; Impact: ENORM</span>
+            <span class="info-badge" style="background:#e8f5e9;color:var(--comic-green);" data-i18n="s_badge_time">&#9201; Timp total: ~10 minute</span>
+            <span class="info-badge" style="background:#fff3e0;color:var(--comic-orange);" data-i18n="s_badge_cost">&#9733; Cost: 0 lei (Stars e optional)</span>
+            <span class="info-badge" style="background:#f3e5f5;color:#7b1fa2;" data-i18n="s_badge_impact">&#9829; Impact: ENORM</span>
         </div>
     </div>
 </section>
@@ -289,9 +284,9 @@
         <div class="comic-panel message-card">
             <div class="message-title">
                 <span style="font-size:28px;">&#128155;</span>
-                Un Mesaj de la Viorel
+                <span data-i18n="s_msg_title">Un Mesaj de la Viorel</span>
             </div>
-            <p class="message-text">Salutare, dragii mei! Acest proiect a pornit din pasiunea mea pentru umor si nostalgie. Vreau sa va multumesc ca sunteti aici si ca radeti alaturi de mine in fiecare zi. Multi dintre voi m-ati intrebat <strong>"Cum te putem ajuta?"</strong> &mdash; si am pregatit acest ghid simplu. Fiecare gest, oricat de mic, ne ajuta sa crestem si sa va aducem si mai mult continut amuzant. Totul e gratuit si dureaza cateva secunde. Multumesc din suflet! &#10084;&#65039;</p>
+            <p class="message-text" data-i18n-html="s_msg_text">Salutare, dragii mei! Acest proiect a pornit din pasiunea mea pentru umor si nostalgie. Vreau sa va multumesc ca sunteti aici si ca radeti alaturi de mine in fiecare zi. Multi dintre voi m-ati intrebat <strong>"Cum te putem ajuta?"</strong> &mdash; si am pregatit acest ghid simplu. Fiecare gest, oricat de mic, ne ajuta sa crestem si sa va aducem si mai mult continut amuzant. Totul e gratuit si dureaza cateva secunde. Multumesc din suflet! &#10084;&#65039;</p>
         </div>
     </div>
 </section>
@@ -299,19 +294,19 @@
 <!-- WHY IT MATTERS -->
 <section class="why-section">
     <div class="container">
-        <h3 class="why-title">DE CE CONTEAZA FIECARE GEST?</h3>
+        <h3 class="why-title" data-i18n="s_why_title">DE CE CONTEAZA FIECARE GEST?</h3>
         <div class="why-grid">
             <div class="comic-panel why-card">
-                <div class="why-number green">1 Like</div>
-                <p class="why-desc">= postarea ajunge la +5 persoane</p>
+                <div class="why-number green" data-i18n="s_why1">1 Like</div>
+                <p class="why-desc" data-i18n="s_why1_desc">= postarea ajunge la +5 persoane</p>
             </div>
             <div class="comic-panel why-card">
-                <div class="why-number blue">1 Comentariu</div>
-                <p class="why-desc">= postarea ajunge la +50 persoane</p>
+                <div class="why-number blue" data-i18n="s_why2">1 Comentariu</div>
+                <p class="why-desc" data-i18n="s_why2_desc">= postarea ajunge la +50 persoane</p>
             </div>
             <div class="comic-panel why-card">
-                <div class="why-number red">1 Distribuire</div>
-                <p class="why-desc">= postarea ajunge la +200 persoane</p>
+                <div class="why-number red" data-i18n="s_why3">1 Distribuire</div>
+                <p class="why-desc" data-i18n="s_why3_desc">= postarea ajunge la +200 persoane</p>
             </div>
         </div>
     </div>
@@ -325,15 +320,15 @@
             <div class="comic-panel method-card green-bg">
                 <div class="method-header">
                     <div class="method-num" style="background:var(--comic-green);">1</div>
-                    <div class="method-title">&#128077; Da Like si Reactioneaza</div>
+                    <div class="method-title" data-i18n-html="s_m1_title">&#128077; Da Like si Reactioneaza</div>
                 </div>
-                <p class="method-desc">Fiecare like, love, haha sau wow conteaza enorm! Reactiile spun algoritmului Facebook ca postarea e valoroasa si o arata la mai multi oameni.</p>
+                <p class="method-desc" data-i18n="s_m1_desc">Fiecare like, love, haha sau wow conteaza enorm! Reactiile spun algoritmului Facebook ca postarea e valoroasa si o arata la mai multi oameni.</p>
                 <div class="method-tags">
-                    <span class="method-tag">&#9201; 2 secunde</span>
-                    <span class="method-tag">Dificultate: usor</span>
-                    <span class="method-tag impact-mare">Impact: mare</span>
+                    <span class="method-tag" data-i18n="s_m1_tag1">&#9201; 2 secunde</span>
+                    <span class="method-tag" data-i18n="s_m1_tag2">Dificultate: usor</span>
+                    <span class="method-tag impact-mare" data-i18n="s_m1_tag3">Impact: mare</span>
                 </div>
-                <button class="method-expand" onclick="toggleMethod(this)">Arata-mi cum fac asta &rarr; <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+                <button class="method-expand" onclick="toggleMethod(this)"><span data-i18n="s_show_how">Arata-mi cum fac asta &rarr;</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
                 <div class="method-details">
                     <ol>
                         <li>Deschide pagina noastra de Facebook</li>
@@ -347,15 +342,15 @@
             <div class="comic-panel method-card blue-bg">
                 <div class="method-header">
                     <div class="method-num" style="background:var(--comic-blue);">2</div>
-                    <div class="method-title">&#128172; Lasa un Comentariu</div>
+                    <div class="method-title" data-i18n-html="s_m2_title">&#128172; Lasa un Comentariu</div>
                 </div>
-                <p class="method-desc">Comentariile sunt de 10x mai valoroase decat like-urile! Un simplu emoji sau 'Bun!' ne ajuta enorm. Cu cat sunt mai multe comentarii, cu atat Facebook arata postarea la mai multi oameni.</p>
+                <p class="method-desc" data-i18n="s_m2_desc">Comentariile sunt de 10x mai valoroase decat like-urile! Un simplu emoji sau 'Bun!' ne ajuta enorm. Cu cat sunt mai multe comentarii, cu atat Facebook arata postarea la mai multi oameni.</p>
                 <div class="method-tags">
-                    <span class="method-tag">&#9201; 10 secunde</span>
-                    <span class="method-tag">Dificultate: usor</span>
-                    <span class="method-tag impact-foarte-mare">Impact: foarte mare</span>
+                    <span class="method-tag" data-i18n="s_m2_tag1">&#9201; 10 secunde</span>
+                    <span class="method-tag" data-i18n="s_m2_tag2">Dificultate: usor</span>
+                    <span class="method-tag impact-foarte-mare" data-i18n="s_m2_tag3">Impact: foarte mare</span>
                 </div>
-                <button class="method-expand" onclick="toggleMethod(this)">Arata-mi cum fac asta &rarr; <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+                <button class="method-expand" onclick="toggleMethod(this)"><span data-i18n="s_show_how">Arata-mi cum fac asta &rarr;</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
                 <div class="method-details">
                     <ol>
                         <li>Deschide o postare de pe pagina noastra</li>
@@ -369,15 +364,15 @@
             <div class="comic-panel method-card orange-bg">
                 <div class="method-header">
                     <div class="method-num" style="background:var(--comic-orange);">3</div>
-                    <div class="method-title">&#128279; Distribuie Postarile</div>
+                    <div class="method-title" data-i18n-html="s_m3_title">&#128279; Distribuie Postarile</div>
                 </div>
-                <p class="method-desc">Distribuirea este REGELE engagement-ului! Cand distribui o postare, toti prietenii tai o vad, si noi ajungem la oameni noi. E cea mai puternica metoda de a ne ajuta sa crestem.</p>
+                <p class="method-desc" data-i18n="s_m3_desc">Distribuirea este REGELE engagement-ului! Cand distribui o postare, toti prietenii tai o vad, si noi ajungem la oameni noi. E cea mai puternica metoda de a ne ajuta sa crestem.</p>
                 <div class="method-tags">
-                    <span class="method-tag">&#9201; 5 secunde</span>
-                    <span class="method-tag">Dificultate: usor</span>
-                    <span class="method-tag impact-urias">Impact: urias</span>
+                    <span class="method-tag" data-i18n="s_m3_tag1">&#9201; 5 secunde</span>
+                    <span class="method-tag" data-i18n="s_m3_tag2">Dificultate: usor</span>
+                    <span class="method-tag impact-urias" data-i18n="s_m3_tag3">Impact: urias</span>
                 </div>
-                <button class="method-expand" onclick="toggleMethod(this)">Arata-mi cum fac asta &rarr; <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+                <button class="method-expand" onclick="toggleMethod(this)"><span data-i18n="s_show_how">Arata-mi cum fac asta &rarr;</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
                 <div class="method-details">
                     <ol>
                         <li>Gaseste o postare haioasa pe pagina noastra</li>
@@ -391,15 +386,15 @@
             <div class="comic-panel method-card cyan-bg">
                 <div class="method-header">
                     <div class="method-num" style="background:#00838f;">4</div>
-                    <div class="method-title">&#128064; Urmareste Reelurile Complet</div>
+                    <div class="method-title" data-i18n-html="s_m4_title">&#128064; Urmareste Reelurile Complet</div>
                 </div>
-                <p class="method-desc">Facebook plateste creatorii pe baza vizualizarilor de reeluri. Dar conteaza doar vizualizarile COMPLETE &mdash; adica sa urmaresti reel-ul pana la capat, nu doar 2 secunde.</p>
+                <p class="method-desc" data-i18n="s_m4_desc">Facebook plateste creatorii pe baza vizualizarilor de reeluri. Dar conteaza doar vizualizarile COMPLETE &mdash; adica sa urmaresti reel-ul pana la capat, nu doar 2 secunde.</p>
                 <div class="method-tags">
-                    <span class="method-tag">&#9201; 30-60 secunde</span>
-                    <span class="method-tag">Dificultate: usor</span>
-                    <span class="method-tag impact-foarte-mare">Impact: foarte mare</span>
+                    <span class="method-tag" data-i18n="s_m4_tag1">&#9201; 30-60 secunde</span>
+                    <span class="method-tag" data-i18n="s_m4_tag2">Dificultate: usor</span>
+                    <span class="method-tag impact-foarte-mare" data-i18n="s_m4_tag3">Impact: foarte mare</span>
                 </div>
-                <button class="method-expand" onclick="toggleMethod(this)">Arata-mi cum fac asta &rarr; <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+                <button class="method-expand" onclick="toggleMethod(this)"><span data-i18n="s_show_how">Arata-mi cum fac asta &rarr;</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
                 <div class="method-details">
                     <ol>
                         <li>Deschide un reel de pe pagina noastra</li>
@@ -413,15 +408,15 @@
             <div class="comic-panel method-card yellow-bg">
                 <div class="method-header">
                     <div class="method-num" style="background:#f9a825;">5</div>
-                    <div class="method-title">&#11088; Trimite Stars (Contributie Voluntara)</div>
+                    <div class="method-title" data-i18n-html="s_m5_title">&#11088; Trimite Stars (Contributie Voluntara)</div>
                 </div>
-                <p class="method-desc">Stars sunt 'moneda' Facebook-ului prin care poti sustine direct creatorii. Fiecare stea valoreaza ~0.01$. E complet voluntar, dar fiecare stea conteaza!</p>
+                <p class="method-desc" data-i18n="s_m5_desc">Stars sunt 'moneda' Facebook-ului prin care poti sustine direct creatorii. Fiecare stea valoreaza ~0.01$. E complet voluntar, dar fiecare stea conteaza!</p>
                 <div class="method-tags">
-                    <span class="method-tag">&#9201; 1 minut</span>
-                    <span class="method-tag">Dificultate: mediu</span>
-                    <span class="method-tag impact-urias">Impact: urias</span>
+                    <span class="method-tag" data-i18n="s_m5_tag1">&#9201; 1 minut</span>
+                    <span class="method-tag" data-i18n="s_m5_tag2">Dificultate: mediu</span>
+                    <span class="method-tag impact-urias" data-i18n="s_m5_tag3">Impact: urias</span>
                 </div>
-                <button class="method-expand" onclick="toggleMethod(this)">Arata-mi cum fac asta &rarr; <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+                <button class="method-expand" onclick="toggleMethod(this)"><span data-i18n="s_show_how">Arata-mi cum fac asta &rarr;</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
                 <div class="method-details">
                     <ol>
                         <li>Deschide un video sau reel de pe pagina noastra</li>
@@ -435,15 +430,15 @@
             <div class="comic-panel method-card pink-bg">
                 <div class="method-header">
                     <div class="method-num" style="background:#c62828;">6</div>
-                    <div class="method-title">&#10084;&#65039; Invita Prietenii sa Dea Like Paginii</div>
+                    <div class="method-title" data-i18n-html="s_m6_title">&#10084;&#65039; Invita Prietenii sa Dea Like Paginii</div>
                 </div>
-                <p class="method-desc">Mai multi urmaritori = mai mult reach = mai multe vizualizari = mai multe venituri. Fiecare prieten nou care da like paginii ne ajuta pe termen lung.</p>
+                <p class="method-desc" data-i18n="s_m6_desc">Mai multi urmaritori = mai mult reach = mai multe vizualizari = mai multe venituri. Fiecare prieten nou care da like paginii ne ajuta pe termen lung.</p>
                 <div class="method-tags">
-                    <span class="method-tag">&#9201; 2 minute</span>
-                    <span class="method-tag">Dificultate: usor</span>
-                    <span class="method-tag impact-foarte-mare">Impact: foarte mare</span>
+                    <span class="method-tag" data-i18n="s_m6_tag1">&#9201; 2 minute</span>
+                    <span class="method-tag" data-i18n="s_m6_tag2">Dificultate: usor</span>
+                    <span class="method-tag impact-foarte-mare" data-i18n="s_m6_tag3">Impact: foarte mare</span>
                 </div>
-                <button class="method-expand" onclick="toggleMethod(this)">Arata-mi cum fac asta &rarr; <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+                <button class="method-expand" onclick="toggleMethod(this)"><span data-i18n="s_show_how">Arata-mi cum fac asta &rarr;</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
                 <div class="method-details">
                     <ol>
                         <li>Deschide pagina noastra de Facebook</li>
@@ -457,15 +452,15 @@
             <div class="comic-panel method-card teal-bg" style="grid-column: 1 / -1; max-width: 440px;">
                 <div class="method-header">
                     <div class="method-num" style="background:#00695c;">7</div>
-                    <div class="method-title">&#128279; Viziteaza Site-ul Nostru</div>
+                    <div class="method-title" data-i18n-html="s_m7_title">&#128279; Viziteaza Site-ul Nostru</div>
                 </div>
-                <p class="method-desc">Site-ul nostru (divertismentsiglumehaioase.com) are toate bancurile, meme-urile si reelurile intr-un singur loc. Fiecare vizita ne ajuta sa crestem traficul si sa activam reclamele pe site.</p>
+                <p class="method-desc" data-i18n="s_m7_desc">Site-ul nostru (divertismentsiglumehaioase.com) are toate bancurile, meme-urile si reelurile intr-un singur loc. Fiecare vizita ne ajuta sa crestem traficul si sa activam reclamele pe site.</p>
                 <div class="method-tags">
-                    <span class="method-tag">&#9201; 5 minute</span>
-                    <span class="method-tag">Dificultate: usor</span>
-                    <span class="method-tag impact-mare">Impact: mare</span>
+                    <span class="method-tag" data-i18n="s_m7_tag1">&#9201; 5 minute</span>
+                    <span class="method-tag" data-i18n="s_m7_tag2">Dificultate: usor</span>
+                    <span class="method-tag impact-mare" data-i18n="s_m7_tag3">Impact: mare</span>
                 </div>
-                <button class="method-expand" onclick="toggleMethod(this)">Arata-mi cum fac asta &rarr; <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+                <button class="method-expand" onclick="toggleMethod(this)"><span data-i18n="s_show_how">Arata-mi cum fac asta &rarr;</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
                 <div class="method-details">
                     <ol>
                         <li>Intra pe <a href="/" style="color:var(--comic-blue);text-decoration:underline;">divertismentsiglumehaioase.com</a></li>
@@ -482,64 +477,64 @@
 <!-- DIRECT SUPPORT -->
 <section class="direct-section halftone-bg" style="border-top:3px solid var(--foreground);">
     <div class="container">
-        <h2 class="direct-title">Sustinere <span class="red">Directa</span></h2>
-        <p class="direct-subtitle">Daca vrei sa ne sustii si financiar, poti face o contributie voluntara prin una din metodele de mai jos. Orice suma conteaza si ne ajuta sa crestem!</p>
+        <h2 class="direct-title" data-i18n-html="s_direct_title">Sustinere <span class="red">Directa</span></h2>
+        <p class="direct-subtitle" data-i18n="s_direct_sub">Daca vrei sa ne sustii si financiar, poti face o contributie voluntara prin una din metodele de mai jos. Orice suma conteaza si ne ajuta sa crestem!</p>
         <div class="direct-grid">
             <!-- Facebook Stars -->
             <div class="comic-panel direct-card">
                 <div class="direct-card-header stars-h">&#11088; Facebook Stars</div>
                 <div class="direct-card-body">
-                    <p>Trimite Stars direct pe postarile sau reelurile noastre de pe Facebook. Fiecare stea = ~0.01$.</p>
+                    <p data-i18n="s_stars_desc">Trimite Stars direct pe postarile sau reelurile noastre de pe Facebook. Fiecare stea = ~0.01$.</p>
                     <div class="price-row"><span>50 Stars</span><span class="price-amount">~$0.50</span></div>
                     <div class="price-row"><span>100 Stars</span><span class="price-amount">~$1.00</span></div>
                     <div class="price-row"><span>500 Stars</span><span class="price-amount">~$5.00</span></div>
-                    <a href="https://www.facebook.com/share/1CkszCSb6U/" target="_blank" class="direct-btn stars-btn">&#11088; TRIMITE STARS</a>
+                    <a href="https://www.facebook.com/share/1CkszCSb6U/" target="_blank" class="direct-btn stars-btn" data-i18n="s_stars_btn">&#11088; TRIMITE STARS</a>
                 </div>
             </div>
             <!-- PayPal -->
             <div class="comic-panel direct-card">
                 <div class="direct-card-header paypal-h">&#128179; PayPal</div>
                 <div class="direct-card-body">
-                    <p>Contribuie prin PayPal &mdash; sigur, rapid si accepta orice card. Alegi tu suma, oricat de mica.</p>
-                    <p class="suggested-label">Contributie sugerata</p>
+                    <p data-i18n="s_paypal_desc">Contribuie prin PayPal &mdash; sigur, rapid si accepta orice card. Alegi tu suma, oricat de mica.</p>
+                    <p class="suggested-label" data-i18n="s_suggested">Contributie sugerata</p>
                     <div class="suggested-amounts">
                         <span class="suggested-amt">&euro;2</span>
                         <span class="suggested-amt">&euro;5</span>
                         <span class="suggested-amt">&euro;10</span>
                     </div>
-                    <button class="direct-btn paypal-btn">&#128179; DONEAZA CU PAYPAL</button>
+                    <button class="direct-btn paypal-btn" data-i18n="s_paypal_btn">&#128179; DONEAZA CU PAYPAL</button>
                 </div>
             </div>
             <!-- Revolut -->
             <div class="comic-panel direct-card">
                 <div class="direct-card-header revolut-h">&#128179; Revolut</div>
                 <div class="direct-card-body">
-                    <p>Transfer instant prin Revolut &mdash; fara comisioane, rapid si simplu. Link-ul va fi disponibil in curand!</p>
-                    <p class="suggested-label">Contributie sugerata</p>
+                    <p data-i18n="s_revolut_desc">Transfer instant prin Revolut &mdash; fara comisioane, rapid si simplu. Link-ul va fi disponibil in curand!</p>
+                    <p class="suggested-label" data-i18n="s_suggested">Contributie sugerata</p>
                     <div class="suggested-amounts">
                         <span class="suggested-amt">5 RON</span>
                         <span class="suggested-amt">10 RON</span>
                         <span class="suggested-amt">25 RON</span>
                     </div>
-                    <button class="direct-btn revolut-btn">&#128179; IN CURAND</button>
+                    <button class="direct-btn revolut-btn" data-i18n="s_revolut_btn">&#128179; IN CURAND</button>
                 </div>
             </div>
         </div>
-        <p class="direct-disclaimer">Contributiile financiare sunt 100% voluntare. Ne poti sustine si gratuit prin like-uri, comentarii si distribuiri &mdash; conteaza la fel de mult!</p>
+        <p class="direct-disclaimer" data-i18n="s_disclaimer">Contributiile financiare sunt 100% voluntare. Ne poti sustine si gratuit prin like-uri, comentarii si distribuiri &mdash; conteaza la fel de mult!</p>
     </div>
 </section>
 
 <!-- CTA -->
 <section class="cta-section">
     <div class="container">
-        <h2 class="cta-title">Incepe Chiar Acum!</h2>
-        <p class="cta-subtitle">Alege una din actiunile de mai jos &mdash; dureaza sub 1 minut si ne ajuta enorm:</p>
+        <h2 class="cta-title" data-i18n="s_cta_title">Incepe Chiar Acum!</h2>
+        <p class="cta-subtitle" data-i18n="s_cta_sub">Alege una din actiunile de mai jos &mdash; dureaza sub 1 minut si ne ajuta enorm:</p>
         <div class="cta-buttons">
-            <a href="https://www.facebook.com/share/1CkszCSb6U/" target="_blank" class="comic-btn" style="background:var(--comic-blue);color:#fff;">&#128077; DA LIKE PAGINII</a>
-            <a href="https://www.facebook.com/share/g/1CZAM1XhgS/" target="_blank" class="comic-btn" style="background:var(--comic-red);color:#fff;">&#10084;&#65039; INTRA IN GRUP</a>
-            <a href="/" class="comic-btn" style="background:var(--comic-orange);color:#fff;">&#128279; VIZITEAZA SITE-UL</a>
+            <a href="https://www.facebook.com/share/1CkszCSb6U/" target="_blank" class="comic-btn" style="background:var(--comic-blue);color:#fff;" data-i18n="s_cta_like">&#128077; DA LIKE PAGINII</a>
+            <a href="https://www.facebook.com/share/g/1CZAM1XhgS/" target="_blank" class="comic-btn" style="background:var(--comic-red);color:#fff;" data-i18n="s_cta_group">&#10084;&#65039; INTRA IN GRUP</a>
+            <a href="/" class="comic-btn" style="background:var(--comic-orange);color:#fff;" data-i18n="s_cta_visit">&#128279; VIZITEAZA SITE-UL</a>
         </div>
-        <p class="cta-final">Multumim din suflet! Fiecare gest conteaza si ne motiveaza sa continuam. &#128155;</p>
+        <p class="cta-final" data-i18n="s_cta_final">Multumim din suflet! Fiecare gest conteaza si ne motiveaza sa continuam. &#128155;</p>
     </div>
 </section>
 
@@ -552,44 +547,45 @@
                     <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/FhpRMpBhfdDCgpPE.png" alt="Logo" style="width:28px;height:28px;border-radius:50;border:2px solid var(--comic-yellow);">
                     <span class="font-comic" style="font-size:16px;color:var(--comic-yellow);">Glume Haioase</span>
                 </div>
-                <p style="font-size:13px;color:rgba(248,241,227,0.6);margin-bottom:4px;">Cel mai haios colt al internetului romanesc! Bancuri, meme-uri, nostalgie si reeluri amuzante.</p>
+                <p style="font-size:13px;color:rgba(248,241,227,0.6);margin-bottom:4px;" data-i18n="footer_desc">Cel mai haios colt al internetului romanesc! Bancuri, meme-uri, nostalgie si reeluri amuzante.</p>
                 <p style="font-size:12px;color:rgba(248,241,227,0.5);margin-bottom:10px;">Viorel Ochianu</p>
                 <div style="display:flex;flex-wrap:wrap;gap:4px;">
                     <a href="https://www.facebook.com/share/1CkszCSb6U/" target="_blank" class="footer-social-btn" style="background:#1877F2;">&#128266; PAGINA</a>
                     <a href="https://www.facebook.com/share/g/1CZAM1XhgS/" target="_blank" class="footer-social-btn" style="background:#1877F2;">&#128101; GRUP</a>
                     <a href="https://m.me/ViorelOchianu" target="_blank" class="footer-social-btn" style="background:#0084FF;">&#128172; MESAJ</a>
                     <a href="https://www.instagram.com/viorelochianu/" target="_blank" class="footer-social-btn" style="background:linear-gradient(135deg,#F58529,#DD2A7B,#8134AF);">&#128247; INSTAGRAM</a>
-                    <a href="https://www.youtube.com/@ViorelOchianu" target="_blank" class="footer-social-btn" style="background:#FF0000;">&#9654; YOUTUBE <span style="font-size:9px;opacity:0.7;">IN LUCRU</span></a>
+                    <a href="https://www.youtube.com/@divertismentsiglumehaioase" target="_blank" class="footer-social-btn" style="background:#FF0000;"><span style="font-size:13px;">&#9654;</span> YOUTUBE</a>
                 </div>
             </div>
             <div>
-                <h4 class="footer-title">NAVIGARE</h4>
-                <a href="/" class="footer-link">Acasa</a>
-                <a href="/bancuri" class="footer-link">Bancuri</a>
-                <a href="/meme" class="footer-link">Meme</a>
-                <a href="/reeluri" class="footer-link">Reeluri</a>
-                <a href="/nostalgie" class="footer-link">Nostalgie</a>
-                <a href="/despre" class="footer-link">Despre</a>
-                <a href="/magazin" class="footer-link">Magazin & Newsletter</a>
-                <a href="/confidentialitate" class="footer-link">Confidentialitate</a>
-                <a href="/termeni" class="footer-link">Termeni si Conditii</a>
-                <a href="/sustine" class="footer-link">Sustine-ne</a>
+                <h4 class="footer-title" data-i18n="footer_nav">NAVIGARE</h4>
+                <a href="/" class="footer-link" data-i18n="nav_home_lc">Acasa</a>
+                <a href="/bancuri" class="footer-link" data-i18n="nav_jokes_lc">Bancuri</a>
+                <a href="/meme" class="footer-link" data-i18n="nav_memes_lc">Meme</a>
+                <a href="/reeluri" class="footer-link" data-i18n="nav_reels_lc">Reeluri</a>
+                <a href="/noutati" class="footer-link" data-i18n="nav_news_lc">Noutati</a>
+                <a href="/nostalgie" class="footer-link" data-i18n="nav_nostalgia_lc">Nostalgie</a>
+                <a href="/despre" class="footer-link" data-i18n="nav_about_lc">Despre</a>
+                <a href="/magazin" class="footer-link" data-i18n="nav_shop_lc">Magazin & Newsletter</a>
+                <a href="/confidentialitate" class="footer-link" data-i18n="nav_privacy">Confidentialitate</a>
+                <a href="/termeni" class="footer-link" data-i18n="nav_terms">Termeni si Conditii</a>
+                <a href="/sustine" class="footer-link" data-i18n="nav_support">Sustine-ne</a>
             </div>
             <div>
-                <h4 class="footer-title">DESPRE SITE</h4>
-                <p style="font-size:13px;color:rgba(248,241,227,0.6);margin-bottom:8px;">Un proiect dedicat umorului romanesc. Toate glumele sunt pentru distractie si buna dispozitie!</p>
+                <h4 class="footer-title" data-i18n="footer_about_site">DESPRE SITE</h4>
+                <p style="font-size:13px;color:rgba(248,241,227,0.6);margin-bottom:8px;" data-i18n="footer_about_desc">Un proiect dedicat umorului romanesc. Toate glumele sunt pentru distractie si buna dispozitie!</p>
                 <p style="font-size:12px;color:rgba(248,241,227,0.5);margin-bottom:12px;">Admin: <strong style="color:var(--comic-yellow);">Viorel Ochianu</strong></p>
-                <h4 class="footer-title">URMARESTE-NE!</h4>
+                <h4 class="footer-title" data-i18n="footer_follow">URMARESTE-NE!</h4>
                 <a href="https://www.facebook.com/share/1CkszCSb6U/" target="_blank" class="footer-social-link"><svg viewBox="0 0 24 24" fill="currentColor" style="color:#1877F2;"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Pagina: Divertisment si glume haioase</a>
                 <a href="https://www.facebook.com/share/g/1CZAM1XhgS/" target="_blank" class="footer-social-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:#1877F2;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> Grupul nostru de umor</a>
                 <a href="https://www.instagram.com/viorelochianu/" target="_blank" class="footer-social-link"><svg viewBox="0 0 24 24" fill="currentColor" style="color:#E4405F;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg> @viorelochianu pe Instagram</a>
-                <a href="https://www.youtube.com/@ViorelOchianu" target="_blank" class="footer-social-link"><svg viewBox="0 0 24 24" fill="currentColor" style="color:#FF0000;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg> Ne gasiti si pe YouTube! <span style="color:var(--comic-yellow);font-size:10px;">(In lucru)</span></a>
+                <a href="https://www.youtube.com/@divertismentsiglumehaioase" target="_blank" class="footer-social-link"><svg viewBox="0 0 24 24" fill="currentColor" style="color:#FF0000;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg> <span data-i18n="follow_yt">Ne gasiti si pe YouTube!</span></a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p class="footer-copy">Facut cu &#10084; pentru rasul romanesc &copy; 2026</p>
+            <p class="footer-copy" data-i18n-html="footer_copy">Facut cu &#10084; pentru rasul romanesc &copy; 2026</p>
             <p class="footer-legal"><a href="/confidentialitate">Confidentialitate</a> &middot; <a href="/termeni">Termeni si Conditii</a> &middot; <button style="color:inherit;text-decoration:underline;font-size:inherit;">Preferinte Cookie</button></p>
-            <p class="footer-disclaimer">Orice asemanare cu persoane reale este pur intamplatoare. Continutul este creat exclusiv in scop de divertisment.</p>
+            <p class="footer-disclaimer" data-i18n="footer_disclaimer">Orice asemanare cu persoane reale este pur intamplatoare. Continutul este creat exclusiv in scop de divertisment.</p>
         </div>
     </div>
 </footer>
@@ -606,29 +602,211 @@
 <div class="mobile-menu-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
 <div class="mobile-nav" id="mobileNav">
     <button class="close-btn" onclick="closeMobileMenu()">&times;</button>
-    <a href="/">ACASA</a>
-    <a href="/bancuri">BANCURI</a>
-    <a href="/meme">MEME</a>
-    <a href="/reeluri">REELURI</a>
-    <a href="/nostalgie">NOSTALGIE</a>
-    <a href="/despre">DESPRE</a>
-    <a href="/magazin">MAGAZIN</a>
+    <a href="/" data-i18n="nav_home">ACASA</a>
+    <a href="/bancuri" data-i18n="nav_jokes">BANCURI</a>
+    <a href="/meme" data-i18n="nav_memes">MEME</a>
+    <a href="/reeluri" data-i18n="nav_reels">REELURI</a>
+    <a href="/noutati" data-i18n="nav_news">NOUTATI</a>
+    <a href="/nostalgie" data-i18n="nav_nostalgia">NOSTALGIE</a>
+    <a href="/despre" data-i18n="nav_about">DESPRE</a>
+    <a href="/magazin" data-i18n="nav_shop">MAGAZIN</a>
     <div class="mob-social">
         <a href="https://www.facebook.com/share/1CkszCSb6U/" target="_blank" style="background:#1877F2;color:#fff;">f</a>
         <a href="https://m.me/ViorelOchianu" target="_blank" style="background:#0084FF;color:#fff;">&#128172;</a>
         <a href="https://www.instagram.com/viorelochianu/" target="_blank" style="background:linear-gradient(135deg,#F58529,#DD2A7B,#8134AF);color:#fff;">&#9679;</a>
-        <a href="https://www.youtube.com/@ViorelOchianu" target="_blank" style="background:#FF0000;color:#fff;">&#9654;</a>
+        <a href="https://www.youtube.com/@divertismentsiglumehaioase" target="_blank" style="background:#FF0000;color:#fff;">&#9654;</a>
     </div>
 </div>
 
 <script>
-function openMobileMenu() { document.getElementById('mobileNav').classList.add('active'); document.getElementById('mobileOverlay').classList.add('active'); document.body.style.overflow='hidden'; }
-function closeMobileMenu() { document.getElementById('mobileNav').classList.remove('active'); document.getElementById('mobileOverlay').classList.remove('active'); document.body.style.overflow=''; }
+// === TRANSLATION DICTIONARY ===
+var translations = {
+    ro: {
+        logo: 'Divertisment si<br><span class="red">Glume Haioase</span>',
+        nav_home: 'ACASA', nav_jokes: 'BANCURI', nav_memes: 'MEME', nav_reels: 'REELURI',
+        nav_news: 'NOUTATI', nav_nostalgia: 'NOSTALGIE', nav_about: 'DESPRE', nav_shop: 'MAGAZIN',
+        nav_home_lc: 'Acasa', nav_jokes_lc: 'Bancuri', nav_memes_lc: 'Meme', nav_reels_lc: 'Reeluri',
+        nav_news_lc: 'Noutati', nav_nostalgia_lc: 'Nostalgie', nav_about_lc: 'Despre', nav_shop_lc: 'Magazin & Newsletter',
+        nav_privacy: 'Confidentialitate', nav_terms: 'Termeni si Conditii', nav_support: 'Sustine-ne',
+        s_badge: 'GHID PAS CU PAS',
+        s_hero_title: 'Cum Ne Poti <span class="red">Sustine?</span>',
+        s_hero_sub: 'Multi ne-ati intrebat cum puteti ajuta. Am pregatit acest ghid simplu cu <strong>7 metode concrete</strong> &mdash; de la cele mai usoare (2 secunde) pana la cele mai impactante. Fiecare gest <strong>conteaza</strong>!',
+        s_badge_time: '\u23F1 Timp total: ~10 minute',
+        s_badge_cost: '\u2733 Cost: 0 lei (Stars e optional)',
+        s_badge_impact: '\u2665 Impact: ENORM',
+        s_msg_title: 'Un Mesaj de la Viorel',
+        s_msg_text: 'Salutare, dragii mei! Acest proiect a pornit din pasiunea mea pentru umor si nostalgie. Vreau sa va multumesc ca sunteti aici si ca radeti alaturi de mine in fiecare zi. Multi dintre voi m-ati intrebat <strong>"Cum te putem ajuta?"</strong> &mdash; si am pregatit acest ghid simplu. Fiecare gest, oricat de mic, ne ajuta sa crestem si sa va aducem si mai mult continut amuzant. Totul e gratuit si dureaza cateva secunde. Multumesc din suflet! \u2764\uFE0F',
+        s_why_title: 'DE CE CONTEAZA FIECARE GEST?',
+        s_why1: '1 Like', s_why1_desc: '= postarea ajunge la +5 persoane',
+        s_why2: '1 Comentariu', s_why2_desc: '= postarea ajunge la +50 persoane',
+        s_why3: '1 Distribuire', s_why3_desc: '= postarea ajunge la +200 persoane',
+        s_m1_title: '\uD83D\uDC4D Da Like si Reactioneaza',
+        s_m1_desc: 'Fiecare like, love, haha sau wow conteaza enorm! Reactiile spun algoritmului Facebook ca postarea e valoroasa si o arata la mai multi oameni.',
+        s_m1_tag1: '\u23F1 2 secunde', s_m1_tag2: 'Dificultate: usor', s_m1_tag3: 'Impact: mare',
+        s_m2_title: '\uD83D\uDCAC Lasa un Comentariu',
+        s_m2_desc: 'Comentariile sunt de 10x mai valoroase decat like-urile! Un simplu emoji sau \'Bun!\' ne ajuta enorm.',
+        s_m2_tag1: '\u23F1 10 secunde', s_m2_tag2: 'Dificultate: usor', s_m2_tag3: 'Impact: foarte mare',
+        s_m3_title: '\uD83D\uDD17 Distribuie Postarile',
+        s_m3_desc: 'Distribuirea este REGELE engagement-ului! Cand distribui o postare, toti prietenii tai o vad.',
+        s_m3_tag1: '\u23F1 5 secunde', s_m3_tag2: 'Dificultate: usor', s_m3_tag3: 'Impact: urias',
+        s_m4_title: '\uD83D\uDC40 Urmareste Reelurile Complet',
+        s_m4_desc: 'Facebook plateste creatorii pe baza vizualizarilor de reeluri. Conteaza doar vizualizarile COMPLETE.',
+        s_m4_tag1: '\u23F1 30-60 secunde', s_m4_tag2: 'Dificultate: usor', s_m4_tag3: 'Impact: foarte mare',
+        s_m5_title: '\u2B50 Trimite Stars (Contributie Voluntara)',
+        s_m5_desc: 'Stars sunt \'moneda\' Facebook-ului prin care poti sustine direct creatorii. Fiecare stea valoreaza ~0.01$.',
+        s_m5_tag1: '\u23F1 1 minut', s_m5_tag2: 'Dificultate: mediu', s_m5_tag3: 'Impact: urias',
+        s_m6_title: '\u2764\uFE0F Invita Prietenii sa Dea Like Paginii',
+        s_m6_desc: 'Mai multi urmaritori = mai mult reach = mai multe vizualizari = mai multe venituri.',
+        s_m6_tag1: '\u23F1 2 minute', s_m6_tag2: 'Dificultate: usor', s_m6_tag3: 'Impact: foarte mare',
+        s_m7_title: '\uD83D\uDD17 Viziteaza Site-ul Nostru',
+        s_m7_desc: 'Site-ul nostru are toate bancurile, meme-urile si reelurile intr-un singur loc. Fiecare vizita ne ajuta sa crestem.',
+        s_m7_tag1: '\u23F1 5 minute', s_m7_tag2: 'Dificultate: usor', s_m7_tag3: 'Impact: mare',
+        s_show_how: 'Arata-mi cum fac asta \u2192',
+        s_direct_title: 'Sustinere <span class="red">Directa</span>',
+        s_direct_sub: 'Daca vrei sa ne sustii si financiar, poti face o contributie voluntara prin una din metodele de mai jos. Orice suma conteaza!',
+        s_stars_desc: 'Trimite Stars direct pe postarile sau reelurile noastre de pe Facebook. Fiecare stea = ~0.01$.',
+        s_stars_btn: '\u2B50 TRIMITE STARS',
+        s_paypal_desc: 'Contribuie prin PayPal &mdash; sigur, rapid si accepta orice card. Alegi tu suma.',
+        s_paypal_btn: '\uD83D\uDCB3 DONEAZA CU PAYPAL',
+        s_revolut_desc: 'Transfer instant prin Revolut &mdash; fara comisioane, rapid si simplu. Link-ul va fi disponibil in curand!',
+        s_revolut_btn: '\uD83D\uDCB3 IN CURAND',
+        s_suggested: 'Contributie sugerata',
+        s_disclaimer: 'Contributiile financiare sunt 100% voluntare. Ne poti sustine si gratuit prin like-uri, comentarii si distribuiri.',
+        s_cta_title: 'Incepe Chiar Acum!',
+        s_cta_sub: 'Alege una din actiunile de mai jos &mdash; dureaza sub 1 minut si ne ajuta enorm:',
+        s_cta_like: '\uD83D\uDC4D DA LIKE PAGINII',
+        s_cta_group: '\u2764\uFE0F INTRA IN GRUP',
+        s_cta_visit: '\uD83D\uDD17 VIZITEAZA SITE-UL',
+        s_cta_final: 'Multumim din suflet! Fiecare gest conteaza si ne motiveaza sa continuam. \uD83D\uDC9B',
+        footer_desc: 'Cel mai haios colt al internetului romanesc! Bancuri, meme-uri, nostalgie si reeluri amuzante.',
+        footer_nav: 'NAVIGARE',
+        footer_about_site: 'DESPRE SITE',
+        footer_about_desc: 'Un proiect dedicat umorului romanesc. Toate glumele sunt pentru distractie si buna dispozitie!',
+        footer_follow: 'URMARESTE-NE!',
+        follow_yt: 'Ne gasiti si pe YouTube!',
+        footer_copy: 'Facut cu \u2764 pentru rasul romanesc &copy; 2026',
+        footer_disclaimer: 'Orice asemanare cu persoane reale este pur intamplatoare. Continutul este creat exclusiv in scop de divertisment.'
+    },
+    en: {
+        logo: 'Entertainment &<br><span class="red">Funny Jokes</span>',
+        nav_home: 'HOME', nav_jokes: 'JOKES', nav_memes: 'MEMES', nav_reels: 'REELS',
+        nav_news: 'NEWS', nav_nostalgia: 'NOSTALGIA', nav_about: 'ABOUT', nav_shop: 'SHOP',
+        nav_home_lc: 'Home', nav_jokes_lc: 'Jokes', nav_memes_lc: 'Memes', nav_reels_lc: 'Reels',
+        nav_news_lc: 'News', nav_nostalgia_lc: 'Nostalgia', nav_about_lc: 'About', nav_shop_lc: 'Shop & Newsletter',
+        nav_privacy: 'Privacy Policy', nav_terms: 'Terms & Conditions', nav_support: 'Support Us',
+        s_badge: 'STEP BY STEP GUIDE',
+        s_hero_title: 'How Can You <span class="red">Support Us?</span>',
+        s_hero_sub: 'Many of you have asked how you can help. We prepared this simple guide with <strong>7 concrete methods</strong> &mdash; from the easiest (2 seconds) to the most impactful. Every action <strong>matters</strong>!',
+        s_badge_time: '\u23F1 Total time: ~10 minutes',
+        s_badge_cost: '\u2733 Cost: Free (Stars is optional)',
+        s_badge_impact: '\u2665 Impact: HUGE',
+        s_msg_title: 'A Message from Viorel',
+        s_msg_text: 'Hello, dear friends! This project started from my passion for humor and nostalgia. I want to thank you for being here and laughing with me every day. Many of you asked <strong>"How can we help?"</strong> &mdash; so I prepared this simple guide. Every gesture, no matter how small, helps us grow and bring you even more funny content. Everything is free and takes just a few seconds. Thank you from the bottom of my heart! \u2764\uFE0F',
+        s_why_title: 'WHY DOES EVERY ACTION MATTER?',
+        s_why1: '1 Like', s_why1_desc: '= the post reaches +5 people',
+        s_why2: '1 Comment', s_why2_desc: '= the post reaches +50 people',
+        s_why3: '1 Share', s_why3_desc: '= the post reaches +200 people',
+        s_m1_title: '\uD83D\uDC4D Like & React',
+        s_m1_desc: 'Every like, love, haha or wow counts enormously! Reactions tell the Facebook algorithm the post is valuable.',
+        s_m1_tag1: '\u23F1 2 seconds', s_m1_tag2: 'Difficulty: easy', s_m1_tag3: 'Impact: high',
+        s_m2_title: '\uD83D\uDCAC Leave a Comment',
+        s_m2_desc: 'Comments are 10x more valuable than likes! A simple emoji or \'Nice!\' helps us enormously.',
+        s_m2_tag1: '\u23F1 10 seconds', s_m2_tag2: 'Difficulty: easy', s_m2_tag3: 'Impact: very high',
+        s_m3_title: '\uD83D\uDD17 Share Posts',
+        s_m3_desc: 'Sharing is the KING of engagement! When you share a post, all your friends see it.',
+        s_m3_tag1: '\u23F1 5 seconds', s_m3_tag2: 'Difficulty: easy', s_m3_tag3: 'Impact: huge',
+        s_m4_title: '\uD83D\uDC40 Watch Reels Completely',
+        s_m4_desc: 'Facebook pays creators based on reel views. Only COMPLETE views count.',
+        s_m4_tag1: '\u23F1 30-60 seconds', s_m4_tag2: 'Difficulty: easy', s_m4_tag3: 'Impact: very high',
+        s_m5_title: '\u2B50 Send Stars (Voluntary Contribution)',
+        s_m5_desc: 'Stars are Facebook\'s \'currency\' to directly support creators. Each star is worth ~$0.01.',
+        s_m5_tag1: '\u23F1 1 minute', s_m5_tag2: 'Difficulty: medium', s_m5_tag3: 'Impact: huge',
+        s_m6_title: '\u2764\uFE0F Invite Friends to Like the Page',
+        s_m6_desc: 'More followers = more reach = more views = more revenue. Every new friend who likes the page helps long-term.',
+        s_m6_tag1: '\u23F1 2 minutes', s_m6_tag2: 'Difficulty: easy', s_m6_tag3: 'Impact: very high',
+        s_m7_title: '\uD83D\uDD17 Visit Our Website',
+        s_m7_desc: 'Our website has all the jokes, memes and reels in one place. Every visit helps us grow traffic.',
+        s_m7_tag1: '\u23F1 5 minutes', s_m7_tag2: 'Difficulty: easy', s_m7_tag3: 'Impact: high',
+        s_show_how: 'Show me how \u2192',
+        s_direct_title: 'Direct <span class="red">Support</span>',
+        s_direct_sub: 'If you want to support us financially, you can make a voluntary contribution through one of the methods below. Every amount counts!',
+        s_stars_desc: 'Send Stars directly on our Facebook posts or reels. Each star = ~$0.01.',
+        s_stars_btn: '\u2B50 SEND STARS',
+        s_paypal_desc: 'Contribute via PayPal &mdash; secure, fast and accepts any card. You choose the amount.',
+        s_paypal_btn: '\uD83D\uDCB3 DONATE WITH PAYPAL',
+        s_revolut_desc: 'Instant transfer via Revolut &mdash; no fees, fast and simple. Link coming soon!',
+        s_revolut_btn: '\uD83D\uDCB3 COMING SOON',
+        s_suggested: 'Suggested contribution',
+        s_disclaimer: 'Financial contributions are 100% voluntary. You can also support us for free through likes, comments and shares.',
+        s_cta_title: 'Start Right Now!',
+        s_cta_sub: 'Choose one of the actions below &mdash; takes less than 1 minute and helps us enormously:',
+        s_cta_like: '\uD83D\uDC4D LIKE THE PAGE',
+        s_cta_group: '\u2764\uFE0F JOIN THE GROUP',
+        s_cta_visit: '\uD83D\uDD17 VISIT THE WEBSITE',
+        s_cta_final: 'Thank you from the bottom of our hearts! Every gesture counts and motivates us to continue. \uD83D\uDC9B',
+        footer_desc: 'The funniest corner of the Romanian internet! Jokes, memes, nostalgia and funny reels.',
+        footer_nav: 'NAVIGATE',
+        footer_about_site: 'ABOUT THE SITE',
+        footer_about_desc: 'A project dedicated to Romanian humor. All jokes are meant for fun and good vibes!',
+        footer_follow: 'FOLLOW US!',
+        follow_yt: 'Find us on YouTube!',
+        footer_copy: 'Made with \u2764 for Romanian laughter &copy; 2026',
+        footer_disclaimer: 'Any resemblance to real persons is purely coincidental. Content is created exclusively for entertainment purposes.'
+    }
+};
+
+var currentLang = localStorage.getItem('siteLang') || 'ro';
+
+function setLang(lang) {
+    currentLang = lang;
+    localStorage.setItem('siteLang', lang);
+    document.documentElement.lang = lang;
+    applyTranslations(lang);
+    document.getElementById('langRO').classList.toggle('active', lang === 'ro');
+    document.getElementById('langEN').classList.toggle('active', lang === 'en');
+}
+
+function applyTranslations(lang) {
+    var t = translations[lang];
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) { el.textContent = t[key]; }
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n-html');
+        if (t[key] !== undefined) { el.innerHTML = t[key]; }
+    });
+    var logoEl = document.querySelector('[data-i18n="logo"]');
+    if (logoEl && t['logo']) { logoEl.innerHTML = t['logo']; }
+    if (lang === 'en') {
+        document.title = 'How Can You Support Us? | Entertainment & Funny Jokes';
+    } else {
+        document.title = 'Cum Ne Po\u021bi Sus\u021bine? | Divertisment \u0219i Glume Haioase';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() { setLang(currentLang); });
+
+// === MOBILE MENU ===
+function openMobileMenu() {
+    document.getElementById('mobileNav').classList.add('active');
+    document.getElementById('mobileOverlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+function closeMobileMenu() {
+    document.getElementById('mobileNav').classList.remove('active');
+    document.getElementById('mobileOverlay').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// === METHOD EXPAND ===
 function toggleMethod(btn) {
     var details = btn.nextElementSibling;
     btn.classList.toggle('open');
     details.classList.toggle('show');
 }
+
+// === SCROLL TO TOP ===
 window.addEventListener('scroll', function() {
     var btn = document.getElementById('scrollTopBtn');
     if (window.scrollY > 400) { btn.classList.add('show'); } else { btn.classList.remove('show'); }

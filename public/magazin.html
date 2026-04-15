@@ -84,6 +84,12 @@ a{text-decoration:none;color:inherit}
   .info-banner{padding:15px;gap:15px}
 }
 
+/* Lang Toggle */
+.lang-toggle{display:flex;align-items:center;border:2px solid #1a1a2e;overflow:hidden;border-radius:15px;flex-shrink:0}
+.lang-btn{font-family:'Bangers',cursive;font-size:.8rem;padding:4px 8px;background:#fff;color:#1a1a2e;cursor:pointer;transition:.3s;border:none}
+.lang-btn.active{background:#FF3B3B;color:#fff}
+.lang-btn:not(.active):hover{background:rgba(255,59,59,.1)}
+
 /* Messenger Float */
 .messenger-float{position:fixed;bottom:20px;right:20px;width:50px;height:50px;background:#0084FF;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 15px rgba(0,132,255,.4);z-index:999;transition:.3s}
 .messenger-float:hover{transform:scale(1.1)}
@@ -103,20 +109,25 @@ a{text-decoration:none;color:inherit}
     <div class="logo-icon">😂</div>
     <div class="logo-text">Divertisment și<br><span>Glume Haioase</span></div>
   </a>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="langRO" onclick="setLang('ro')">RO</button>
+    <button class="lang-btn" id="langEN" onclick="setLang('en')">EN</button>
+  </div>
   <nav class="nav">
-    <a href="/">ACASA</a>
-    <a href="/bancuri">BANCURI</a>
-    <a href="/meme">MEME</a>
-    <a href="/reeluri">REELURI</a>
-    <a href="/nostalgie">NOSTALGIE</a>
-    <a href="/despre">DESPRE</a>
-    <a href="/magazin" class="active">MAGAZIN</a>
+    <a href="/" data-i18n="nav_home">ACASA</a>
+    <a href="/bancuri" data-i18n="nav_jokes">BANCURI</a>
+    <a href="/meme" data-i18n="nav_memes">MEME</a>
+    <a href="/reeluri" data-i18n="nav_reels">REELURI</a>
+    <a href="/noutati" data-i18n="nav_news">NOUTATI</a>
+    <a href="/nostalgie" data-i18n="nav_nostalgia">NOSTALGIE</a>
+    <a href="/despre" data-i18n="nav_about">DESPRE</a>
+    <a href="/magazin" class="active" data-i18n="nav_shop">MAGAZIN</a>
   </nav>
   <div class="social-icons">
-    <a href="https://www.facebook.com/divertismentsiglumehaioase" class="si-fb" title="Facebook">f</a>
-    <a href="https://www.facebook.com/groups/glumehaioase" class="si-gr" title="Grup">G</a>
-    <a href="https://m.me/divertismentsiglumehaioase" class="si-ms" title="Messenger">💬</a>
-    <a href="https://www.instagram.com/virelochianu" class="si-ig" title="Instagram">📷</a>
+    <a href="https://www.facebook.com/share/1CkszCSb6U/" class="si-fb" title="Facebook">f</a>
+    <a href="https://www.facebook.com/share/g/1CZAM1XhgS/" class="si-gr" title="Grup">G</a>
+    <a href="https://m.me/ViorelOchianu" class="si-ms" title="Messenger">💬</a>
+    <a href="https://www.instagram.com/viorelochianu/" class="si-ig" title="Instagram">📷</a>
     <a href="https://www.youtube.com/@divertismentsiglumehaioase" class="si-yt" title="YouTube">▶</a>
   </div>
 </div>
@@ -124,35 +135,35 @@ a{text-decoration:none;color:inherit}
 
 <!-- Hero Banner -->
 <section class="shop-hero">
-  <h1>🛒 Magazin Oficial D&GH</h1>
-  <p>Produse oficiale "Divertisment și Glume Haioase" — tricouri, polo, șepci și căni cu mascota noastră!</p>
-  <div class="badge">✨ EDIȚIE LIMITATĂ — LIVRARE ÎN TOATĂ ROMANIA</div>
+  <h1 data-i18n="m_hero_title">🛒 Magazin Oficial D&GH</h1>
+  <p data-i18n="m_hero_desc">Produse oficiale "Divertisment și Glume Haioase" — tricouri, polo, șepci și căni cu mascota noastră!</p>
+  <div class="badge" data-i18n="m_hero_badge">✨ EDIȚIE LIMITATĂ — LIVRARE ÎN TOATĂ ROMANIA</div>
 </section>
 
 <!-- Info Banner -->
 <div class="info-banner" style="margin:20px auto;max-width:1200px;padding:15px 20px">
-  <div class="info-item"><span class="icon">🚚</span> Livrare Gratuită peste 150 RON</div>
-  <div class="info-item"><span class="icon">🔄</span> Retur Gratuit 30 Zile</div>
-  <div class="info-item"><span class="icon">💳</span> Plată Securizată</div>
-  <div class="info-item"><span class="icon">📦</span> Expediere în 24-48h</div>
+  <div class="info-item"><span class="icon">🚚</span> <span data-i18n="m_info1">Livrare Gratuită peste 150 RON</span></div>
+  <div class="info-item"><span class="icon">🔄</span> <span data-i18n="m_info2">Retur Gratuit 30 Zile</span></div>
+  <div class="info-item"><span class="icon">💳</span> <span data-i18n="m_info3">Plată Securizată</span></div>
+  <div class="info-item"><span class="icon">📦</span> <span data-i18n="m_info4">Expediere în 24-48h</span></div>
 </div>
 
 <!-- Filter Bar -->
 <div class="filter-bar">
-  <button class="filter-btn active" onclick="filterProducts('all')">TOATE</button>
-  <button class="filter-btn" onclick="filterProducts('barbati-crew')">👕 BĂRBAȚI - CREW</button>
-  <button class="filter-btn" onclick="filterProducts('barbati-polo')">👔 BĂRBAȚI - POLO</button>
-  <button class="filter-btn" onclick="filterProducts('dama-crew')">👚 DAME - CREW</button>
-  <button class="filter-btn" onclick="filterProducts('dama-polo')">👗 DAME - POLO</button>
-  <button class="filter-btn" onclick="filterProducts('sepci')">🧢 ȘEPCI</button>
-  <button class="filter-btn" onclick="filterProducts('cani')">☕ CĂNI</button>
+  <button class="filter-btn active" onclick="filterProducts('all')" data-i18n="m_filter_all">TOATE</button>
+  <button class="filter-btn" onclick="filterProducts('barbati-crew')" data-i18n="m_filter_mc">👕 BĂRBAȚI - CREW</button>
+  <button class="filter-btn" onclick="filterProducts('barbati-polo')" data-i18n="m_filter_mp">👔 BĂRBAȚI - POLO</button>
+  <button class="filter-btn" onclick="filterProducts('dama-crew')" data-i18n="m_filter_wc">👚 DAME - CREW</button>
+  <button class="filter-btn" onclick="filterProducts('dama-polo')" data-i18n="m_filter_wp">👗 DAME - POLO</button>
+  <button class="filter-btn" onclick="filterProducts('sepci')" data-i18n="m_filter_caps">🧢 ȘEPCI</button>
+  <button class="filter-btn" onclick="filterProducts('cani')" data-i18n="m_filter_mugs">☕ CĂNI</button>
 </div>
 
 <!-- Products -->
 <div class="products-section">
 
   <!-- BARBATI CREW NECK -->
-  <h2 class="section-title" id="barbati-crew">👕 Tricouri Bărbați — La Baza Gâtului</h2>
+  <h2 class="section-title" id="barbati-crew" data-i18n="m_sec_mc">👕 Tricouri Bărbați — La Baza Gâtului</h2>
   <div class="products-grid">
     <div class="product-card" data-category="barbati-crew">
       <span class="badge-cat">BĂRBAȚI</span>
@@ -191,7 +202,7 @@ a{text-decoration:none;color:inherit}
   </div>
 
   <!-- BARBATI POLO -->
-  <h2 class="section-title" id="barbati-polo">👔 Polo Bărbați — Cu Guler</h2>
+  <h2 class="section-title" id="barbati-polo" data-i18n="m_sec_mp">👔 Polo Bărbați — Cu Guler</h2>
   <div class="products-grid">
     <div class="product-card" data-category="barbati-polo">
       <span class="badge-cat">POLO</span>
@@ -230,7 +241,7 @@ a{text-decoration:none;color:inherit}
   </div>
 
   <!-- DAME CREW NECK -->
-  <h2 class="section-title" id="dama-crew">👚 Tricouri Dame — La Baza Gâtului</h2>
+  <h2 class="section-title" id="dama-crew" data-i18n="m_sec_wc">👚 Tricouri Dame — La Baza Gâtului</h2>
   <div class="products-grid">
     <div class="product-card" data-category="dama-crew">
       <span class="badge-cat">DAME</span>
@@ -269,7 +280,7 @@ a{text-decoration:none;color:inherit}
   </div>
 
   <!-- DAME POLO -->
-  <h2 class="section-title" id="dama-polo">👗 Polo Dame — Cu Guler</h2>
+  <h2 class="section-title" id="dama-polo" data-i18n="m_sec_wp">👗 Polo Dame — Cu Guler</h2>
   <div class="products-grid">
     <div class="product-card" data-category="dama-polo">
       <span class="badge-cat">POLO DAME</span>
@@ -308,7 +319,7 @@ a{text-decoration:none;color:inherit}
   </div>
 
   <!-- SEPCI -->
-  <h2 class="section-title" id="sepci">🧢 Șepci D&GH</h2>
+  <h2 class="section-title" id="sepci" data-i18n="m_sec_caps">🧢 Șepci D&GH</h2>
   <div class="products-grid">
     <div class="product-card" data-category="sepci">
       <span class="badge-cat">ȘAPCĂ</span>
@@ -336,7 +347,7 @@ a{text-decoration:none;color:inherit}
   </div>
 
   <!-- CANI -->
-  <h2 class="section-title" id="cani">☕ Căni D&GH</h2>
+  <h2 class="section-title" id="cani" data-i18n="m_sec_mugs">☕ Căni D&GH</h2>
   <div class="products-grid">
     <div class="product-card" data-category="cani">
       <span class="badge-cat">CANĂ</span>
@@ -373,48 +384,49 @@ a{text-decoration:none;color:inherit}
       <div class="logo-icon">😂</div>
       <div class="logo-text">Divertisment și<br><span style="color:#FFD700">Glume Haioase</span></div>
     </div>
-    <p style="font-size:.85rem;color:#aaa;margin-bottom:8px">Cel mai haios colț al internetului românesc!</p>
+    <p style="font-size:.85rem;color:#aaa;margin-bottom:8px" data-i18n="footer_desc">Cel mai haios colț al internetului românesc!</p>
     <p style="font-size:.8rem;color:#888">Viorel Ochianu</p>
     <div class="footer-social">
-      <a href="https://www.facebook.com/divertismentsiglumehaioase" style="background:#1877F2">PAGINA</a>
-      <a href="https://www.facebook.com/groups/glumehaioase" style="background:#FF6B35">GRUP</a>
-      <a href="https://m.me/divertismentsiglumehaioase" style="background:#0084FF">MESAJ</a>
-      <a href="https://www.instagram.com/virelochianu" style="background:linear-gradient(45deg,#f09433,#dc2743)">INSTAGRAM</a>
+      <a href="https://www.facebook.com/share/1CkszCSb6U/" style="background:#1877F2">PAGINA</a>
+      <a href="https://www.facebook.com/share/g/1CZAM1XhgS/" style="background:#FF6B35">GRUP</a>
+      <a href="https://m.me/ViorelOchianu" style="background:#0084FF">MESAJ</a>
+      <a href="https://www.instagram.com/viorelochianu/" style="background:linear-gradient(45deg,#f09433,#dc2743)">INSTAGRAM</a>
       <a href="https://www.youtube.com/@divertismentsiglumehaioase" style="background:#FF0000">YOUTUBE</a>
     </div>
   </div>
   <div class="footer-col">
-    <h3>NAVIGARE</h3>
-    <a href="/">Acasă</a>
-    <a href="/bancuri">Bancuri</a>
-    <a href="/meme">Meme</a>
-    <a href="/reeluri">Reeluri</a>
-    <a href="/nostalgie">Nostalgie</a>
-    <a href="/despre">Despre</a>
-    <a href="/magazin">Magazin</a>
-    <a href="/confidentialitate">Confidențialitate</a>
-    <a href="/termeni">Termeni și Condiții</a>
-    <a href="/sustine">Susține-ne</a>
+    <h3 data-i18n="footer_nav">NAVIGARE</h3>
+    <a href="/" data-i18n="nav_home_lc">Acasă</a>
+    <a href="/bancuri" data-i18n="nav_jokes_lc">Bancuri</a>
+    <a href="/meme" data-i18n="nav_memes_lc">Meme</a>
+    <a href="/reeluri" data-i18n="nav_reels_lc">Reeluri</a>
+    <a href="/noutati" data-i18n="nav_news_lc">Noutati</a>
+    <a href="/nostalgie" data-i18n="nav_nostalgia_lc">Nostalgie</a>
+    <a href="/despre" data-i18n="nav_about_lc">Despre</a>
+    <a href="/magazin" data-i18n="nav_shop_lc">Magazin</a>
+    <a href="/confidentialitate" data-i18n="nav_privacy">Confidențialitate</a>
+    <a href="/termeni" data-i18n="nav_terms">Termeni și Condiții</a>
+    <a href="/sustine" data-i18n="nav_support">Susține-ne</a>
   </div>
   <div class="footer-col">
-    <h3>DESPRE MAGAZIN</h3>
-    <p style="font-size:.85rem;color:#aaa;margin-bottom:10px">Produse oficiale cu branding-ul D&GH. Toate produsele sunt realizate din materiale de calitate superioară.</p>
-    <h3 style="margin-top:15px">URMĂREȘTE-NE!</h3>
-    <a href="https://www.facebook.com/divertismentsiglumehaioase">🔵 Pagina: Divertisment și glume haioase</a>
-    <a href="https://www.facebook.com/groups/glumehaioase">🟠 Grupul nostru de umor</a>
-    <a href="https://www.instagram.com/virelochianu">📷 @virelochianu pe Instagram</a>
+    <h3 data-i18n="m_about_shop">DESPRE MAGAZIN</h3>
+    <p style="font-size:.85rem;color:#aaa;margin-bottom:10px" data-i18n="m_about_shop_desc">Produse oficiale cu branding-ul D&GH. Toate produsele sunt realizate din materiale de calitate superioară.</p>
+    <h3 style="margin-top:15px" data-i18n="footer_follow">URMĂREȘTE-NE!</h3>
+    <a href="https://www.facebook.com/share/1CkszCSb6U/">🟢 Pagina: Divertisment și glume haioase</a>
+    <a href="https://www.facebook.com/share/g/1CZAM1XhgS/">🟠 Grupul nostru de umor</a>
+    <a href="https://www.instagram.com/viorelochianu/">📷 @viorelochianu pe Instagram</a>
     <a href="https://www.youtube.com/@divertismentsiglumehaioase">🔴 @divertismentsiglumehaioase pe YouTube</a>
   </div>
 </div>
 <div class="footer-bottom">
-  Făcut cu ❤️ pentru râsul românesc © 2026<br>
+  <span data-i18n-html="footer_copy">Făcut cu ❤️ pentru râsul românesc © 2026</span><br>
   <a href="/confidentialitate" style="color:#FF3B3B">Confidențialitate</a> · <a href="/termeni" style="color:#FF3B3B">Termeni și Condiții</a> · <a href="#" style="color:#FF3B3B">Preferințe Cookie</a><br>
-  <small>Orice asemănare cu persoane reale este pur întâmplătoare. Conținutul este creat exclusiv în scop de divertisment.</small>
+  <small data-i18n="footer_disclaimer">Orice asemănare cu persoane reale este pur întâmplătoare. Conținutul este creat exclusiv în scop de divertisment.</small>
 </div>
 </footer>
 
 <!-- Messenger Float -->
-<a href="https://m.me/divertismentsiglumehaioase" class="messenger-float" target="_blank">
+<a href="https://m.me/ViorelOchianu" class="messenger-float" target="_blank">
   <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.908 1.434 5.503 3.678 7.2V22l3.378-1.855c.9.25 1.855.384 2.944.384 5.523 0 10-4.145 10-9.243S17.523 2 12 2zm1.076 12.457l-2.55-2.72-4.98 2.72 5.476-5.813 2.612 2.72 4.918-2.72-5.476 5.813z"/></svg>
 </a>
 
@@ -422,6 +434,96 @@ a{text-decoration:none;color:inherit}
 <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <script>
+// === TRANSLATION DICTIONARY ===
+var translations = {
+    ro: {
+        nav_home: 'ACASA', nav_jokes: 'BANCURI', nav_memes: 'MEME', nav_reels: 'REELURI',
+        nav_news: 'NOUTATI', nav_nostalgia: 'NOSTALGIE', nav_about: 'DESPRE', nav_shop: 'MAGAZIN',
+        nav_home_lc: 'Acasa', nav_jokes_lc: 'Bancuri', nav_memes_lc: 'Meme', nav_reels_lc: 'Reeluri',
+        nav_news_lc: 'Noutati', nav_nostalgia_lc: 'Nostalgie', nav_about_lc: 'Despre', nav_shop_lc: 'Magazin',
+        nav_privacy: 'Confidentialitate', nav_terms: 'Termeni si Conditii', nav_support: 'Sustine-ne',
+        m_hero_title: '\uD83D\uDED2 Magazin Oficial D&GH',
+        m_hero_desc: 'Produse oficiale "Divertisment \u0219i Glume Haioase" \u2014 tricouri, polo, \u0219epci \u0219i c\u0103ni cu mascota noastr\u0103!',
+        m_hero_badge: '\u2728 EDI\u021aIE LIMITAT\u0102 \u2014 LIVRARE \u00ceN TOAT\u0102 ROMANIA',
+        m_info1: 'Livrare Gratuit\u0103 peste 150 RON', m_info2: 'Retur Gratuit 30 Zile',
+        m_info3: 'Plat\u0103 Securizat\u0103', m_info4: 'Expediere \u00een 24-48h',
+        m_filter_all: 'TOATE', m_filter_mc: '\uD83D\uDC55 B\u0102RBA\u021aI - CREW',
+        m_filter_mp: '\uD83D\uDC54 B\u0102RBA\u021aI - POLO', m_filter_wc: '\uD83D\uDC5A DAME - CREW',
+        m_filter_wp: '\uD83D\uDC57 DAME - POLO', m_filter_caps: '\uD83E\uDDE2 \u0218EPCI',
+        m_filter_mugs: '\u2615 C\u0102NI',
+        m_sec_mc: '\uD83D\uDC55 Tricouri B\u0103rba\u021bi \u2014 La Baza G\u00e2tului',
+        m_sec_mp: '\uD83D\uDC54 Polo B\u0103rba\u021bi \u2014 Cu Guler',
+        m_sec_wc: '\uD83D\uDC5A Tricouri Dame \u2014 La Baza G\u00e2tului',
+        m_sec_wp: '\uD83D\uDC57 Polo Dame \u2014 Cu Guler',
+        m_sec_caps: '\uD83E\uDDE2 \u0218epci D&GH',
+        m_sec_mugs: '\u2615 C\u0103ni D&GH',
+        m_about_shop: 'DESPRE MAGAZIN',
+        m_about_shop_desc: 'Produse oficiale cu branding-ul D&GH. Toate produsele sunt realizate din materiale de calitate superioar\u0103.',
+        footer_desc: 'Cel mai haios col\u021b al internetului rom\u00e2nesc!',
+        footer_nav: 'NAVIGARE', footer_follow: 'URM\u0102RE\u0218TE-NE!',
+        footer_copy: 'F\u0103cut cu \u2764\uFE0F pentru r\u00e2sul rom\u00e2nesc \u00A9 2026',
+        footer_disclaimer: 'Orice asem\u0103nare cu persoane reale este pur \u00eent\u00e2mpl\u0103toare. Con\u021binutul este creat exclusiv \u00een scop de divertisment.'
+    },
+    en: {
+        nav_home: 'HOME', nav_jokes: 'JOKES', nav_memes: 'MEMES', nav_reels: 'REELS',
+        nav_news: 'NEWS', nav_nostalgia: 'NOSTALGIA', nav_about: 'ABOUT', nav_shop: 'SHOP',
+        nav_home_lc: 'Home', nav_jokes_lc: 'Jokes', nav_memes_lc: 'Memes', nav_reels_lc: 'Reels',
+        nav_news_lc: 'News', nav_nostalgia_lc: 'Nostalgia', nav_about_lc: 'About', nav_shop_lc: 'Shop',
+        nav_privacy: 'Privacy Policy', nav_terms: 'Terms & Conditions', nav_support: 'Support Us',
+        m_hero_title: '\uD83D\uDED2 Official D&GH Shop',
+        m_hero_desc: 'Official "Entertainment & Funny Jokes" products \u2014 t-shirts, polos, caps and mugs with our mascot!',
+        m_hero_badge: '\u2728 LIMITED EDITION \u2014 SHIPPING ACROSS ROMANIA',
+        m_info1: 'Free Shipping over 150 RON', m_info2: 'Free Returns 30 Days',
+        m_info3: 'Secure Payment', m_info4: 'Shipping in 24-48h',
+        m_filter_all: 'ALL', m_filter_mc: '\uD83D\uDC55 MEN - CREW',
+        m_filter_mp: '\uD83D\uDC54 MEN - POLO', m_filter_wc: '\uD83D\uDC5A WOMEN - CREW',
+        m_filter_wp: '\uD83D\uDC57 WOMEN - POLO', m_filter_caps: '\uD83E\uDDE2 CAPS',
+        m_filter_mugs: '\u2615 MUGS',
+        m_sec_mc: '\uD83D\uDC55 Men\u2019s T-Shirts \u2014 Crew Neck',
+        m_sec_mp: '\uD83D\uDC54 Men\u2019s Polo \u2014 Collared',
+        m_sec_wc: '\uD83D\uDC5A Women\u2019s T-Shirts \u2014 Crew Neck',
+        m_sec_wp: '\uD83D\uDC57 Women\u2019s Polo \u2014 Collared',
+        m_sec_caps: '\uD83E\uDDE2 D&GH Caps',
+        m_sec_mugs: '\u2615 D&GH Mugs',
+        m_about_shop: 'ABOUT THE SHOP',
+        m_about_shop_desc: 'Official D&GH branded products. All items are made from premium quality materials.',
+        footer_desc: 'The funniest corner of the Romanian internet!',
+        footer_nav: 'NAVIGATE', footer_follow: 'FOLLOW US!',
+        footer_copy: 'Made with \u2764\uFE0F for Romanian laughter \u00A9 2026',
+        footer_disclaimer: 'Any resemblance to real persons is purely coincidental. Content is created exclusively for entertainment purposes.'
+    }
+};
+
+var currentLang = localStorage.getItem('siteLang') || 'ro';
+
+function setLang(lang) {
+    currentLang = lang;
+    localStorage.setItem('siteLang', lang);
+    document.documentElement.lang = lang;
+    applyTranslations(lang);
+    document.getElementById('langRO').classList.toggle('active', lang === 'ro');
+    document.getElementById('langEN').classList.toggle('active', lang === 'en');
+}
+
+function applyTranslations(lang) {
+    var t = translations[lang];
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) { el.textContent = t[key]; }
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n-html');
+        if (t[key] !== undefined) { el.innerHTML = t[key]; }
+    });
+    if (lang === 'en') {
+        document.title = 'Shop | Entertainment & Funny Jokes';
+    } else {
+        document.title = 'Magazin | Divertisment \u0219i Glume Haioase';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() { setLang(currentLang); });
+
 // Filter products
 function filterProducts(cat) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));

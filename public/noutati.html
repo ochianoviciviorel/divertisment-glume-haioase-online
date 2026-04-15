@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Noutati - Divertisment si Glume Haioase</title>
+    <meta name="description" content="Ultimele noutati de pe canalele noastre: YouTube Shorts, videoclipuri si postari Facebook.">
+    <meta name="theme-color" content="#E53935">
+    <link rel="canonical" href="https://www.divertismentsiglumehaioase.com/noutati">
+    <meta property="og:site_name" content="Divertisment si Glume Haioase">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.divertismentsiglumehaioase.com/noutati">
+    <meta property="og:title" content="Noutati - Divertisment si Glume Haioase">
+    <meta property="og:description" content="Ultimele noutati de pe YouTube si Facebook!">
+    <meta property="og:locale" content="ro_RO">
+    <meta property="og:image" content="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/FhpRMpBhfdDCgpPE.png">
+    <meta name="robots" content="index, follow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap&subset=latin-ext" rel="stylesheet">
+    <style>
+        /* === RESET & BASE === */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+        body { font-family: 'Nunito', sans-serif; background: #f5edd8; color: #1a1a19; line-height: 1.5; }
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; height: auto; display: block; }
+        button { cursor: pointer; border: none; background: none; font: inherit; }
+
+        .font-comic { font-family: 'Fredoka', sans-serif; font-weight: 600; letter-spacing: 0.03em; }
+
+        :root {
+            --comic-red: #df202e;
+            --comic-blue: #0061be;
+            --comic-green: #008a23;
+            --comic-yellow: #ffd16b;
+            --comic-orange: #f68000;
+            --comic-cream: #f8f1e3;
+            --foreground: #1a1a19;
+            --background: #f5edd8;
+        }
+
+        /* === FLOATING BUTTONS === */
+        .scroll-top-btn { position: fixed; bottom: 24px; left: 24px; width: 44px; height: 44px; background: var(--foreground); color: #fff; border: 2px solid var(--comic-yellow); border-radius: 50%; display: none; align-items: center; justify-content: center; cursor: pointer; z-index: 90; box-shadow: 0 2px 8px rgba(0,0,0,0.3); transition: all 0.2s; }
+        .scroll-top-btn:hover { background: var(--comic-yellow); color: var(--foreground); }
+        .scroll-top-btn.show { display: flex; }
+        .messenger-float { position: fixed; bottom: 24px; right: 24px; width: 50px; height: 50px; background: #0084FF; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 90; box-shadow: 0 3px 12px rgba(0,132,255,0.4); transition: transform 0.2s; }
+        .messenger-float:hover { transform: scale(1.1); }
+        .messenger-float svg { width: 26px; height: 26px; }
+        .footer-social-btn { display: inline-flex; align-items: center; gap: 6px; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 11px; padding: 5px 12px; border: 2px solid rgba(255,255,255,0.3); border-radius: 4px; color: #fff; margin: 3px 4px 3px 0; transition: all 0.15s; }
+        .footer-social-btn:hover { border-color: var(--comic-yellow); }
+
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+        @media (min-width: 768px) { .container { padding: 0 24px; } }
+
+        .comic-panel { background: #fff; border: 2px solid var(--foreground); position: relative; box-shadow: 3px 3px var(--foreground); }
+        .comic-btn { font-family: 'Fredoka', sans-serif; font-weight: 600; letter-spacing: 0.03em; border: 2px solid var(--foreground); box-shadow: 3px 3px var(--foreground); transition: all 0.15s; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+        .comic-btn:hover { box-shadow: none; transform: translate(3px, 3px); }
+        .comic-badge { font-family: 'Fredoka', sans-serif; font-weight: 600; letter-spacing: 0.03em; border: 2px solid var(--foreground); display: inline-flex; align-items: center; gap: 6px; box-shadow: 2px 2px var(--foreground); }
+        .halftone-bg { background-image: radial-gradient(circle, rgba(14,10,7,0.06) 1px, transparent 1px); background-size: 12px 12px; }
+
+        /* === HEADER === */
+        .site-header { position: sticky; top: 0; z-index: 100; background: var(--comic-yellow); border-bottom: 3px solid var(--foreground); }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 8px 0; gap: 8px; }
+        .logo-link { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+        .logo-img { width: 36px; height: 36px; border-radius: 50%; border: 2px solid var(--foreground); box-shadow: 2px 2px 0 var(--foreground); object-fit: cover; }
+        .logo-text { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 14px; color: var(--foreground); letter-spacing: 0.02em; line-height: 1.2; }
+        .logo-text .red { color: var(--comic-red); }
+
+        .social-header { display: none; align-items: center; gap: 4px; }
+        .social-icon-btn { width: 34px; height: 34px; border: 2px solid var(--foreground); box-shadow: 2px 2px 0 var(--foreground); display: flex; align-items: center; justify-content: center; color: #fff; transition: all 0.15s; }
+        .social-icon-btn:hover { box-shadow: none; transform: translate(2px, 2px); }
+        .social-icon-btn svg { width: 16px; height: 16px; }
+
+        .desktop-nav { display: none; align-items: center; gap: 2px; }
+        .nav-link { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 12px; padding: 6px 12px; letter-spacing: 0.05em; border: 2px solid transparent; transition: all 0.15s; }
+        .nav-link:hover { background: rgba(223, 32, 46, 0.1); border-color: var(--foreground); }
+        .nav-link.active { background: var(--comic-red); color: #fff; border-color: var(--foreground); box-shadow: 2px 2px 0 var(--foreground); }
+
+        .lang-toggle { display: flex; align-items: center; border: 2px solid var(--foreground); box-shadow: 2px 2px 0 var(--foreground); overflow: hidden; flex-shrink: 0; }
+        .lang-btn { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 11px; padding: 5px 8px; background: #fff; color: var(--foreground); cursor: pointer; transition: all 0.15s; display: flex; align-items: center; gap: 3px; border: none; }
+        .lang-btn.active { background: var(--comic-red); color: #fff; }
+        .lang-btn:not(.active):hover { background: rgba(223, 32, 46, 0.1); }
+
+        .hamburger-btn { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; flex-shrink: 0; }
+        .hamburger-btn svg { width: 22px; height: 22px; }
+        @media (min-width: 900px) { .hamburger-btn { display: none; } .desktop-nav { display: flex; } .social-header { display: flex; } }
+
+        /* === PAGE HERO === */
+        .page-hero { background: var(--comic-red); border-bottom: 3px solid var(--foreground); padding: 28px 0 24px; text-align: center; }
+        .page-hero h1 { font-family: 'Fredoka', sans-serif; font-size: clamp(24px, 5vw, 36px); color: #fff; font-weight: 700; letter-spacing: 0.03em; margin-bottom: 4px; }
+        .page-hero p { color: rgba(255,255,255,0.85); font-size: 14px; max-width: 500px; margin: 0 auto; }
+
+        /* === SECTION STYLING === */
+        .news-section { padding: 28px 0 20px; }
+        .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+        .section-header .comic-badge { font-size: 11px; padding: 4px 10px; }
+        .section-header h2 { font-family: 'Fredoka', sans-serif; font-size: clamp(18px, 4vw, 24px); font-weight: 700; }
+
+        /* === SHORTS GRID === */
+        .shorts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; margin-bottom: 16px; }
+        .short-card { border-radius: 12px; overflow: hidden; position: relative; aspect-ratio: 9/16; background: #000; }
+        .short-card iframe { width: 100%; height: 100%; border: none; }
+        .short-card-info { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.85)); padding: 24px 8px 8px; color: #fff; }
+        .short-card-title { font-family: 'Fredoka', sans-serif; font-size: 11px; font-weight: 600; display: block; margin-bottom: 2px; line-height: 1.3; }
+        .short-card-views { font-size: 10px; opacity: 0.7; }
+
+        /* === VIDEOS GRID === */
+        .videos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin-bottom: 16px; }
+        .video-card { overflow: hidden; }
+        .video-card .video-embed { position: relative; padding-bottom: 56.25%; height: 0; background: #000; border: 2px solid var(--foreground); }
+        .video-card .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        .video-card-body { padding: 8px 10px; }
+        .video-card-title { font-family: 'Fredoka', sans-serif; font-size: 13px; font-weight: 600; margin-bottom: 2px; }
+        .video-card-views { font-size: 11px; color: #666; }
+
+        /* === FACEBOOK SECTION === */
+        .fb-posts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin-bottom: 16px; }
+        .fb-post-card { padding: 12px; }
+        .fb-post-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+        .fb-post-avatar { width: 36px; height: 36px; border-radius: 50%; border: 2px solid var(--comic-yellow); }
+        .fb-post-name { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 13px; }
+        .fb-post-time { font-size: 11px; color: #888; }
+        .fb-post-text { font-size: 13px; line-height: 1.5; margin-bottom: 10px; color: #333; }
+        .fb-post-image { width: 100%; border-radius: 6px; border: 1px solid #eee; }
+        .fb-post-reactions { display: flex; align-items: center; gap: 6px; margin-top: 8px; font-size: 12px; color: #666; }
+
+        /* === CTA BUTTON === */
+        .cta-row { text-align: center; margin: 8px 0 20px; }
+        .cta-row .comic-btn { font-size: 12px; padding: 8px 20px; text-decoration: none; }
+
+        /* === DIVIDER === */
+        .section-divider { border: none; border-top: 3px dashed var(--foreground); margin: 0; opacity: 0.15; }
+
+        /* === MOBILE MENU === */
+        .mobile-menu-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 998; }
+        .mobile-menu-overlay.active { display: block; }
+        .mobile-nav { display: none; position: fixed; top: 0; right: 0; width: 260px; height: 100vh; background: var(--comic-yellow); z-index: 999; flex-direction: column; padding: 60px 20px 20px; gap: 4px; box-shadow: -4px 0 20px rgba(0,0,0,0.2); overflow-y: auto; transform: translateX(100%); transition: transform 0.3s ease; }
+        .mobile-nav.active { display: flex; transform: translateX(0); }
+        .mobile-nav a { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 15px; color: var(--foreground); padding: 10px 16px; border-radius: 6px; letter-spacing: 0.5px; transition: background 0.15s; }
+        .mobile-nav a:hover, .mobile-nav a.active-page { background: var(--comic-red); color: #fff; }
+        .mobile-nav .close-btn { position: absolute; top: 12px; right: 12px; font-size: 28px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; color: var(--foreground); }
+        .mobile-nav .mob-social { display: flex; gap: 8px; padding: 10px 16px; margin-top: 8px; border-top: 2px solid rgba(0,0,0,0.1); }
+        .mobile-nav .mob-social a { padding: 0; width: 36px; height: 36px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; }
+
+        /* === FOOTER === */
+        .site-footer { background: var(--foreground); color: var(--comic-cream); padding: 28px 0 16px; border-top: 4px solid var(--comic-yellow); }
+        .footer-grid { display: grid; grid-template-columns: 1fr; gap: 24px; margin-bottom: 20px; }
+        @media (min-width: 768px) { .footer-grid { grid-template-columns: 1fr 1fr 1fr; } }
+        .footer-title { font-family: 'Fredoka', sans-serif; font-size: 13px; letter-spacing: 0.1em; color: var(--comic-yellow); margin-bottom: 8px; }
+        .footer-link { display: block; font-size: 13px; color: rgba(248,241,227,0.7); padding: 3px 0; transition: color 0.15s; }
+        .footer-link:hover { color: var(--comic-yellow); }
+        .footer-social-link { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(248,241,227,0.7); padding: 4px 0; transition: color 0.15s; }
+        .footer-social-link:hover { color: var(--comic-yellow); }
+        .footer-bottom { border-top: 1px solid rgba(248,241,227,0.1); padding-top: 14px; text-align: center; }
+        .footer-copy { font-family: 'Fredoka', sans-serif; font-size: 13px; color: var(--comic-yellow); margin-bottom: 4px; }
+        .footer-legal { font-size: 11px; color: rgba(248,241,227,0.4); margin-bottom: 4px; }
+        .footer-legal a { color: rgba(248,241,227,0.5); margin: 0 4px; }
+        .footer-legal a:hover { color: var(--comic-yellow); }
+        .footer-disclaimer { font-size: 11px; color: rgba(248,241,227,0.3); max-width: 500px; margin: 0 auto; }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-in { animation: fadeInUp 0.5s ease forwards; }
+
+        @media (max-width: 500px) {
+            .shorts-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+            .videos-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DVRWDJEZ3M"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DVRWDJEZ3M');
+    </script>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            <a href="/" class="logo-link">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/FhpRMpBhfdDCgpPE.png" alt="Logo Divertisment si Glume Haioase" class="logo-img">
+                <span class="logo-text" data-i18n="logo">Divertisment si<br><span class="red">Glume Haioase</span></span>
+            </a>
+            <div class="social-header">
+                <a href="https://www.facebook.com/share/1CkszCSb6U/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" style="background:#1877F2;" title="Facebook">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <a href="https://www.youtube.com/@divertismentsiglumehaioase" target="_blank" rel="noopener noreferrer" class="social-icon-btn" style="background:#FF0000;" title="YouTube">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/viorelochianu/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" style="background:linear-gradient(135deg,#F58529,#DD2A7B,#8134AF);" title="Instagram">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </a>
+            </div>
+            <div class="lang-toggle">
+                <button class="lang-btn active" id="langRO" onclick="setLang('ro')">RO</button>
+                <button class="lang-btn" id="langEN" onclick="setLang('en')">EN</button>
+            </div>
+            <nav class="desktop-nav">
+                <a href="/" class="nav-link" data-i18n="nav_home">ACASA</a>
+                <a href="/bancuri" class="nav-link" data-i18n="nav_jokes">BANCURI</a>
+                <a href="/meme" class="nav-link" data-i18n="nav_memes">MEME</a>
+                <a href="/reeluri" class="nav-link" data-i18n="nav_reels">REELURI</a>
+                <a href="/noutati" class="nav-link active" data-i18n="nav_news">NOUTATI</a>
+                <a href="/nostalgie" class="nav-link" data-i18n="nav_nostalgia">NOSTALGIE</a>
+                <a href="/despre" class="nav-link" data-i18n="nav_about">DESPRE</a>
+                <a href="/magazin" class="nav-link" data-i18n="nav_shop">MAGAZIN</a>
+            </nav>
+            <button class="hamburger-btn" aria-label="Meniu" onclick="openMobileMenu()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero">
+    <div class="container">
+        <h1 data-i18n="news_page_title">Noutati</h1>
+        <p data-i18n="news_page_subtitle">Ultimele indexari de pe canalele noastre YouTube si Facebook</p>
+    </div>
+</section>
+
+<!-- ===== YOUTUBE SHORTS (not on index.html) ===== -->
+<section class="news-section halftone-bg">
+    <div class="container">
+        <div class="section-header">
+            <span class="comic-badge" style="background:var(--comic-red);color:#fff;font-size:11px;padding:4px 10px;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
+                <span data-i18n="news_shorts_badge">YOUTUBE SHORTS</span>
+            </span>
+            <h2 data-i18n-html="news_shorts_title">Shorts <span style="color:var(--comic-red);">Noi</span></h2>
+        </div>
+        <div class="shorts-grid">
+            <!-- Short 1: Hands made by me -->
+            <a href="https://www.youtube.com/shorts/uyO9E1Km9_Q" target="_blank" rel="noopener noreferrer" class="comic-panel short-card">
+                <img src="https://i.ytimg.com/vi/uyO9E1Km9_Q/oar2.jpg" alt="Hands made by me" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                <div class="short-card-info">
+                    <span class="short-card-title" data-i18n="ns1_title">Hands made by me, Viorel Ochianu</span>
+                    <span class="short-card-views" data-i18n="ns1_views">475 vizualizari</span>
+                </div>
+            </a>
+            <!-- Short 2: Reel nostalgie v3 -->
+            <a href="https://www.youtube.com/shorts/czkRctIayIk" target="_blank" rel="noopener noreferrer" class="comic-panel short-card">
+                <img src="https://i.ytimg.com/vi/czkRctIayIk/oar2.jpg" alt="Reel nostalgie v3" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                <div class="short-card-info">
+                    <span class="short-card-title" data-i18n="ns2_title">Reel nostalgie v3</span>
+                    <span class="short-card-views" data-i18n="ns2_views">366 vizualizari</span>
+                </div>
+            </a>
+            <!-- Short 3: Cap Kaliakra -->
+            <a href="https://www.youtube.com/shorts/bMM-VWIGqXA" target="_blank" rel="noopener noreferrer" class="comic-panel short-card">
+                <img src="https://i.ytimg.com/vi/bMM-VWIGqXA/oar2.jpg" alt="Cap Kaliakra" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                <div class="short-card-info">
+                    <span class="short-card-title" data-i18n="ns3_title">O iesire la mare, Cap Kaliakra</span>
+                    <span class="short-card-views" data-i18n="ns3_views">305 vizualizari</span>
+                </div>
+            </a>
+            <!-- Short 4: Brasov -->
+            <a href="https://www.youtube.com/shorts/8BZ7gjBBq3A" target="_blank" rel="noopener noreferrer" class="comic-panel short-card">
+                <img src="https://i.ytimg.com/vi/8BZ7gjBBq3A/oar2.jpg" alt="Brasov" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                <div class="short-card-info">
+                    <span class="short-card-title" data-i18n="ns4_title">Brasov</span>
+                    <span class="short-card-views" data-i18n="ns4_views">104 vizualizari</span>
+                </div>
+            </a>
+            <!-- Short 5: Reel bancuri v3 -->
+            <a href="https://www.youtube.com/shorts/iQZXrbYx2n8" target="_blank" rel="noopener noreferrer" class="comic-panel short-card">
+                <img src="https://i.ytimg.com/vi/iQZXrbYx2n8/oar2.jpg" alt="Reel bancuri v3" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                <div class="short-card-info">
+                    <span class="short-card-title" data-i18n="ns5_title">Reel bancuri v3</span>
+                    <span class="short-card-views" data-i18n="ns5_views">65 vizualizari</span>
+                </div>
+            </a>
+            <!-- Short 6: Drama la pompa -->
+            <a href="https://www.youtube.com/shorts/jwTUBXexfMU" target="_blank" rel="noopener noreferrer" class="comic-panel short-card">
+                <img src="https://i.ytimg.com/vi/jwTUBXexfMU/oar2.jpg" alt="Drama la pompa" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                <div class="short-card-info">
+                    <span class="short-card-title" data-i18n="ns6_title">Drama la pompa: Telenovela Romaneasca 2026</span>
+                    <span class="short-card-views" data-i18n="ns6_views">40 vizualizari</span>
+                </div>
+            </a>
+        </div>
+        <div class="cta-row">
+            <a href="https://www.youtube.com/@divertismentsiglumehaioase/shorts" target="_blank" rel="noopener noreferrer" class="comic-btn" style="background:var(--comic-red);color:#fff;font-size:12px;padding:8px 20px;text-decoration:none;">
+                <span data-i18n="news_see_all_shorts">VEZI TOATE SHORTS PE YOUTUBE</span> &#8599;
+            </a>
+        </div>
+    </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ===== YOUTUBE VIDEOS (not on index.html) ===== -->
+<section class="news-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="comic-badge" style="background:#FF0000;color:#fff;font-size:11px;padding:4px 10px;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                <span data-i18n="news_videos_badge">VIDEOCLIPURI</span>
+            </span>
+            <h2 data-i18n-html="news_videos_title">Videoclipuri <span style="color:#FF0000;">YouTube</span></h2>
+        </div>
+        <div class="videos-grid">
+            <!-- Video 1: 14 aprilie 2026 -->
+            <div class="comic-panel video-card">
+                <div class="video-embed">
+                    <iframe src="https://www.youtube.com/embed/8nSd6hWHPUU" title="14 aprilie 2026" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="video-card-body">
+                    <div class="video-card-title" data-i18n="nv1_title">14 aprilie 2026</div>
+                    <div class="video-card-views" data-i18n="nv1_views">7 vizualizari</div>
+                </div>
+            </div>
+            <!-- Video 2: 13 aprilie 2026 -->
+            <div class="comic-panel video-card">
+                <div class="video-embed">
+                    <iframe src="https://www.youtube.com/embed/HlA5S9N93LE" title="13 aprilie 2026" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="video-card-body">
+                    <div class="video-card-title" data-i18n="nv2_title">13 aprilie 2026</div>
+                    <div class="video-card-views" data-i18n="nv2_views">6 vizualizari</div>
+                </div>
+            </div>
+        </div>
+        <div class="cta-row">
+            <a href="https://www.youtube.com/@divertismentsiglumehaioase/videos" target="_blank" rel="noopener noreferrer" class="comic-btn" style="background:#FF0000;color:#fff;font-size:12px;padding:8px 20px;text-decoration:none;">
+                <span data-i18n="news_see_all_videos">VEZI TOATE VIDEOCLIPURILE PE YOUTUBE</span> &#8599;
+            </a>
+        </div>
+    </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ===== FACEBOOK POSTS ===== -->
+<section class="news-section halftone-bg">
+    <div class="container">
+        <div class="section-header">
+            <span class="comic-badge" style="background:#1877F2;color:#fff;font-size:11px;padding:4px 10px;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                <span data-i18n="news_fb_badge">FACEBOOK</span>
+            </span>
+            <h2 data-i18n-html="news_fb_title">Postari <span style="color:#1877F2;">Facebook</span></h2>
+        </div>
+        <div class="fb-posts-grid">
+            <!-- FB Post 1 -->
+            <div class="comic-panel fb-post-card">
+                <div class="fb-post-header">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/FhpRMpBhfdDCgpPE.png" alt="D&GH" class="fb-post-avatar">
+                    <div>
+                        <div class="fb-post-name">Divertisment si Glume Haioase</div>
+                        <div class="fb-post-time" data-i18n="fb_post1_time">Postare recenta</div>
+                    </div>
+                </div>
+                <div class="fb-post-text" data-i18n="fb_post1_text">- Mama, cred ca tata vrea sa omoare bona?!
+- De ce crezi asta puisor?!
+- L-am auzit zicandu-i: "In noaptea asta nu mai scapi!!" 😂😂</div>
+                <a href="https://www.facebook.com/photo/?fbid=122100078416738503&set=a.122095837856738503" target="_blank" rel="noopener noreferrer" style="display:block;">
+                    <img src="https://i.ytimg.com/vi/Qn7ZVRlUtbQ/oar2.jpg" alt="Gluma haioasa" class="fb-post-image" style="background:#ffd16b;min-height:180px;">
+                </a>
+                <div class="fb-post-reactions">
+                    <span>😂 1</span>
+                    <span style="margin-left:auto;" data-i18n="fb_see_post">Vezi postarea pe Facebook &#8599;</span>
+                </div>
+            </div>
+        </div>
+        <div class="cta-row">
+            <a href="https://www.facebook.com/profile.php?id=61572155092821" target="_blank" rel="noopener noreferrer" class="comic-btn" style="background:#1877F2;color:#fff;font-size:12px;padding:8px 20px;text-decoration:none;">
+                <span data-i18n="news_see_all_fb">VEZI PAGINA PE FACEBOOK</span> &#8599;
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/FhpRMpBhfdDCgpPE.png" alt="Logo" style="width:28px;height:28px;border-radius:50%;border:2px solid var(--comic-yellow);">
+                    <span class="font-comic" style="font-size:16px;color:var(--comic-yellow);">Glume Haioase</span>
+                </div>
+                <p style="font-size:13px;color:rgba(248,241,227,0.6);margin-bottom:4px;" data-i18n="footer_desc">Cel mai haios colt al internetului romanesc! Bancuri, meme-uri, nostalgie si reeluri amuzante.</p>
+                <p style="font-size:12px;color:rgba(248,241,227,0.5);margin-bottom:10px;">Viorel Ochianu</p>
+                <div style="display:flex;flex-wrap:wrap;gap:4px;">
+                    <a href="https://www.facebook.com/share/1CkszCSb6U/" target="_blank" class="footer-social-btn" style="background:#1877F2;"><span style="font-size:13px;">&#128266;</span> <span data-i18n="f_page">PAGINA</span></a>
+                    <a href="https://www.facebook.com/share/g/1CZAM1XhgS/" target="_blank" class="footer-social-btn" style="background:#1877F2;"><span style="font-size:13px;">&#128101;</span> <span data-i18n="f_group">GRUP</span></a>
+                    <a href="https://m.me/ViorelOchianu" target="_blank" class="footer-social-btn" style="background:#0084FF;"><span style="font-size:13px;">&#128172;</span> <span data-i18n="f_msg">MESAJ</span></a>
+                    <a href="https://www.instagram.com/viorelochianu/" target="_blank" class="footer-social-btn" style="background:linear-gradient(135deg,#F58529,#DD2A7B,#8134AF);"><span style="font-size:13px;">&#128247;</span> INSTAGRAM</a>
+                    <a href="https://www.youtube.com/@divertismentsiglumehaioase" target="_blank" class="footer-social-btn" style="background:#FF0000;"><span style="font-size:13px;">&#9654;</span> YOUTUBE</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer-title" data-i18n="footer_nav">NAVIGARE</h4>
+                <a href="/" class="footer-link" data-i18n="nav_home_lc">Acasa</a>
+                <a href="/bancuri" class="footer-link" data-i18n="nav_jokes_lc">Bancuri</a>
+                <a href="/meme" class="footer-link" data-i18n="nav_memes_lc">Meme</a>
+                <a href="/reeluri" class="footer-link" data-i18n="nav_reels_lc">Reeluri</a>
+                <a href="/noutati" class="footer-link" data-i18n="nav_news_lc">Noutati</a>
+                <a href="/nostalgie" class="footer-link" data-i18n="nav_nostalgia_lc">Nostalgie</a>
+                <a href="/despre" class="footer-link" data-i18n="nav_about_lc">Despre</a>
+                <a href="/magazin" class="footer-link" data-i18n="nav_shop_lc">Magazin & Newsletter</a>
+                <a href="/confidentialitate" class="footer-link" data-i18n="nav_privacy">Confidentialitate</a>
+                <a href="/termeni" class="footer-link" data-i18n="nav_terms">Termeni si Conditii</a>
+                <a href="/sustine" class="footer-link" data-i18n="nav_support">Sustine-ne</a>
+            </div>
+            <div>
+                <h4 class="footer-title" data-i18n="footer_about_site">DESPRE SITE</h4>
+                <p style="font-size:13px;color:rgba(248,241,227,0.6);margin-bottom:8px;" data-i18n="footer_about_desc">Un proiect dedicat umorului romanesc. Toate glumele sunt pentru distractie si buna dispozitie!</p>
+                <p style="font-size:12px;color:rgba(248,241,227,0.5);margin-bottom:12px;">Admin: <strong style="color:var(--comic-yellow);">Viorel Ochianu</strong></p>
+                <h4 class="footer-title" data-i18n="footer_follow">URMARESTE-NE!</h4>
+                <a href="https://www.facebook.com/share/1CkszCSb6U/" target="_blank" class="footer-social-link">
+                    <svg viewBox="0 0 24 24" fill="currentColor" style="color:#1877F2;width:14px;height:14px;"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    <span data-i18n="follow_page">Pagina: Divertisment si glume haioase</span>
+                </a>
+                <a href="https://www.youtube.com/@divertismentsiglumehaioase" target="_blank" class="footer-social-link">
+                    <svg viewBox="0 0 24 24" fill="currentColor" style="color:#FF0000;width:14px;height:14px;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <span data-i18n="follow_yt">Ne gasiti si pe YouTube!</span>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copy" data-i18n-html="footer_copy">Facut cu &#10084; pentru rasul romanesc &copy; 2026</p>
+            <p class="footer-legal">
+                <a href="/confidentialitate" data-i18n="nav_privacy">Confidentialitate</a> &middot;
+                <a href="/termeni" data-i18n="nav_terms">Termeni si Conditii</a> &middot;
+                <button style="color:inherit;text-decoration:underline;font-size:inherit;" data-i18n="cookie_prefs">Preferinte Cookie</button>
+            </p>
+            <p class="footer-disclaimer" data-i18n="footer_disclaimer">Orice asemanare cu persoane reale este pur intamplatoare. Continutul este creat exclusiv in scop de divertisment.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ===== FLOATING BUTTONS ===== -->
+<button class="scroll-top-btn" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Sus">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m18 15-6-6-6 6"/></svg>
+</button>
+<a href="https://m.me/ViorelOchianu" target="_blank" class="messenger-float" title="Trimite-ne un mesaj pe Messenger">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.908 1.434 5.503 3.678 7.199V22l3.378-1.874c.9.252 1.855.388 2.944.388 5.523 0 10-4.145 10-9.243S17.523 2 12 2zm1.062 12.476l-2.545-2.724-4.97 2.724 5.467-5.804 2.607 2.724 4.907-2.724-5.466 5.804z"/></svg>
+</a>
+
+<!-- ===== MOBILE MENU ===== -->
+<div class="mobile-menu-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+<div class="mobile-nav" id="mobileNav">
+    <button class="close-btn" onclick="closeMobileMenu()">&times;</button>
+    <a href="/" data-i18n="nav_home">ACASA</a>
+    <a href="/bancuri" data-i18n="nav_jokes">BANCURI</a>
+    <a href="/meme" data-i18n="nav_memes">MEME</a>
+    <a href="/reeluri" data-i18n="nav_reels">REELURI</a>
+    <a href="/noutati" class="active-page" data-i18n="nav_news">NOUTATI</a>
+    <a href="/nostalgie" data-i18n="nav_nostalgia">NOSTALGIE</a>
+    <a href="/despre" data-i18n="nav_about">DESPRE</a>
+    <a href="/magazin" data-i18n="nav_shop">MAGAZIN</a>
+    <div class="mob-social">
+        <a href="https://www.facebook.com/share/1CkszCSb6U/" target="_blank" style="background:#1877F2;color:#fff;">f</a>
+        <a href="https://m.me/ViorelOchianu" target="_blank" style="background:#0084FF;color:#fff;">&#128172;</a>
+        <a href="https://www.instagram.com/viorelochianu/" target="_blank" style="background:linear-gradient(135deg,#F58529,#DD2A7B,#8134AF);color:#fff;">&#9679;</a>
+        <a href="https://www.youtube.com/@divertismentsiglumehaioase" target="_blank" style="background:#FF0000;color:#fff;">&#9654;</a>
+    </div>
+</div>
+
+<!-- ===== TRANSLATION SYSTEM + SCRIPTS ===== -->
+<script>
+var translations = {
+    ro: {
+        logo: 'Divertisment si<br><span class="red">Glume Haioase</span>',
+        nav_home: 'ACASA', nav_jokes: 'BANCURI', nav_memes: 'MEME', nav_reels: 'REELURI',
+        nav_news: 'NOUTATI', nav_nostalgia: 'NOSTALGIE', nav_about: 'DESPRE', nav_shop: 'MAGAZIN',
+        news_page_title: 'Noutati',
+        news_page_subtitle: 'Ultimele indexari de pe canalele noastre YouTube si Facebook',
+        news_shorts_badge: 'YOUTUBE SHORTS',
+        news_shorts_title: 'Shorts <span style="color:var(--comic-red);">Noi</span>',
+        ns1_title: 'Hands made by me, Viorel Ochianu', ns1_views: '475 vizualizari',
+        ns2_title: 'Reel nostalgie v3', ns2_views: '366 vizualizari',
+        ns3_title: 'O iesire la mare, Cap Kaliakra', ns3_views: '305 vizualizari',
+        ns4_title: 'Brasov', ns4_views: '104 vizualizari',
+        ns5_title: 'Reel bancuri v3', ns5_views: '65 vizualizari',
+        ns6_title: 'Drama la pompa: Telenovela Romaneasca 2026', ns6_views: '40 vizualizari',
+        news_see_all_shorts: 'VEZI TOATE SHORTS PE YOUTUBE',
+        news_videos_badge: 'VIDEOCLIPURI',
+        news_videos_title: 'Videoclipuri <span style="color:#FF0000;">YouTube</span>',
+        nv1_title: '14 aprilie 2026', nv1_views: '7 vizualizari',
+        nv2_title: '13 aprilie 2026', nv2_views: '6 vizualizari',
+        news_see_all_videos: 'VEZI TOATE VIDEOCLIPURILE PE YOUTUBE',
+        news_fb_badge: 'FACEBOOK',
+        news_fb_title: 'Postari <span style="color:#1877F2;">Facebook</span>',
+        fb_post1_time: 'Postare recenta',
+        fb_post1_text: '- Mama, cred ca tata vrea sa omoare bona?!\n- De ce crezi asta puisor?!\n- L-am auzit zicandu-i: "In noaptea asta nu mai scapi!!" \ud83d\ude02\ud83d\ude02',
+        fb_see_post: 'Vezi postarea pe Facebook \u2197',
+        news_see_all_fb: 'VEZI PAGINA PE FACEBOOK',
+        footer_desc: 'Cel mai haios colt al internetului romanesc! Bancuri, meme-uri, nostalgie si reeluri amuzante.',
+        f_page: 'PAGINA', f_group: 'GRUP', f_msg: 'MESAJ',
+        footer_nav: 'NAVIGARE',
+        nav_home_lc: 'Acasa', nav_jokes_lc: 'Bancuri', nav_memes_lc: 'Meme', nav_reels_lc: 'Reeluri',
+        nav_news_lc: 'Noutati', nav_nostalgia_lc: 'Nostalgie', nav_about_lc: 'Despre', nav_shop_lc: 'Magazin & Newsletter',
+        nav_privacy: 'Confidentialitate', nav_terms: 'Termeni si Conditii', nav_support: 'Sustine-ne',
+        footer_about_site: 'DESPRE SITE',
+        footer_about_desc: 'Un proiect dedicat umorului romanesc. Toate glumele sunt pentru distractie si buna dispozitie!',
+        footer_follow: 'URMARESTE-NE!',
+        follow_page: 'Pagina: Divertisment si glume haioase',
+        follow_yt: 'Ne gasiti si pe YouTube!',
+        footer_copy: 'Facut cu &#10084; pentru rasul romanesc &copy; 2026',
+        cookie_prefs: 'Preferinte Cookie',
+        footer_disclaimer: 'Orice asemanare cu persoane reale este pur intamplatoare. Continutul este creat exclusiv in scop de divertisment.'
+    },
+    en: {
+        logo: 'Entertainment &<br><span class="red">Funny Jokes</span>',
+        nav_home: 'HOME', nav_jokes: 'JOKES', nav_memes: 'MEMES', nav_reels: 'REELS',
+        nav_news: 'NEWS', nav_nostalgia: 'NOSTALGIA', nav_about: 'ABOUT', nav_shop: 'SHOP',
+        news_page_title: 'News',
+        news_page_subtitle: 'Latest content from our YouTube and Facebook channels',
+        news_shorts_badge: 'YOUTUBE SHORTS',
+        news_shorts_title: 'New <span style="color:var(--comic-red);">Shorts</span>',
+        ns1_title: 'Hands made by me, Viorel Ochianu', ns1_views: '475 views',
+        ns2_title: 'Nostalgia Reel v3', ns2_views: '366 views',
+        ns3_title: 'A trip to the sea, Cape Kaliakra', ns3_views: '305 views',
+        ns4_title: 'Brasov', ns4_views: '104 views',
+        ns5_title: 'Jokes Reel v3', ns5_views: '65 views',
+        ns6_title: 'Drama at the Gas Pump: Romanian Telenovela 2026', ns6_views: '40 views',
+        news_see_all_shorts: 'SEE ALL SHORTS ON YOUTUBE',
+        news_videos_badge: 'VIDEOS',
+        news_videos_title: 'YouTube <span style="color:#FF0000;">Videos</span>',
+        nv1_title: 'April 14, 2026', nv1_views: '7 views',
+        nv2_title: 'April 13, 2026', nv2_views: '6 views',
+        news_see_all_videos: 'SEE ALL VIDEOS ON YOUTUBE',
+        news_fb_badge: 'FACEBOOK',
+        news_fb_title: 'Facebook <span style="color:#1877F2;">Posts</span>',
+        fb_post1_time: 'Recent post',
+        fb_post1_text: '- Mom, I think dad wants to kill the nanny?!\n- Why do you think that, sweetie?!\n- I heard him telling her: "Tonight you won\'t escape!!" \ud83d\ude02\ud83d\ude02',
+        fb_see_post: 'See post on Facebook \u2197',
+        news_see_all_fb: 'SEE PAGE ON FACEBOOK',
+        footer_desc: 'The funniest corner of the Romanian internet! Jokes, memes, nostalgia and funny reels.',
+        f_page: 'PAGE', f_group: 'GROUP', f_msg: 'MESSAGE',
+        footer_nav: 'NAVIGATE',
+        nav_home_lc: 'Home', nav_jokes_lc: 'Jokes', nav_memes_lc: 'Memes', nav_reels_lc: 'Reels',
+        nav_news_lc: 'News', nav_nostalgia_lc: 'Nostalgia', nav_about_lc: 'About', nav_shop_lc: 'Shop & Newsletter',
+        nav_privacy: 'Privacy Policy', nav_terms: 'Terms & Conditions', nav_support: 'Support Us',
+        footer_about_site: 'ABOUT THE SITE',
+        footer_about_desc: 'A project dedicated to Romanian humor. All jokes are meant for fun and good vibes!',
+        footer_follow: 'FOLLOW US!',
+        follow_page: 'Page: Entertainment & Funny Jokes',
+        follow_yt: 'Find us on YouTube too!',
+        footer_copy: 'Made with &#10084; for Romanian laughter &copy; 2026',
+        cookie_prefs: 'Cookie Preferences',
+        footer_disclaimer: 'Any resemblance to real persons is purely coincidental. Content is created exclusively for entertainment purposes.'
+    }
+};
+
+var currentLang = localStorage.getItem('siteLang') || 'ro';
+
+function setLang(lang) {
+    currentLang = lang;
+    localStorage.setItem('siteLang', lang);
+    document.documentElement.lang = lang;
+    applyTranslations(lang);
+    document.getElementById('langRO').classList.toggle('active', lang === 'ro');
+    document.getElementById('langEN').classList.toggle('active', lang === 'en');
+}
+
+function applyTranslations(lang) {
+    var t = translations[lang];
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) el.textContent = t[key];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n-html');
+        if (t[key] !== undefined) el.innerHTML = t[key];
+    });
+    var logoEl = document.querySelector('[data-i18n="logo"]');
+    if (logoEl && t['logo']) logoEl.innerHTML = t['logo'];
+    document.title = lang === 'en' ? 'News - Entertainment & Funny Jokes' : 'Noutati - Divertisment si Glume Haioase';
+}
+
+document.addEventListener('DOMContentLoaded', function() { setLang(currentLang); });
+
+function openMobileMenu() {
+    document.getElementById('mobileNav').classList.add('active');
+    document.getElementById('mobileOverlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+function closeMobileMenu() {
+    document.getElementById('mobileNav').classList.remove('active');
+    document.getElementById('mobileOverlay').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+window.addEventListener('scroll', function() {
+    var btn = document.getElementById('scrollTopBtn');
+    if (window.scrollY > 400) { btn.classList.add('show'); } else { btn.classList.remove('show'); }
+});
+</script>
+
+</body>
+</html>
