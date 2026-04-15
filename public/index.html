@@ -17,6 +17,13 @@
     <meta property="og:title" content="Divertisment și Glume Haioase">
     <meta property="og:description" content="Cel mai haios colț al internetului românesc!">
     <meta property="og:locale" content="ro_RO">
+    <meta property="og:image" content="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/FhpRMpBhfdDCgpPE.png">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="400">
+    <meta property="og:image:alt" content="Divertisment și Glume Haioase">
+    <meta name="twitter:image" content="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/FhpRMpBhfdDCgpPE.png">
+    <meta name="twitter:site" content="@viorelochianu">
+    <meta name="author" content="Viorel Ochianu">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap&subset=latin-ext" rel="stylesheet">
@@ -196,6 +203,14 @@
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .animate-in { animation: fadeInUp 0.5s ease forwards; }
     </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DVRWDJEZ3M"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DVRWDJEZ3M');
+    </script>
 </head>
 <body>
 
@@ -237,6 +252,7 @@
 
             <!-- Desktop Navigation -->
             <nav class="desktop-nav">
+<<<<<<< HEAD
                 <a href="/" class="nav-link active" data-i18n="nav_home">ACASA</a>
                 <a href="/bancuri" class="nav-link" data-i18n="nav_jokes">BANCURI</a>
                 <a href="/meme" class="nav-link" data-i18n="nav_memes">MEME</a>
@@ -244,6 +260,16 @@
                 <a href="/nostalgie" class="nav-link" data-i18n="nav_nostalgia">NOSTALGIE</a>
                 <a href="/despre" class="nav-link" data-i18n="nav_about">DESPRE</a>
                 <a href="/magazin" class="nav-link" data-i18n="nav_shop">MAGAZIN</a>
+=======
+                <a href="/" class="nav-link active">ACASA</a>
+                <a href="/bancuri" class="nav-link">BANCURI</a>
+                <a href="/meme" class="nav-link">MEME</a>
+                <a href="/reeluri" class="nav-link">REELURI</a>
+                <a href="/nostalgie" class="nav-link">NOSTALGIE</a>
+                <a href="/despre" class="nav-link">DESPRE</a>
+                <a href="/magazin" class="nav-link">MAGAZIN</a>
+                <a href="/social" class="nav-link">SOCIAL</a>
+>>>>>>> eb8b42f8eb9671a2827a524e3321fafff37fea7d
             </nav>
 
             <!-- Hamburger (mobile) -->
@@ -774,6 +800,125 @@ function toggleJoke(btn) {
         btn.querySelector('[data-i18n]').textContent = t.joke_btn_hide;
         btn.querySelector('[data-i18n]').setAttribute('data-i18n', 'joke_btn_hide');
     }
+}
+</script>
+
+
+<style>
+#gdpr-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #1a1a1a;
+    color: #fff;
+    padding: 16px 20px;
+    z-index: 99999;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-family: Nunito, sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    border-top: 3px solid #FFD54F;
+}
+#gdpr-banner .gdpr-text { flex: 1; min-width: 200px; }
+#gdpr-banner .gdpr-text strong { font-family: Fredoka, sans-serif; font-size: 15px; color: #FFD54F; display: block; margin-bottom: 4px; }
+#gdpr-banner .gdpr-text a { color: #FFD54F; text-decoration: underline; }
+#gdpr-banner .gdpr-buttons { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+#gdpr-banner .gdpr-btn { padding: 8px 18px; border-radius: 6px; font-family: Fredoka, sans-serif; font-weight: 600; font-size: 13px; cursor: pointer; border: 2px solid transparent; transition: all 0.15s; white-space: nowrap; }
+#gdpr-banner .gdpr-btn-accept { background: #FFD54F; color: #1a1a1a; border-color: #FFD54F; }
+#gdpr-banner .gdpr-btn-accept:hover { background: #FFC107; border-color: #FFC107; }
+#gdpr-banner .gdpr-btn-essential { background: transparent; color: #ccc; border-color: #555; }
+#gdpr-banner .gdpr-btn-essential:hover { border-color: #aaa; color: #fff; }
+#gdpr-banner .gdpr-btn-settings { background: transparent; color: #aaa; border: none; font-size: 12px; padding: 4px 8px; text-decoration: underline; cursor: pointer; font-family: Nunito, sans-serif; }
+#gdpr-settings-modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 100000; align-items: center; justify-content: center; }
+#gdpr-settings-modal.active { display: flex; }
+#gdpr-settings-box { background: #fff; border-radius: 12px; padding: 24px; max-width: 480px; width: 90%; box-shadow: 0 8px 32px rgba(0,0,0,0.3); font-family: Nunito, sans-serif; }
+#gdpr-settings-box h3 { font-family: Fredoka, sans-serif; font-size: 20px; margin-bottom: 16px; color: #1a1a1a; }
+.gdpr-option { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #eee; }
+.gdpr-option:last-of-type { border-bottom: none; }
+.gdpr-option-info strong { display: block; font-size: 14px; color: #1a1a1a; margin-bottom: 2px; }
+.gdpr-option-info span { font-size: 12px; color: #666; }
+.gdpr-toggle { position: relative; width: 44px; height: 24px; flex-shrink: 0; }
+.gdpr-toggle input { opacity: 0; width: 0; height: 0; }
+.gdpr-toggle-slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background: #ccc; border-radius: 24px; transition: 0.3s; }
+.gdpr-toggle-slider:before { content: ""; position: absolute; height: 18px; width: 18px; left: 3px; bottom: 3px; background: #fff; border-radius: 50%; transition: 0.3s; }
+.gdpr-toggle input:checked + .gdpr-toggle-slider { background: #E53935; }
+.gdpr-toggle input:checked + .gdpr-toggle-slider:before { transform: translateX(20px); }
+.gdpr-toggle input:disabled + .gdpr-toggle-slider { background: #4CAF50; cursor: not-allowed; }
+.gdpr-modal-buttons { display: flex; gap: 8px; margin-top: 16px; justify-content: flex-end; }
+.gdpr-modal-btn { padding: 8px 18px; border-radius: 6px; font-family: Fredoka, sans-serif; font-weight: 600; font-size: 13px; cursor: pointer; border: 2px solid #1a1a1a; transition: all 0.15s; }
+.gdpr-modal-btn-save { background: #E53935; color: #fff; border-color: #E53935; }
+.gdpr-modal-btn-cancel { background: #fff; color: #1a1a1a; }
+@media (max-width: 600px) { #gdpr-banner { flex-direction: column; align-items: flex-start; } #gdpr-banner .gdpr-buttons { width: 100%; } }
+</style>
+
+<div id="gdpr-banner" style="display:none;">
+    <div class="gdpr-text">
+        <strong>&#127850; Cookie-uri &amp; Confidentialitate</strong>
+        Folosim cookie-uri pentru a-ti oferi cea mai buna experienta pe site. Poti alege ce tipuri de cookie-uri accepti.
+        <a href="/confidentialitate" target="_blank">Citeste politica completa</a>
+    </div>
+    <div class="gdpr-buttons">
+        <button class="gdpr-btn gdpr-btn-settings" onclick="document.getElementById('gdpr-settings-modal').classList.add('active')">PERSONALIZEAZA</button>
+        <button class="gdpr-btn gdpr-btn-essential" onclick="gdprSave('essential')">DOAR ESENTIALE</button>
+        <button class="gdpr-btn gdpr-btn-accept" onclick="gdprSave('all')">ACCEPT TOATE &#10003;</button>
+    </div>
+</div>
+
+<div id="gdpr-settings-modal">
+    <div id="gdpr-settings-box">
+        <h3>&#9881;&#65039; Preferinte Cookie</h3>
+        <div class="gdpr-option">
+            <div class="gdpr-option-info">
+                <strong>Cookie-uri Esentiale</strong>
+                <span>Necesare pentru functionarea site-ului. Nu pot fi dezactivate.</span>
+            </div>
+            <label class="gdpr-toggle"><input type="checkbox" checked disabled><span class="gdpr-toggle-slider"></span></label>
+        </div>
+        <div class="gdpr-option">
+            <div class="gdpr-option-info">
+                <strong>Cookie-uri Analitice</strong>
+                <span>Ne ajuta sa intelegem cum folosesti site-ul (date anonimizate).</span>
+            </div>
+            <label class="gdpr-toggle"><input type="checkbox" id="gdpr-analytics" checked><span class="gdpr-toggle-slider"></span></label>
+        </div>
+        <div class="gdpr-option">
+            <div class="gdpr-option-info">
+                <strong>Cookie-uri Facebook/Social</strong>
+                <span>Necesare pentru afisarea reelurilor si continutului Facebook.</span>
+            </div>
+            <label class="gdpr-toggle"><input type="checkbox" id="gdpr-social" checked><span class="gdpr-toggle-slider"></span></label>
+        </div>
+        <div class="gdpr-modal-buttons">
+            <button class="gdpr-modal-btn gdpr-modal-btn-cancel" onclick="document.getElementById('gdpr-settings-modal').classList.remove('active')">Anuleaza</button>
+            <button class="gdpr-modal-btn gdpr-modal-btn-save" onclick="gdprSaveCustom()">Salveaza Preferintele</button>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    var consent = localStorage.getItem('gdpr_consent');
+    if (!consent) {
+        document.getElementById('gdpr-banner').style.display = 'flex';
+    }
+})();
+function gdprSave(type) {
+    var prefs = { essential: true, analytics: type === 'all', social: type === 'all', date: new Date().toISOString(), type: type };
+    localStorage.setItem('gdpr_consent', JSON.stringify(prefs));
+    document.getElementById('gdpr-banner').style.display = 'none';
+    document.getElementById('gdpr-settings-modal').classList.remove('active');
+}
+function gdprSaveCustom() {
+    var prefs = { essential: true, analytics: document.getElementById('gdpr-analytics').checked, social: document.getElementById('gdpr-social').checked, date: new Date().toISOString(), type: 'custom' };
+    localStorage.setItem('gdpr_consent', JSON.stringify(prefs));
+    document.getElementById('gdpr-banner').style.display = 'none';
+    document.getElementById('gdpr-settings-modal').classList.remove('active');
 }
 </script>
 
