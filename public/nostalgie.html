@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nostalgie Romaneasca | Divertisment si Glume Haioase</title>
+    <title data-i18n="n_title">Nostalgie Romaneasca | Divertisment si Glume Haioase</title>
     <meta name="description" content="Atunci vs. Acum - Amintiri din copilaria romaneasca">
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
@@ -12,7 +12,8 @@
     <meta property="og:description" content="Amintiri din copilaria romaneasca - Atunci vs. Acum. Jocuri de afara, televizor, dulciuri si muzica de altadata.">
     <meta property="og:image" content="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/FhpRMpBhfdDCgpPE.png">
     <meta property="og:locale" content="ro_RO">
-    <meta property="og:site_name" content="Divertisment si Glume Haioase">
+    <meta property="og:site
+ame" content="Divertisment si Glume Haioase">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Nostalgie Romaneasca | Divertisment si Glume Haioase">
@@ -87,7 +88,10 @@ footer a, footer p { font-size:12px !important; }
 section { margin-bottom:10px !important; }
 h2 { font-size:clamp(18px,3vw,24px) !important; }
 h3 { font-size:clamp(14px,2.5vw,18px) !important; }
-
+.lang-toggle{display:flex;align-items:center;border:2px solid #1a1a1a;overflow:hidden;border-radius:15px;flex-shrink:0}
+.lang-btn{font-family:Fredoka,sans-serif;font-size:12px;padding:4px 8px;background:#fff;color:#1a1a1a;cursor:pointer;transition:.3s;border:none}
+.lang-btn.active{background:#E53935;color:#fff}
+.lang-btn:not(.active):hover{background:rgba(229,57,53,.1)}
 </style>
     <meta property="og:image" content="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/FhpRMpBhfdDCgpPE.png">
     <meta property="og:image:width" content="400">
@@ -111,29 +115,41 @@ h3 { font-size:clamp(14px,2.5vw,18px) !important; }
         <a href="/" style="display:flex;align-items:center;gap:8px;text-decoration:none;">
             <span style="font-family:Fredoka,sans-serif;font-size:22px;font-weight:700;color:#1a1a1a;">Glume <span style="color:#E53935;">Haioase</span></span>
         </a>
+<div class="lang-toggle">
+  <button class="lang-btn active" id="langRO" onclick="setLang('ro')">RO</button>
+  <button class="lang-btn" id="langEN" onclick="setLang('en')">EN</button>
+</div>
         <nav style="display:flex;align-items:center;gap:4px;" id="desktop-nav">
-            <a href="https://www.facebook.com/profile.php?id=100010102273607" target="_blank" style="width:28px;height:28px;background:#1877F2;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;text-decoration:none;font-weight:bold;">f</a>
-            <a href="https://www.instagram.com/viorelochianu" target="_blank" style="width:28px;height:28px;background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;text-decoration:none;">&#9679;</a>
+            <a href="https://www.facebook.com/share/1CkszCSb6U/" target="_blank" style="width:28px;height:28px;background:#1877F2;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;text-decoration:none;font-weight:bold;">f</a>
+            <a href="https://www.instagram.com/viorelochianu/" target="_blank" style="width:28px;height:28px;background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;text-decoration:none;">&#9679;</a>
             <span style="width:8px;"></span>
-            <a href="/" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;">ACASA</a>
-<a href="/bancuri" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;">BANCURI</a>
-<a href="/meme" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;">MEME</a>
-<a href="/reeluri" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;">REELURI</a>
-<a href="/nostalgie" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;background:#E53935;color:#fff;border-radius:4px;padding:4px 12px;">NOSTALGIE</a>
-<a href="/despre" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;">DESPRE</a>
-<a href="/social" style="text-decoration:none;color:#fff;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;background:#1877F2;border-radius:4px;">📱 SOCIAL</a>
+            <a href="/" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;" data-i18n="nav_home">ACASA</a>
+<a href="/bancuri" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;" data-i18n="nav_jokes">BANCURI</a>
+<a href="/meme" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;" data-i18n="nav_memes">MEME</a>
+<a href="/reeluri" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;" data-i18n="nav_reels">REELURI</a>
+<a href="/noutati" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;" data-i18n="nav
+ews">NOUTATI</a>
+<a href="/nostalgie" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;background:#E53935;color:#fff;border-radius:4px;padding:4px 12px;" data-i18n="nav
+ostalgia">NOSTALGIE</a>
+<a href="/despre" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;" data-i18n="nav_about">DESPRE</a>
+<a href="/magazin" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;" data-i18n="nav_shop">MAGAZIN</a>
+<a href="/social" style="text-decoration:none;color:#fff;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;background:#1877F2;border-radius:4px;" data-i18n="nav_social">📱 SOCIAL</a>
 
         </nav>
         <button onclick="document.getElementById('mobile-menu').style.display=document.getElementById('mobile-menu').style.display==='flex'?'none':'flex'" style="display:none;background:none;border:none;font-size:24px;cursor:pointer;" id="menu-btn">&#9776;</button>
     </div>
     <div id="mobile-menu" style="display:none;flex-direction:column;gap:8px;padding:16px;background:#FFD54F;">
-        <a href="/" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;">ACASA</a>
-<a href="/bancuri" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;">BANCURI</a>
-<a href="/meme" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;">MEME</a>
-<a href="/reeluri" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;">REELURI</a>
-<a href="/nostalgie" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;background:#E53935;color:#fff;border-radius:4px;padding:4px 12px;">NOSTALGIE</a>
-<a href="/despre" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;">DESPRE</a>
-<a href="/social" style="text-decoration:none;color:#fff;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;background:#1877F2;border-radius:4px;">📱 SOCIAL</a>
+        <a href="/" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;" data-i18n="nav_home">ACASA</a>
+<a href="/bancuri" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;" data-i18n="nav_jokes">BANCURI</a>
+<a href="/meme" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;" data-i18n="nav_memes">MEME</a>
+<a href="/reeluri" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;" data-i18n="nav_reels">REELURI</a>
+<a href="/noutati" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;" data-i18n="nav
+ews">NOUTATI</a>
+<a href="/nostalgie" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;background:#E53935;color:#fff;border-radius:4px;padding:4px 12px;" data-i18n="nav
+ostalgia">NOSTALGIE</a>
+<a href="/despre" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;" data-i18n="nav_about">DESPRE</a>
+<a href="/magazin" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;" data-i18n="nav_shop">MAGAZIN</a>
+<a href="/social" style="text-decoration:none;color:#fff;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;background:#1877F2;border-radius:4px;" data-i18n="nav_social">📱 SOCIAL</a>
 
     </div>
 </header>
@@ -144,147 +160,240 @@ h3 { font-size:clamp(14px,2.5vw,18px) !important; }
 }
 </style><main class="main-content">
     <div style="text-align:center;">
-        <span class="badge" style="background:#2E7D32;">&#128154; NOSTALGIE ROMANEASCA</span>
-        <h1 class="page-title">Atunci vs. <span>Acum</span></h1>
-        <p class="page-subtitle">Amintiri din copilaria romaneasca — te vei regasi in fiecare!</p>
+        <h1 class="page-title" data-i18n="n_main_title"><span>Nostalgie</span> Românească</h1>
+        <p class="page-subtitle" data-i18n="n_subtitle">Amintiri din copilăria anilor '90-2000. Atunci vs. Acum.</p>
     </div>
-    <div class="grid-2">
-        <div class="nostalgie-card" style="border:2px solid #1a1a1a;box-shadow:3px 3px 0 #1a1a1a;">
-    <div class="nostalgie-header" style="background:#E53935;">
-        <div style="display:flex;align-items:center;gap:8px;">
-            <span style="font-size:24px;">&#127769;</span>
-            <h3 style="font-family:Fredoka,sans-serif;font-size:20px;font-weight:700;">Jocurile de Afara</h3>
+    <section id="jocuri">
+        <h2 style="text-align:center;margin-bottom:16px;" data-i18n="n_jocuri_title">Jocuri & Joacă</h2>
+        <div class="grid-2">
+            <div class="nostalgie-card">
+                <div class="nostalgie-header" style="background:#1565C0;">
+                    <h3 data-i18n="n_jocuri_atunci">ATUNCI</h3>
+                    <span class="badge" style="background:rgba(255,255,255,0.2);">Anii '90-2000</span>
+                </div>
+                <div class="nostalgie-body">
+                    <p>Ne jucam afară de dimineața până seara. Strigam "Hai pe-afară!" și imediat se umplea strada de copii. Ne jucam ascunselea, elasticul, șotron, frunza, 1-2-3 la perete stai. Inventam jocuri noi în fiecare zi.</p>
+                </div>
+            </div>
+            <div class="nostalgie-card">
+                <div class="nostalgie-header" style="background:#E53935;">
+                    <h3 data-i18n="n_jocuri_acum">ACUM</h3>
+                    <span class="badge" style="background:rgba(255,255,255,0.2);">Anii 2020</span>
+                </div>
+                <div class="nostalgie-body">
+                    <p>Copiii se joacă pe tabletă, telefon sau consolă. Jocurile sunt online, în rețea cu prieteni virtuali. Strigă "Hai pe Discord!" și se adună în lobby. Se joacă Fortnite, Minecraft, Roblox. Jocurile sunt actualizate constant de dezvoltatori.</p>
+                </div>
+            </div>
         </div>
-        <span style="font-family:Fredoka,sans-serif;font-weight:700;opacity:0.7;">#1</span>
-    </div>
-    <div class="nostalgie-body">
-        <span class="nostalgie-label" style="background:#FFF9C4;color:#F57F17;">ATUNCI</span>
-        <p style="margin-bottom:12px;font-size:15px;">Ne jucam afara pana se aprindeau becurile pe strada</p>
-        <span class="nostalgie-label" style="background:#FFCDD2;color:#C62828;">ACUM</span>
-        <p style="margin-bottom:12px;font-size:15px;">"Mama, mi-a murit telefonul!"</p>
-        <button class="btn" style="background:#fff;font-size:13px;" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'">MAI MULT &#9660;</button>
-        <p style="display:none;margin-top:12px;padding:12px;background:#f5f5f0;border-radius:6px;font-size:14px;color:#666;">Sotron, elasticul, v-ati ascunselea, leapsa... Copilaria insemna genunchi juliti si prieteni adevarati.</p>
-    </div>
-</div>
-<div class="nostalgie-card" style="border:2px solid #1a1a1a;box-shadow:3px 3px 0 #1a1a1a;">
-    <div class="nostalgie-header" style="background:#1565C0;">
-        <div style="display:flex;align-items:center;gap:8px;">
-            <span style="font-size:24px;">&#128250;</span>
-            <h3 style="font-family:Fredoka,sans-serif;font-size:20px;font-weight:700;">Televizorul</h3>
+    </section>
+    <section id="televizor">
+        <h2 style="text-align:center;margin-bottom:16px;" data-i18n="n_tv_title">La Televizor</h2>
+        <div class="grid-2">
+            <div class="nostalgie-card">
+                <div class="nostalgie-header" style="background:#1565C0;">
+                    <h3 data-i18n="n_tv_atunci">ATUNCI</h3>
+                </div>
+                <div class="nostalgie-body">
+                    <p>Aveam program la desene animate, doar o oră pe zi. Ne uitam la "Viața cu Louie", "Copiii de la 402", "Ce-i cu Andy?". Așteptam cu sufletul la gură să înceapă serialul preferat. Nu exista "play next".</p>
+                </div>
+            </div>
+            <div class="nostalgie-card">
+                <div class="nostalgie-header" style="background:#E53935;">
+                    <h3 data-i18n="n_tv_acum">ACUM</h3>
+                </div>
+                <div class="nostalgie-body">
+                    <p>Avem Netflix, Disney+, HBO Max. Ne uitam la ce vrem, când vrem, oricâte episoade vrem. Putem da "skip intro" și "play next episode". Avem acces la mii de filme și seriale la un click distanță.</p>
+                </div>
+            </div>
         </div>
-        <span style="font-family:Fredoka,sans-serif;font-weight:700;opacity:0.7;">#2</span>
-    </div>
-    <div class="nostalgie-body">
-        <span class="nostalgie-label" style="background:#FFF9C4;color:#F57F17;">ATUNCI</span>
-        <p style="margin-bottom:12px;font-size:15px;">Asteptam toata saptamana pentru desenele de sambata</p>
-        <span class="nostalgie-label" style="background:#FFCDD2;color:#C62828;">ACUM</span>
-        <p style="margin-bottom:12px;font-size:15px;">"Netflix, pune urmatorul episod!"</p>
-        <button class="btn" style="background:#fff;font-size:13px;" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'">MAI MULT &#9660;</button>
-        <p style="display:none;margin-top:12px;padding:12px;background:#f5f5f0;border-radius:6px;font-size:14px;color:#666;">Tom si Jerry, Ursul Yogi, Scooby-Doo... si acel moment magic cand incepe emisiunea preferata.</p>
-    </div>
-</div>
-<div class="nostalgie-card" style="border:2px solid #1a1a1a;box-shadow:3px 3px 0 #1a1a1a;">
-    <div class="nostalgie-header" style="background:#2E7D32;">
-        <div style="display:flex;align-items:center;gap:8px;">
-            <span style="font-size:24px;">&#127852;</span>
-            <h3 style="font-family:Fredoka,sans-serif;font-size:20px;font-weight:700;">Dulciurile</h3>
+    </section>
+    <section id="dulciuri">
+        <h2 style="text-align:center;margin-bottom:16px;" data-i18n="n_dulciuri_title">Dulciuri & Gustări</h2>
+        <div class="grid-2">
+            <div class="nostalgie-card">
+                <div class="nostalgie-header" style="background:#1565C0;">
+                    <h3 data-i18n="n_dulciuri_atunci">ATUNCI</h3>
+                </div>
+                <div class="nostalgie-body">
+                    <p>Mâncam pufuleți cu surprize, gumă Turbo cu abțibilduri cu mașini, ciocolată chinezească și napolitane cu cremă de cacao. Ne bucuram de fiecare bomboană primită. Fructele erau cele mai bune dulciuri.</p>
+                </div>
+            </div>
+            <div class="nostalgie-card">
+                <div class="nostalgie-header" style="background:#E53935;">
+                    <h3 data-i18n="n_dulciuri_acum">ACUM</h3>
+                </div>
+                <div class="nostalgie-body">
+                    <p>Avem rafturi întregi de dulciuri în supermarket. De la ciocolată belgiană la jeleuri de toate formele și culorile. Putem comanda torturi și prăjituri online. Avem acces la rețete de deserturi din toată lumea.</p>
+                </div>
+            </div>
         </div>
-        <span style="font-family:Fredoka,sans-serif;font-weight:700;opacity:0.7;">#3</span>
-    </div>
-    <div class="nostalgie-body">
-        <span class="nostalgie-label" style="background:#FFF9C4;color:#F57F17;">ATUNCI</span>
-        <p style="margin-bottom:12px;font-size:15px;">Pufuletii, ROM, Eugenia, sucul Bravo</p>
-        <span class="nostalgie-label" style="background:#FFCDD2;color:#C62828;">ACUM</span>
-        <p style="margin-bottom:12px;font-size:15px;">"Vrei un smoothie organic cu seminte de chia?"</p>
-        <button class="btn" style="background:#fff;font-size:13px;" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'">MAI MULT &#9660;</button>
-        <p style="display:none;margin-top:12px;padding:12px;background:#f5f5f0;border-radius:6px;font-size:14px;color:#666;">Gustul copilariei: bomboane cu 50 de bani, guma Turbo, ciocolata ROM si sucul Bravo la 1 leu.</p>
-    </div>
-</div>
-<div class="nostalgie-card" style="border:2px solid #1a1a1a;box-shadow:3px 3px 0 #1a1a1a;">
-    <div class="nostalgie-header" style="background:#FF6F00;">
-        <div style="display:flex;align-items:center;gap:8px;">
-            <span style="font-size:24px;">&#127925;</span>
-            <h3 style="font-family:Fredoka,sans-serif;font-size:20px;font-weight:700;">Muzica</h3>
+    </section>
+    <section id="muzica">
+        <h2 style="text-align:center;margin-bottom:16px;" data-i18n="n_muzica_title">Muzică</h2>
+        <div class="grid-2">
+            <div class="nostalgie-card">
+                <div class="nostalgie-header" style="background:#1565C0;">
+                    <h3 data-i18n="n_muzica_atunci">ATUNCI</h3>
+                </div>
+                <div class="nostalgie-body">
+                    <p>Ascultam muzică la casetofon. Dădeam play, stop, rewind. Trăgeam casete de la prieteni. Așteptam la radio să fie melodia preferată ca s-o înregistrăm. Știam pe de rost versurile de la 3 Sud Est, Andre, Animal X.</p>
+                </div>
+            </div>
+            <div class="nostalgie-card">
+                <div class="nostalgie-header" style="background:#E53935;">
+                    <h3 data-i18n="n_muzica_acum">ACUM</h3>
+                </div>
+                <div class="nostalgie-body">
+                    <p>Ascultam muzică pe Spotify, YouTube Music, Apple Music. Avem playlist-uri pentru orice stare de spirit. Descoperim artiști noi în fiecare zi. Putem asculta orice melodie din lume, oricând, la o calitate perfectă.</p>
+                </div>
+            </div>
         </div>
-        <span style="font-family:Fredoka,sans-serif;font-weight:700;opacity:0.7;">#4</span>
-    </div>
-    <div class="nostalgie-body">
-        <span class="nostalgie-label" style="background:#FFF9C4;color:#F57F17;">ATUNCI</span>
-        <p style="margin-bottom:12px;font-size:15px;">Inregistram melodii de la radio pe caseta</p>
-        <span class="nostalgie-label" style="background:#FFCDD2;color:#C62828;">ACUM</span>
-        <p style="margin-bottom:12px;font-size:15px;">"Alexa, pune playlist-ul meu!"</p>
-        <button class="btn" style="background:#fff;font-size:13px;" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'">MAI MULT &#9660;</button>
-        <p style="display:none;margin-top:12px;padding:12px;background:#f5f5f0;border-radius:6px;font-size:14px;color:#666;">Casetofonul, walkman-ul, si acel moment cand trebuia sa derulezi caseta cu creionul.</p>
-    </div>
-</div>
-<div class="nostalgie-card" style="border:2px solid #1a1a1a;box-shadow:3px 3px 0 #1a1a1a;">
-    <div class="nostalgie-header" style="background:#7B1FA2;">
-        <div style="display:flex;align-items:center;gap:8px;">
-            <span style="font-size:24px;">&#128218;</span>
-            <h3 style="font-family:Fredoka,sans-serif;font-size:20px;font-weight:700;">Scoala</h3>
+    </section>
+</main><footer style="background:#1a1a1a;color:#f5f5f0;padding:24px 16px;text-align:center;">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;text-align:left;">
+        <div>
+            <h3 style="font-family:Fredoka,sans-serif;font-size:16px;margin-bottom:8px;color:#E53935;" data-i18n="footer
+av_title">Navigare</h3>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+                <a href="/" style="color:#f5f5f0;text-decoration:none;" data-i18n="nav_home">Acasa</a>
+                <a href="/bancuri" style="color:#f5f5f0;text-decoration:none;" data-i18n="nav_jokes">Bancuri</a>
+                <a href="/meme" style="color:#f5f5f0;text-decoration:none;" data-i18n="nav_memes">Meme</a>
+                <a href="/reeluri" style="color:#f5f5f0;text-decoration:none;" data-i18n="nav_reels">Reeluri</a>
+                <a href="/noutati" style="color:#f5f5f0;text-decoration:none;" data-i18n="nav
+ews">Noutati</a>
+                <a href="/nostalgie" style="color:#f5f5f0;text-decoration:none;" data-i18n="nav
+ostalgia">Nostalgie</a>
+                <a href="/despre" style="color:#f5f5f0;text-decoration:none;" data-i18n="nav_about">Despre</a>
+            </div>
         </div>
-        <span style="font-family:Fredoka,sans-serif;font-weight:700;opacity:0.7;">#5</span>
-    </div>
-    <div class="nostalgie-body">
-        <span class="nostalgie-label" style="background:#FFF9C4;color:#F57F17;">ATUNCI</span>
-        <p style="margin-bottom:12px;font-size:15px;">Scriam cu stiloul si aveam caiet de corespondenta</p>
-        <span class="nostalgie-label" style="background:#FFCDD2;color:#C62828;">ACUM</span>
-        <p style="margin-bottom:12px;font-size:15px;">"Mama, trimite-mi tema pe WhatsApp!"</p>
-        <button class="btn" style="background:#fff;font-size:13px;" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'">MAI MULT &#9660;</button>
-        <p style="display:none;margin-top:12px;padding:12px;background:#f5f5f0;border-radius:6px;font-size:14px;color:#666;">Cerneala albastra pe degete, biletelee in clasa, si frica de diriginte.</p>
-    </div>
-</div>
-<div class="nostalgie-card" style="border:2px solid #1a1a1a;box-shadow:3px 3px 0 #1a1a1a;">
-    <div class="nostalgie-header" style="background:#00838F;">
-        <div style="display:flex;align-items:center;gap:8px;">
-            <span style="font-size:24px;">&#128222;</span>
-            <h3 style="font-family:Fredoka,sans-serif;font-size:20px;font-weight:700;">Telefonul</h3>
+        <div>
+            <h3 style="font-family:Fredoka,sans-serif;font-size:16px;margin-bottom:8px;color:#E53935;" data-i18n="footer_social_title">Social</h3>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+                <a href="https://www.facebook.com/share/g/1CZAM1XhgS/" target="_blank" style="color:#f5f5f0;text-decoration:none;" data-i18n="footer_fb_group">Grup Facebook</a>
+                <a href="https://www.facebook.com/share/1CkszCSb6U/" target="_blank" style="color:#f5f5f0;text-decoration:none;" data-i18n="footer_fb_page">Pagină Facebook</a>
+                <a href="https://www.instagram.com/viorelochianu/" target="_blank" style="color:#f5f5f0;text-decoration:none;">Instagram</a>
+                <a href="https://www.youtube.com/@divertismentsiglumehaioase" target="_blank" style="color:#f5f5f0;text-decoration:none;">YouTube</a>
+                <a href="https://m.me/ViorelOchianu" target="_blank" style="color:#f5f5f0;text-decoration:none;" data-i18n="footer_messenger">Messenger</a>
+            </div>
         </div>
-        <span style="font-family:Fredoka,sans-serif;font-weight:700;opacity:0.7;">#6</span>
+        <div>
+            <h3 style="font-family:Fredoka,sans-serif;font-size:16px;margin-bottom:8px;color:#E53935;" data-i18n="footer_utile_title">Utile</h3>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+                <a href="/sustine" style="color:#f5f5f0;text-decoration:none;" data-i18n="nav_support">Sustine-ne</a>
+                <a href="/magazin" style="color:#f5f5f0;text-decoration:none;" data-i18n="nav_shop">Magazin</a>
+                <a href="/confidentialitate" style="color:#f5f5f0;text-decoration:none;" data-i18n="footer_privacy">Confidentialitate</a>
+                <a href="/termeni" style="color:#f5f5f0;text-decoration:none;" data-i18n="footer_terms">Termeni si conditii</a>
+            </div>
+        </div>
     </div>
-    <div class="nostalgie-body">
-        <span class="nostalgie-label" style="background:#FFF9C4;color:#F57F17;">ATUNCI</span>
-        <p style="margin-bottom:12px;font-size:15px;">Sunam de la telefonul fix si raspundea tatal prietenului</p>
-        <span class="nostalgie-label" style="background:#FFCDD2;color:#C62828;">ACUM</span>
-        <p style="margin-bottom:12px;font-size:15px;">"De ce nu mi-ai dat seen?"</p>
-        <button class="btn" style="background:#fff;font-size:13px;" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'">MAI MULT &#9660;</button>
-        <p style="display:none;margin-top:12px;padding:12px;background:#f5f5f0;border-radius:6px;font-size:14px;color:#666;">Telefonul cu disc, firul rasucit, si conversatiile de ore intregi cu cordonul intins pana in camera.</p>
-    </div>
-</div>
+    <p style="margin-top:24px;font-size:12px;color:#999;">&copy; 2026 Divertisment si Glume Haioase. Toate drepturile rezervate.</p>
+</footer></div>
+<script>
+const translations = {
+  ro: {
+    n_title: "Nostalgie Romaneasca | Divertisment si Glume Haioase",
+    n_main_title: "<span>Nostalgie</span> Românească",
+    n_subtitle: "Amintiri din copilăria anilor '90-2000. Atunci vs. Acum.",
+    n_jocuri_title: "Jocuri & Joacă",
+    n_jocuri_atunci: "ATUNCI",
+    n_jocuri_acum: "ACUM",
+    n_tv_title: "La Televizor",
+    n_tv_atunci: "ATUNCI",
+    n_tv_acum: "ACUM",
+    n_dulciuri_title: "Dulciuri & Gustări",
+    n_dulciuri_atunci: "ATUNCI",
+    n_dulciuri_acum: "ACUM",
+    n_muzica_title: "Muzică",
+    n_muzica_atunci: "ATUNCI",
+    n_muzica_acum: "ACUM",
+    nav_home: "ACASA",
+    nav_jokes: "BANCURI",
+    nav_memes: "MEME",
+    nav_reels: "REELURI",
+    nav
+ews: "NOUTATI",
+    nav
+ostalgia: "NOSTALGIE",
+    nav_about: "DESPRE",
+    nav_shop: "MAGAZIN",
+    nav_social: "📱 SOCIAL",
+    nav_support: "Sustine-ne",
+    footer
+av_title: "Navigare",
+    footer_social_title: "Social",
+    footer_fb_group: "Grup Facebook",
+    footer_fb_page: "Pagină Facebook",
+    footer_messenger: "Messenger",
+    footer_utile_title: "Utile",
+    footer_privacy: "Confidentialitate",
+    footer_terms: "Termeni si conditii",
+  },
+  en: {
+    n_title: "Romanian Nostalgia | Fun and Jokes",
+    n_main_title: "Romanian <span>Nostalgia</span>",
+    n_subtitle: "Memories from the '90s-2000s childhood. Then vs. Now.",
+    n_jocuri_title: "Games & Play",
+    n_jocuri_atunci: "THEN",
+    n_jocuri_acum: "NOW",
+    n_tv_title: "On TV",
+    n_tv_atunci: "THEN",
+    n_tv_acum: "NOW",
+    n_dulciuri_title: "Sweets & Snacks",
+    n_dulciuri_atunci: "THEN",
+    n_dulciuri_acum: "NOW",
+    n_muzica_title: "Music",
+    n_muzica_atunci: "THEN",
+    n_muzica_acum: "NOW",
+    nav_home: "HOME",
+    nav_jokes: "JOKES",
+    nav_memes: "MEMES",
+    nav_reels: "REELS",
+    nav
+ews: "NEWS",
+    nav
+ostalgia: "NOSTALGIA",
+    nav_about: "ABOUT",
+    nav_shop: "SHOP",
+    nav_social: "📱 SOCIAL",
+    nav_support: "Support Us",
+    footer
+av_title: "Navigation",
+    footer_social_title: "Social",
+    footer_fb_group: "Facebook Group",
+    footer_fb_page: "Facebook Page",
+    footer_messenger: "Messenger",
+    footer_utile_title: "Useful",
+    footer_privacy: "Privacy",
+    footer_terms: "Terms and conditions",
+  }
+};
 
-    </div>
-</main><footer style="background:#1a1a1a;color:#fff;padding:40px 16px 20px;">
-    <div style="max-width:1200px;margin:0 auto;">
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px;margin-bottom:32px;">
-            <div>
-                <h3 style="font-family:Fredoka,sans-serif;font-size:18px;margin-bottom:12px;">Navigare</h3>
-                <div style="display:flex;flex-direction:column;gap:8px;">
-                    <a href="/" style="color:#ccc;text-decoration:none;">Acasa</a>
-                    <a href="/bancuri" style="color:#ccc;text-decoration:none;">Bancuri</a>
-                    <a href="/meme" style="color:#ccc;text-decoration:none;">Meme</a>
-                    <a href="/reeluri" style="color:#ccc;text-decoration:none;">Reeluri</a>
-                    <a href="/nostalgie" style="color:#ccc;text-decoration:none;">Nostalgie</a>
-                    <a href="/despre" style="color:#ccc;text-decoration:none;">Despre</a>
-                    <a href="/social" style="color:#ccc;text-decoration:none;">Social Media</a>
-                </div>
-            </div>
-            <div>
-                <h3 style="font-family:Fredoka,sans-serif;font-size:18px;margin-bottom:12px;">Social Media</h3>
-                <div style="display:flex;flex-direction:column;gap:8px;">
-                    <a href="https://www.facebook.com/profile.php?id=100010102273607" target="_blank" style="color:#ccc;text-decoration:none;">Pagina Facebook</a>
-                    <a href="https://www.instagram.com/viorelochianu" target="_blank" style="color:#ccc;text-decoration:none;">Instagram</a>
-                </div>
-            </div>
-            <div>
-                <h3 style="font-family:Fredoka,sans-serif;font-size:18px;margin-bottom:12px;">Legal</h3>
-                <div style="display:flex;flex-direction:column;gap:8px;">
-                    <a href="/confidentialitate" style="color:#ccc;text-decoration:none;">Confidentialitate</a>
-                    <a href="/termeni" style="color:#ccc;text-decoration:none;">Termeni si Conditii</a>
-                </div>
-            </div>
-        </div>
-        <div style="border-top:1px solid #333;padding-top:16px;text-align:center;color:#888;font-size:14px;">
-            &copy; 2025 Divertisment si Glume Haioase. Toate drepturile rezervate.
-        </div>
-    </div>
-</footer></div></body></html>
+function applyTranslations(lang) {
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    if (translations[lang] && translations[lang][key]) {
+      el.innerHTML = translations[lang][key];
+    }
+  });
+}
+
+function setLang(lang) {
+  if (lang !== 'ro' && lang !== 'en') {
+    lang = 'ro';
+  }
+  localStorage.setItem('siteLang', lang);
+  document.documentElement.lang = lang;
+
+  document.getElementById('langRO').classList.toggle('active', lang === 'ro');
+  document.getElementById('langEN').classList.toggle('active', lang === 'en');
+
+  applyTranslations(lang);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const savedLang = localStorage.getItem('siteLang') || 'ro';
+  setLang(savedLang);
+});
+</script>
+</body>
+</html>'''

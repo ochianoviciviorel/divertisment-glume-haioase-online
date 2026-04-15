@@ -24,6 +24,10 @@
     <!-- Facebook embed styles -->
     <style>
         .fb-iframe-container { width: 100%; min-height: 500px; border: none; }
+        .lang-toggle{display:flex;align-items:center;border:2px solid #1a1a1a;overflow:hidden;border-radius:15px;flex-shrink:0}
+        .lang-btn{font-family:Fredoka,sans-serif;font-size:12px;padding:4px 8px;background:#fff;color:#1a1a1a;cursor:pointer;transition:.3s;border:none}
+        .lang-btn.active{background:#E53935;color:#fff}
+        .lang-btn:not(.active):hover{background:rgba(229,57,53,.1)}
     </style>
 
     <!-- Google Analytics -->
@@ -171,23 +175,28 @@
                 <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/FhpRMpBhfdDCgpPE.png" alt="Logo" class="logo-img">
                 <div class="logo-text">Glume <span class="red">Haioase</span><br><span style="font-size:10px;opacity:0.7;">divertismentsiglumehaioase.com</span></div>
             </a>
+            <div class="lang-toggle">
+              <button class="lang-btn active" id="langRO" onclick="setLang('ro')">RO</button>
+              <button class="lang-btn" id="langEN" onclick="setLang('en')">EN</button>
+            </div>
             <div class="social-header">
-                <a href="https://www.facebook.com/GlumehaioaseRo" target="_blank" rel="noopener noreferrer" class="social-icon-btn" style="background:#1877F2;" title="Facebook Pagina">
+                <a href="https://www.facebook.com/share/1CkszCSb6U/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" style="background:#1877F2;" title="Facebook Pagina">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                 </a>
-                <a href="https://www.facebook.com/groups/322386916991477" target="_blank" rel="noopener noreferrer" class="social-icon-btn" style="background:#1877F2;" title="Grup Facebook">
+                <a href="https://www.facebook.com/share/g/1CZAM1XhgS/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" style="background:#1877F2;" title="Grup Facebook">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                 </a>
             </div>
             <nav class="desktop-nav">
-                <a href="/" class="nav-link">ACASA</a>
-                <a href="/bancuri" class="nav-link">BANCURI</a>
-                <a href="/meme" class="nav-link">MEME</a>
-                <a href="/reeluri" class="nav-link">REELURI</a>
-                <a href="/nostalgie" class="nav-link">NOSTALGIE</a>
-                <a href="/despre" class="nav-link">DESPRE</a>
-                <a href="/magazin" class="nav-link">MAGAZIN</a>
-                <a href="/social" class="nav-link active">SOCIAL</a>
+                <a href="/" class="nav-link" data-i18n="nav_home">ACASA</a>
+                <a href="/bancuri" class="nav-link" data-i18n="nav_jokes">BANCURI</a>
+                <a href="/meme" class="nav-link" data-i18n="nav_memes">MEME</a>
+                <a href="/reeluri" class="nav-link" data-i18n="nav_reels">REELURI</a>
+                <a href="/noutati" class="nav-link" data-i18n="nav_news">NOUTATI</a>
+                <a href="/nostalgie" class="nav-link" data-i18n="nav_nostalgia">NOSTALGIE</a>
+                <a href="/despre" class="nav-link" data-i18n="nav_about">DESPRE</a>
+                <a href="/magazin" class="nav-link" data-i18n="nav_shop">MAGAZIN</a>
+                <a href="/social" class="nav-link active" data-i18n="nav_social">SOCIAL</a>
             </nav>
             <button class="hamburger-btn" aria-label="Meniu" onclick="openMobileMenu()">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
@@ -203,14 +212,15 @@
         <button class="mobile-menu-close" onclick="closeMobileMenu()">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
-        <a href="/" class="mobile-nav-link">🏠 ACASA</a>
-        <a href="/bancuri" class="mobile-nav-link">😂 BANCURI</a>
-        <a href="/meme" class="mobile-nav-link">🖼️ MEME</a>
-        <a href="/reeluri" class="mobile-nav-link">🎬 REELURI</a>
-        <a href="/nostalgie" class="mobile-nav-link">📺 NOSTALGIE</a>
-        <a href="/despre" class="mobile-nav-link">ℹ️ DESPRE</a>
-        <a href="/magazin" class="mobile-nav-link">🛍️ MAGAZIN</a>
-        <a href="/social" class="mobile-nav-link active">📱 SOCIAL</a>
+        <a href="/" class="mobile-nav-link" data-i18n="nav_home_mobile">🏠 ACASA</a>
+        <a href="/bancuri" class="mobile-nav-link" data-i18n="nav_jokes_mobile">😂 BANCURI</a>
+        <a href="/meme" class="mobile-nav-link" data-i18n="nav_memes_mobile">🖼️ MEME</a>
+        <a href="/reeluri" class="mobile-nav-link" data-i18n="nav_reels_mobile">🎬 REELURI</a>
+        <a href="/noutati" class="mobile-nav-link" data-i18n="nav_news_mobile">📰 NOUTATI</a>
+        <a href="/nostalgie" class="mobile-nav-link" data-i18n="nav_nostalgia_mobile">📺 NOSTALGIE</a>
+        <a href="/despre" class="mobile-nav-link" data-i18n="nav_about_mobile">ℹ️ DESPRE</a>
+        <a href="/magazin" class="mobile-nav-link" data-i18n="nav_shop_mobile">🛍️ MAGAZIN</a>
+        <a href="/social" class="mobile-nav-link active" data-i18n="nav_social_mobile">📱 SOCIAL</a>
         <a href="/sustine" class="mobile-nav-link">⭐ SUSTINE-NE</a>
     </div>
 </div>
@@ -292,7 +302,7 @@
                     <div class="fb-cta-box">
                         <h3>👍 Urmărește Pagina!</h3>
                         <p>Fii primul care vede conținut nou. Dă Like paginii și activează notificările!</p>
-                        <a href="https://www.facebook.com/GlumehaioaseRo" target="_blank" rel="noopener noreferrer" class="fb-cta-btn">
+                        <a href="https://www.facebook.com/share/1CkszCSb6U/" target="_blank" rel="noopener noreferrer" class="fb-cta-btn">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                             Deschide Pagina pe Facebook
                         </a>
@@ -332,18 +342,18 @@
                         <div class="post-reactions">👍 Like &nbsp;💬 Comentariu &nbsp;👥 Membri noi</div>
                     </div>
                     <div class="fb-cta-box" style="background: linear-gradient(135deg, #4267B2, #2d4a8a);">
-                        <h3>👥 Alătură-te Grupului!</h3>
+                        <h3><span data-i18n="s_group_join_button">👥 Alătură-te Grupului</span>!</h3>
                         <p>Fă parte din comunitatea noastră! Postează glume și râzi cu alți români.</p>
-                        <a href="https://www.facebook.com/groups/322386916991477" target="_blank" rel="noopener noreferrer" class="fb-cta-btn" style="color:#4267B2;">
+                        <a href="https://www.facebook.com/share/g/1CZAM1XhgS/" target="_blank" rel="noopener noreferrer" class="fb-cta-btn" style="color:#4267B2;">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                             Deschide Grupul pe Facebook
                         </a>
                     </div>
                 </div>
                 <div class="fb-card-footer">
-                    <a href="https://www.facebook.com/groups/322386916991477" target="_blank" class="fb-follow-btn" style="background:#4267B2;">
+                    <a href="https://www.facebook.com/share/g/1CZAM1XhgS/" target="_blank" class="fb-follow-btn" style="background:#4267B2;">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                        👥 Alătură-te Grupului
+                        <span data-i18n="s_group_join_button">👥 Alătură-te Grupului</span>
                     </a>
                 </div>
             </div>
@@ -364,8 +374,8 @@
                 <p style="font-size:13px;color:rgba(248,241,227,0.6);margin-bottom:4px;">Cel mai haios colt al internetului romanesc!</p>
                 <p style="font-size:12px;color:rgba(248,241,227,0.5);margin-bottom:10px;">Viorel Ochianu</p>
                 <div style="display:flex;flex-wrap:wrap;gap:4px;">
-                    <a href="https://www.facebook.com/GlumehaioaseRo" target="_blank" class="footer-social-btn" style="background:#1877F2;">&#128266; PAGINA</a>
-                    <a href="https://www.facebook.com/groups/322386916991477" target="_blank" class="footer-social-btn" style="background:#1877F2;">&#128101; GRUP</a>
+                    <a href="https://www.facebook.com/share/1CkszCSb6U/" target="_blank" class="footer-social-btn" style="background:#1877F2;">&#128266; PAGINA</a>
+                    <a href="https://www.facebook.com/share/g/1CZAM1XhgS/" target="_blank" class="footer-social-btn" style="background:#1877F2;">&#128101; GRUP</a>
                     <a href="https://m.me/ViorelOchianu" target="_blank" class="footer-social-btn" style="background:#0084FF;">&#128172; MESAJ</a>
                 </div>
             </div>
@@ -375,20 +385,22 @@
                 <a href="/bancuri" class="footer-link">Bancuri</a>
                 <a href="/meme" class="footer-link">Meme</a>
                 <a href="/reeluri" class="footer-link">Reeluri</a>
+                <a href="/noutati" class="footer-link">Noutati</a>
                 <a href="/nostalgie" class="footer-link">Nostalgie</a>
                 <a href="/despre" class="footer-link">Despre</a>
                 <a href="/magazin" class="footer-link">Magazin</a>
                 <a href="/social" class="footer-link">Social Media</a>
                 <a href="/confidentialitate" class="footer-link">Confidentialitate</a>
                 <a href="/termeni" class="footer-link">Termeni si Conditii</a>
+                <a href="/sustine" class="footer-link">Sustine-ne</a>
             </div>
             <div>
                 <h4 class="footer-title">URMARESTE-NE!</h4>
-                <a href="https://www.facebook.com/GlumehaioaseRo" target="_blank" class="footer-social-link">
+                <a href="https://www.facebook.com/share/1CkszCSb6U/" target="_blank" class="footer-social-link">
                     <svg viewBox="0 0 24 24" fill="currentColor" style="color:#1877F2;"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                     Pagina: Divertisment si glume haioase
                 </a>
-                <a href="https://www.facebook.com/groups/322386916991477" target="_blank" class="footer-social-link">
+                <a href="https://www.facebook.com/share/g/1CZAM1XhgS/" target="_blank" class="footer-social-link">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:#1877F2;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
                     Grupul nostru de umor
                 </a>
@@ -422,6 +434,392 @@
 <script>
 function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow='hidden'; }
 function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow=''; }
+
+const translations = {
+    ro: {
+        nav_home: 'ACASA',
+        nav_jokes: 'BANCURI',
+        nav_memes: 'MEME',
+        nav_reels: 'REELURI',
+        nav_news: 'NOUTATI',
+        nav_nostalgia: 'NOSTALGIE',
+        nav_about: 'DESPRE',
+        nav_shop: 'MAGAZIN',
+        nav_social: 'SOCIAL',
+        nav_home_mobile: '🏠 ACASA',
+        nav_jokes_mobile: '😂 BANCURI',
+        nav_memes_mobile: '🖼️ MEME',
+        nav_reels_mobile: '🎬 REELURI',
+        nav_news_mobile: '📰 NOUTATI',
+        nav_nostalgia_mobile: '📺 NOSTALGIE',
+        nav_about_mobile: 'ℹ️ DESPRE',
+        nav_shop_mobile: '🛍️ MAGAZIN',
+        nav_social_mobile: '📱 SOCIAL',
+        nav_support_mobile: '⭐ SUSTINE-NE',
+        s_live: 'LIVE PE FACEBOOK',
+        s_title: '📱 Urmărește-ne pe Facebook!',
+        s_subtitle: 'Postări noi zilnic cu bancuri, meme-uri, reeluri și nostalgie românească. Alătură-te comunității noastre!',
+        s_stat1: 'Vizualizări reel',
+        s_stat2: 'Conținut nou',
+        s_stat3: 'Conținut românesc',
+        s_stat4: 'Acces total',
+        s_page_title: 'Pagina Noastră',
+        s_page_subtitle: 'Divertisment și Glume Haioase — postări zilnice',
+        s_page_type: 'TIP PAGINĂ',
+        s_page_type_value: 'Entertainment Website',
+        s_page_location: 'LOCAȚIE',
+        s_page_location_value: 'Galați, România',
+        s_page_website: 'WEBSITE',
+        s_page_posts: 'POSTĂRI',
+        s_page_posts_value: 'Conținut nou în fiecare zi',
+        s_page_last_post: '📌 Ultima postare',
+        s_page_post_text: '😂 Bancuri, meme-uri, reeluri amuzante și nostalgie românească — totul pe pagina noastră! Dă Like și nu rata niciun conținut haios!',
+        s_page_post_reactions: '👍 Like &nbsp;💬 Comentariu &nbsp;↗️ Distribuie',
+        s_page_cta_title: '👍 Urmărește Pagina!',
+        s_page_cta_text: 'Fii primul care vede conținut nou. Dă Like paginii și activează notificările!',
+        s_page_cta_button: 'Deschide Pagina pe Facebook',
+        s_group_title: 'Grupul Nostru',
+        s_group_subtitle: 'Comunitatea de umor românesc — alătură-te!',
+        s_group_type: 'TIP GRUP',
+        s_group_type_value: 'Grup public de umor românesc',
+        s_group_visibility: 'VIZIBILITATE',
+        s_group_visibility_value: 'Public — oricine poate vedea postările',
+        s_group_activity: 'ACTIVITATE',
+        s_group_activity_value: 'Postări și comentarii zilnice',
+        s_group_content: 'CONȚINUT',
+        s_group_content_value: 'Bancuri, meme-uri, glume românești',
+        s_group_last_activity: '📌 Ultima activitate',
+        s_group_post_text: '🎉 Alătură-te comunității noastre de umor! Postează bancuri, meme-uri și glume haioase. Împreună râdem mai tare! 😄',
+        s_group_post_reactions: '👍 Like &nbsp;💬 Comentariu &nbsp;👥 Membri noi',
+        s_group_cta_title: '👥 Alătură-te Grupului!',
+        s_group_cta_text: 'Fă parte din comunitatea noastră! Postează glume și râzi cu alți români.',
+        s_group_cta_button: 'Deschide Grupul pe Facebook',
+        s_group_join_button: '👥 Alătură-te Grupului',
+        footer_subtitle: 'Cel mai haios colt al internetului romanesc!',
+        footer_nav_title: 'NAVIGARE',
+        footer_nav_home: 'Acasa',
+        footer_nav_jokes: 'Bancuri',
+        footer_nav_memes: 'Meme',
+        footer_nav_reels: 'Reeluri',
+        footer_nav_news: 'Noutati',
+        footer_nav_nostalgia: 'Nostalgie',
+        footer_nav_about: 'Despre',
+        footer_nav_shop: 'Magazin',
+        footer_nav_social: 'Social Media',
+        footer_nav_privacy: 'Confidentialitate',
+        footer_nav_terms: 'Termeni si Conditii',
+        footer_nav_support: 'Sustine-ne',
+        footer_social_title: 'URMARESTE-NE!',
+        footer_social_page: 'Pagina: Divertisment si glume haioase',
+        footer_social_group: 'Grupul nostru de umor',
+        footer_social_instagram: '@viorelochianu pe Instagram',
+        footer_copyright: 'Facut cu ❤️ pentru rasul romanesc © 2026',
+        footer_legal_privacy: 'Confidentialitate',
+        footer_legal_terms: 'Termeni si Conditii',
+        footer_disclaimer: 'Orice asemanare cu persoane reale este pur intamplatoare. Continutul este creat exclusiv in scop de divertisment.'
+    },
+    en: {
+        nav_home: 'HOME',
+        nav_jokes: 'JOKES',
+        nav_memes: 'MEMES',
+        nav_reels: 'REELS',
+        nav_news: 'NEWS',
+        nav_nostalgia: 'NOSTALGIA',
+        nav_about: 'ABOUT',
+        nav_shop: 'SHOP',
+        nav_social: 'SOCIAL',
+        nav_home_mobile: '🏠 HOME',
+        nav_jokes_mobile: '😂 JOKES',
+        nav_memes_mobile: '🖼️ MEMES',
+        nav_reels_mobile: '🎬 REELS',
+        nav_news_mobile: '📰 NEWS',
+        nav_nostalgia_mobile: '📺 NOSTALGIA',
+        nav_about_mobile: 'ℹ️ ABOUT',
+        nav_shop_mobile: '🛍️ SHOP',
+        nav_social_mobile: '📱 SOCIAL',
+        nav_support_mobile: '⭐ SUPPORT US',
+        s_live: 'LIVE ON FACEBOOK',
+        s_title: '📱 Follow us on Facebook!',
+        s_subtitle: 'New posts daily with Romanian jokes, memes, reels, and nostalgia. Join our community!',
+        s_stat1: 'Reel Views',
+        s_stat2: 'New Content',
+        s_stat3: 'Romanian Content',
+        s_stat4: 'Full Access',
+        s_page_title: 'Our Page',
+        s_page_subtitle: 'Funny Jokes & Entertainment — daily posts',
+        s_page_type: 'PAGE TYPE',
+        s_page_type_value: 'Entertainment Website',
+        s_page_location: 'LOCATION',
+        s_page_location_value: 'Galați, Romania',
+        s_page_website: 'WEBSITE',
+        s_page_posts: 'POSTS',
+        s_page_posts_value: 'New content every day',
+        s_page_last_post: '📌 Last post',
+        s_page_post_text: '😂 Funny jokes, memes, reels, and Romanian nostalgia — all on our page! Like and don\'t miss any funny content!',
+        s_page_post_reactions: '👍 Like &nbsp;💬 Comment &nbsp;↗️ Share',
+        s_page_cta_title: '👍 Follow the Page!',
+        s_page_cta_text: 'Be the first to see new content. Like the page and turn on notifications!',
+        s_page_cta_button: 'Open Page on Facebook',
+        s_group_title: 'Our Group',
+        s_group_subtitle: 'The Romanian humor community — join us!',
+        s_group_type: 'GROUP TYPE',
+        s_group_type_value: 'Public Romanian humor group',
+        s_group_visibility: 'VISIBILITY',
+        s_group_visibility_value: 'Public — anyone can see the posts',
+        s_group_activity: 'ACTIVITY',
+        s_group_activity_value: 'Daily posts and comments',
+        s_group_content: 'CONTENT',
+        s_group_content_value: 'Jokes, memes, Romanian humor',
+        s_group_last_activity: '📌 Last activity',
+        s_group_post_text: '🎉 Join our humor community! Post jokes, memes, and funny gags. Together we laugh harder! 😄',
+        s_group_post_reactions: '👍 Like &nbsp;💬 Comment &nbsp;👥 New members',
+        s_group_cta_title: '👥 Join the Group!',
+        s_group_cta_text: 'Be part of our community! Post jokes and laugh with other Romanians.',
+        s_group_cta_button: 'Open Group on Facebook',
+        s_group_join_button: '👥 Join the Group',
+        footer_subtitle: 'The funniest corner of the Romanian internet!',
+        footer_nav_title: 'NAVIGATION',
+        footer_nav_home: 'Home',
+        footer_nav_jokes: 'Jokes',
+        footer_nav_memes: 'Memes',
+        footer_nav_reels: 'Reels',
+        footer_nav_news: 'News',
+        footer_nav_nostalgia: 'Nostalgia',
+        footer_nav_about: 'About',
+        footer_nav_shop: 'Shop',
+        footer_nav_social: 'Social Media',
+        footer_nav_privacy: 'Privacy',
+        footer_nav_terms: 'Terms and Conditions',
+        footer_nav_support: 'Support Us',
+        footer_social_title: 'FOLLOW US!',
+        footer_social_page: 'Page: Divertisment si glume haioase',
+        footer_social_group: 'Our humor group',
+        footer_social_instagram: '@viorelochianu on Instagram',
+        footer_copyright: 'Made with ❤️ for Romanian laughter © 2026',
+        footer_legal_privacy: 'Privacy',
+        footer_legal_terms: 'Terms and Conditions',
+        footer_disclaimer: 'Any resemblance to real people is purely coincidental. The content is created exclusively for entertainment purposes.'
+    }
+};
+
+function applyTranslations(lang) {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            el.innerHTML = translations[lang][key];
+        }
+    });
+    document.documentElement.lang = lang;
+}
+
+function setLang(lang) {
+    if (lang !== 'ro' && lang !== 'en') {
+        lang = 'ro';
+    }
+    localStorage.setItem('siteLang', lang);
+    applyTranslations(lang);
+
+    document.getElementById('langRO').classList.toggle('active', lang === 'ro');
+    document.getElementById('langEN').classList.toggle('active', lang === 'en');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const siteLang = localStorage.getItem('siteLang') || 'ro';
+    setLang(siteLang);
+});
+const translations = {
+    ro: {
+        nav_home: 'ACASA',
+        nav_jokes: 'BANCURI',
+        nav_memes: 'MEME',
+        nav_reels: 'REELURI',
+        nav_news: 'NOUTATI',
+        nav_nostalgia: 'NOSTALGIE',
+        nav_about: 'DESPRE',
+        nav_shop: 'MAGAZIN',
+        nav_social: 'SOCIAL',
+        nav_home_mobile: '🏠 ACASA',
+        nav_jokes_mobile: '😂 BANCURI',
+        nav_memes_mobile: '🖼️ MEME',
+        nav_reels_mobile: '🎬 REELURI',
+        nav_news_mobile: '📰 NOUTATI',
+        nav_nostalgia_mobile: '📺 NOSTALGIE',
+        nav_about_mobile: 'ℹ️ DESPRE',
+        nav_shop_mobile: '🛍️ MAGAZIN',
+        nav_social_mobile: '📱 SOCIAL',
+        nav_support_mobile: '⭐ SUSTINE-NE',
+        s_live: 'LIVE PE FACEBOOK',
+        s_title: '📱 Urmărește-ne pe Facebook!',
+        s_subtitle: 'Postări noi zilnic cu bancuri, meme-uri, reeluri și nostalgie românească. Alătură-te comunității noastre!',
+        s_stat1: 'Vizualizări reel',
+        s_stat2: 'Conținut nou',
+        s_stat3: 'Conținut românesc',
+        s_stat4: 'Acces total',
+        s_page_title: 'Pagina Noastră',
+        s_page_subtitle: 'Divertisment și Glume Haioase — postări zilnice',
+        s_page_type: 'TIP PAGINĂ',
+        s_page_type_value: 'Entertainment Website',
+        s_page_location: 'LOCAȚIE',
+        s_page_location_value: 'Galați, România',
+        s_page_website: 'WEBSITE',
+        s_page_posts: 'POSTĂRI',
+        s_page_posts_value: 'Conținut nou în fiecare zi',
+        s_page_last_post: '📌 Ultima postare',
+        s_page_post_text: '😂 Bancuri, meme-uri, reeluri amuzante și nostalgie românească — totul pe pagina noastră! Dă Like și nu rata niciun conținut haios!',
+        s_page_post_reactions: '👍 Like &nbsp;💬 Comentariu &nbsp;↗️ Distribuie',
+        s_page_cta_title: '👍 Urmărește Pagina!',
+        s_page_cta_text: 'Fii primul care vede conținut nou. Dă Like paginii și activează notificările!',
+        s_page_cta_button: 'Deschide Pagina pe Facebook',
+        s_group_title: 'Grupul Nostru',
+        s_group_subtitle: 'Comunitatea de umor românesc — alătură-te!',
+        s_group_type: 'TIP GRUP',
+        s_group_type_value: 'Grup public de umor românesc',
+        s_group_visibility: 'VIZIBILITATE',
+        s_group_visibility_value: 'Public — oricine poate vedea postările',
+        s_group_activity: 'ACTIVITATE',
+        s_group_activity_value: 'Postări și comentarii zilnice',
+        s_group_content: 'CONȚINUT',
+        s_group_content_value: 'Bancuri, meme-uri, glume românești',
+        s_group_last_activity: '📌 Ultima activitate',
+        s_group_post_text: '🎉 Alătură-te comunității noastre de umor! Postează bancuri, meme-uri și glume haioase. Împreună râdem mai tare! 😄',
+        s_group_post_reactions: '👍 Like &nbsp;💬 Comentariu &nbsp;👥 Membri noi',
+        s_group_cta_title: '👥 Alătură-te Grupului!',
+        s_group_cta_text: 'Fă parte din comunitatea noastră! Postează glume și râzi cu alți români.',
+        s_group_cta_button: 'Deschide Grupul pe Facebook',
+        s_group_join_button: '👥 Alătură-te Grupului',
+        footer_subtitle: 'Cel mai haios colt al internetului romanesc!',
+        footer_nav_title: 'NAVIGARE',
+        footer_nav_home: 'Acasa',
+        footer_nav_jokes: 'Bancuri',
+        footer_nav_memes: 'Meme',
+        footer_nav_reels: 'Reeluri',
+        footer_nav_news: 'Noutati',
+        footer_nav_nostalgia: 'Nostalgie',
+        footer_nav_about: 'Despre',
+        footer_nav_shop: 'Magazin',
+        footer_nav_social: 'Social Media',
+        footer_nav_privacy: 'Confidentialitate',
+        footer_nav_terms: 'Termeni si Conditii',
+        footer_nav_support: 'Sustine-ne',
+        footer_social_title: 'URMARESTE-NE!',
+        footer_social_page: 'Pagina: Divertisment si glume haioase',
+        footer_social_group: 'Grupul nostru de umor',
+        footer_social_instagram: '@viorelochianu pe Instagram',
+        footer_copyright: 'Facut cu ❤️ pentru rasul romanesc © 2026',
+        footer_legal_privacy: 'Confidentialitate',
+        footer_legal_terms: 'Termeni si Conditii',
+        footer_disclaimer: 'Orice asemanare cu persoane reale este pur intamplatoare. Continutul este creat exclusiv in scop de divertisment.'
+    },
+    en: {
+        nav_home: 'HOME',
+        nav_jokes: 'JOKES',
+        nav_memes: 'MEMES',
+        nav_reels: 'REELS',
+        nav_news: 'NEWS',
+        nav_nostalgia: 'NOSTALGIA',
+        nav_about: 'ABOUT',
+        nav_shop: 'SHOP',
+        nav_social: 'SOCIAL',
+        nav_home_mobile: '🏠 HOME',
+        nav_jokes_mobile: '😂 JOKES',
+        nav_memes_mobile: '🖼️ MEMES',
+        nav_reels_mobile: '🎬 REELS',
+        nav_news_mobile: '📰 NEWS',
+        nav_nostalgia_mobile: '📺 NOSTALGIA',
+        nav_about_mobile: 'ℹ️ ABOUT',
+        nav_shop_mobile: '🛍️ SHOP',
+        nav_social_mobile: '📱 SOCIAL',
+        nav_support_mobile: '⭐ SUPPORT US',
+        s_live: 'LIVE ON FACEBOOK',
+        s_title: '📱 Follow us on Facebook!',
+        s_subtitle: 'New posts daily with Romanian jokes, memes, reels, and nostalgia. Join our community!',
+        s_stat1: 'Reel Views',
+        s_stat2: 'New Content',
+        s_stat3: 'Romanian Content',
+        s_stat4: 'Full Access',
+        s_page_title: 'Our Page',
+        s_page_subtitle: 'Funny Jokes & Entertainment — daily posts',
+        s_page_type: 'PAGE TYPE',
+        s_page_type_value: 'Entertainment Website',
+        s_page_location: 'LOCATION',
+        s_page_location_value: 'Galați, Romania',
+        s_page_website: 'WEBSITE',
+        s_page_posts: 'POSTS',
+        s_page_posts_value: 'New content every day',
+        s_page_last_post: '📌 Last post',
+        s_page_post_text: '😂 Funny jokes, memes, reels, and Romanian nostalgia — all on our page! Like and don\'t miss any funny content!',
+        s_page_post_reactions: '👍 Like &nbsp;💬 Comment &nbsp;↗️ Share',
+        s_page_cta_title: '👍 Follow the Page!',
+        s_page_cta_text: 'Be the first to see new content. Like the page and turn on notifications!',
+        s_page_cta_button: 'Open Page on Facebook',
+        s_group_title: 'Our Group',
+        s_group_subtitle: 'The Romanian humor community — join us!',
+        s_group_type: 'GROUP TYPE',
+        s_group_type_value: 'Public Romanian humor group',
+        s_group_visibility: 'VISIBILITY',
+        s_group_visibility_value: 'Public — anyone can see the posts',
+        s_group_activity: 'ACTIVITY',
+        s_group_activity_value: 'Daily posts and comments',
+        s_group_content: 'CONTENT',
+        s_group_content_value: 'Jokes, memes, Romanian humor',
+        s_group_last_activity: '📌 Last activity',
+        s_group_post_text: '🎉 Join our humor community! Post jokes, memes, and funny gags. Together we laugh harder! 😄',
+        s_group_post_reactions: '👍 Like &nbsp;💬 Comment &nbsp;👥 New members',
+        s_group_cta_title: '👥 Join the Group!',
+        s_group_cta_text: 'Be part of our community! Post jokes and laugh with other Romanians.',
+        s_group_cta_button: 'Open Group on Facebook',
+        s_group_join_button: '👥 Join the Group',
+        footer_subtitle: 'The funniest corner of the Romanian internet!',
+        footer_nav_title: 'NAVIGATION',
+        footer_nav_home: 'Home',
+        footer_nav_jokes: 'Jokes',
+        footer_nav_memes: 'Memes',
+        footer_nav_reels: 'Reels',
+        footer_nav_news: 'News',
+        footer_nav_nostalgia: 'Nostalgia',
+        footer_nav_about: 'About',
+        footer_nav_shop: 'Shop',
+        footer_nav_social: 'Social Media',
+        footer_nav_privacy: 'Privacy',
+        footer_nav_terms: 'Terms and Conditions',
+        footer_nav_support: 'Support Us',
+        footer_social_title: 'FOLLOW US!',
+        footer_social_page: 'Page: Divertisment si glume haioase',
+        footer_social_group: 'Our humor group',
+        footer_social_instagram: '@viorelochianu on Instagram',
+        footer_copyright: 'Made with ❤️ for Romanian laughter © 2026',
+        footer_legal_privacy: 'Privacy',
+        footer_legal_terms: 'Terms and Conditions',
+        footer_disclaimer: 'Any resemblance to real people is purely coincidental. The content is created exclusively for entertainment purposes.'
+    }
+};
+
+function applyTranslations(lang) {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            el.innerHTML = translations[lang][key];
+        }
+    });
+    document.documentElement.lang = lang;
+}
+
+function setLang(lang) {
+    if (lang !== 'ro' && lang !== 'en') {
+        lang = 'ro';
+    }
+    localStorage.setItem('siteLang', lang);
+    applyTranslations(lang);
+
+    document.getElementById('langRO').classList.toggle('active', lang === 'ro');
+    document.getElementById('langEN').classList.toggle('active', lang === 'en');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const siteLang = localStorage.getItem('siteLang') || 'ro';
+    setLang(siteLang);
+});
+
 window.addEventListener('scroll', function() {
     var btn = document.getElementById('scrollTopBtn');
     if (window.scrollY > 300) btn.classList.add('show'); else btn.classList.remove('show');

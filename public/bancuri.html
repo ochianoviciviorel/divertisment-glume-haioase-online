@@ -87,7 +87,10 @@ footer a, footer p { font-size:12px !important; }
 section { margin-bottom:10px !important; }
 h2 { font-size:clamp(18px,3vw,24px) !important; }
 h3 { font-size:clamp(14px,2.5vw,18px) !important; }
-
+.lang-toggle{display:flex;align-items:center;border:2px solid #1a1a1a;overflow:hidden;border-radius:15px;flex-shrink:0}
+.lang-btn{font-family:Fredoka,sans-serif;font-size:12px;padding:4px 8px;background:#fff;color:#1a1a1a;cursor:pointer;transition:.3s;border:none}
+.lang-btn.active{background:#E53935;color:#fff}
+.lang-btn:not(.active):hover{background:rgba(229,57,53,.1)}
 </style>
     <meta property="og:image" content="https://files.manuscdn.com/user_upload_by_module/session_file/310519663464492928/FhpRMpBhfdDCgpPE.png">
     <meta property="og:image:width" content="400">
@@ -111,462 +114,445 @@ h3 { font-size:clamp(14px,2.5vw,18px) !important; }
         <a href="/" style="display:flex;align-items:center;gap:8px;text-decoration:none;">
             <span style="font-family:Fredoka,sans-serif;font-size:22px;font-weight:700;color:#1a1a1a;">Glume <span style="color:#E53935;">Haioase</span></span>
         </a>
+<div class="lang-toggle">
+  <button class="lang-btn active" id="langRO" onclick="setLang('ro')">RO</button>
+  <button class="lang-btn" id="langEN" onclick="setLang('en')">EN</button>
+</div>
         <nav style="display:flex;align-items:center;gap:4px;" id="desktop-nav">
-            <a href="https://www.facebook.com/profile.php?id=100010102273607" target="_blank" style="width:28px;height:28px;background:#1877F2;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;text-decoration:none;font-weight:bold;">f</a>
-            <a href="https://www.instagram.com/viorelochianu" target="_blank" style="width:28px;height:28px;background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;text-decoration:none;">&#9679;</a>
+            <a href="https://www.facebook.com/share/1CkszCSb6U/" target="_blank" style="width:28px;height:28px;background:#1877F2;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;text-decoration:none;font-weight:bold;">f</a>
+            <a href="https://www.instagram.com/viorelochianu/" target="_blank" style="width:28px;height:28px;background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;text-decoration:none;">&#9679;</a>
             <span style="width:8px;"></span>
-            <a href="/" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;">ACASA</a>
-<a href="/bancuri" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;background:#E53935;color:#fff;border-radius:4px;padding:4px 12px;">BANCURI</a>
-<a href="/meme" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;">MEME</a>
-<a href="/reeluri" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;">REELURI</a>
-<a href="/nostalgie" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;">NOSTALGIE</a>
-<a href="/despre" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;">DESPRE</a>
-<a href="/social" style="text-decoration:none;color:#fff;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;background:#1877F2;border-radius:4px;">📱 SOCIAL</a>
+            <a href="/" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;" data-i18n="nav_home">ACASA</a>
+<a href="/bancuri" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;background:#E53935;color:#fff;border-radius:4px;padding:4px 12px;" data-i18n="nav_jokes">BANCURI</a>
+<a href="/meme" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;" data-i18n="nav_memes">MEME</a>
+<a href="/reeluri" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;" data-i18n="nav_reels">REELURI</a>
+<a href="/noutati" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;" data-i18n="nav_news">NOUTATI</a>
+<a href="/nostalgie" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;" data-i18n="nav_nostalgia">NOSTALGIE</a>
+<a href="/despre" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;" data-i18n="nav_about">DESPRE</a>
+<a href="/magazin" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;" data-i18n="nav_shop">MAGAZIN</a>
+<a href="/social" style="text-decoration:none;color:#fff;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;background:#1877F2;border-radius:4px;" data-i18n="nav_social">📱 SOCIAL</a>
 
         </nav>
         <button onclick="document.getElementById('mobile-menu').style.display=document.getElementById('mobile-menu').style.display==='flex'?'none':'flex'" style="display:none;background:none;border:none;font-size:24px;cursor:pointer;" id="menu-btn">&#9776;</button>
     </div>
-    <div id="mobile-menu" style="display:none;flex-direction:column;gap:8px;padding:16px;background:#FFD54F;">
-        <a href="/" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;">ACASA</a>
-<a href="/bancuri" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;background:#E53935;color:#fff;border-radius:4px;padding:4px 12px;">BANCURI</a>
-<a href="/meme" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;">MEME</a>
-<a href="/reeluri" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;">REELURI</a>
-<a href="/nostalgie" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;">NOSTALGIE</a>
-<a href="/despre" style="text-decoration:none;color:#1a1a1a;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;">DESPRE</a>
-<a href="/social" style="text-decoration:none;color:#fff;font-family:Fredoka,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.5px;padding:4px 12px;background:#1877F2;border-radius:4px;">📱 SOCIAL</a>
-
+    <div id="mobile-menu" style="display:none;flex-direction:column;background:#fff;padding:12px;border-top:1px solid #eee;">
+        <a href="/" style="text-decoration:none;color:#1a1a1a;padding:8px 0;font-weight:600;" data-i18n="nav_home">ACASA</a>
+        <a href="/bancuri" style="text-decoration:none;color:#1a1a1a;padding:8px 0;font-weight:600;" data-i18n="nav_jokes">BANCURI</a>
+        <a href="/meme" style="text-decoration:none;color:#1a1a1a;padding:8px 0;font-weight:600;" data-i18n="nav_memes">MEME</a>
+        <a href="/reeluri" style="text-decoration:none;color:#1a1a1a;padding:8px 0;font-weight:600;" data-i18n="nav_reels">REELURI</a>
+        <a href="/noutati" style="text-decoration:none;color:#1a1a1a;padding:8px 0;font-weight:600;" data-i18n="nav_news">NOUTATI</a>
+        <a href="/nostalgie" style="text-decoration:none;color:#1a1a1a;padding:8px 0;font-weight:600;" data-i18n="nav_nostalgia">NOSTALGIE</a>
+        <a href="/despre" style="text-decoration:none;color:#1a1a1a;padding:8px 0;font-weight:600;" data-i18n="nav_about">DESPRE</a>
+        <a href="/magazin" style="text-decoration:none;color:#1a1a1a;padding:8px 0;font-weight:600;" data-i18n="nav_shop">MAGAZIN</a>
+        <a href="/social" style="text-decoration:none;color:#1a1a1a;padding:8px 0;font-weight:600;" data-i18n="nav_social">📱 SOCIAL</a>
     </div>
 </header>
-<style>
-@media (max-width:768px) {
-    #desktop-nav { display:none !important; }
-    #menu-btn { display:block !important; }
-}
-</style><main class="main-content">
-    <div style="text-align:center;">
-        <span class="badge" style="background:#E53935;">&#128514; COLECTIA DE BANCURI</span>
-        <h1 class="page-title">Bancuri <span>Romanesti</span></h1>
-        <p class="page-subtitle">Voteaza cele mai bune bancuri!<br><small style="color:#999;">Voturile sunt salvate pe acest dispozitiv</small></p>
-        <button class="btn btn-red" style="margin-bottom:12px;" onclick="sortBancuri('top')">&#127942; TOP 10 BANCURI</button>
-    </div>
-    <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:8px;">
-        <button class="filter-btn active" onclick="sortBancuri('implicit')" id="sort-implicit">&#9733; IMPLICIT</button>
-        <button class="filter-btn" onclick="sortBancuri('votate')" id="sort-votate">&#11014; CELE MAI VOTATE</button>
-        <button class="filter-btn" onclick="sortBancuri('noi')" id="sort-noi">&#11015; CELE MAI NOI</button>
-    </div>
-    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-bottom:12px;">
-        <button class="filter-btn active" onclick="filterBancuri('toate')">TOATE</button>
-<button class="filter-btn" onclick="filterBancuri('La Doctor')">LA DOCTOR</button>
-<button class="filter-btn" onclick="filterBancuri('Sot si Sotie')">SOT SI SOTIE</button>
-<button class="filter-btn" onclick="filterBancuri('Cu Bula')">CU BULA</button>
-<button class="filter-btn" onclick="filterBancuri('La Scoala')">LA SCOALA</button>
-<button class="filter-btn" onclick="filterBancuri('Cu Politia')">CU POLITIA</button>
-<button class="filter-btn" onclick="filterBancuri('IT & Tech')">IT & TECH</button>
-<button class="filter-btn" onclick="filterBancuri('La Bar')">LA BAR</button>
-<button class="filter-btn" onclick="filterBancuri('Jocuri de Cuvinte')">JOCURI DE CUVINTE</button>
-<button class="filter-btn" onclick="filterBancuri('Banc Scurt')">BANC SCURT</button>
-<button class="filter-btn" onclick="filterBancuri('Animale')">ANIMALE</button>
-<button class="filter-btn" onclick="filterBancuri('Altele')">ALTELE</button>
 
-    </div>
-    <p style="text-align:center;color:#888;margin-bottom:10px;" id="count-text">53 bancuri gasite</p>
-    <div class="grid-2" id="bancuri-container">
-        <div class="card" data-cat="La Doctor" style="transition:all 0.3s;">
+<main class="main-content">
+    <h1 class="page-title" data-i18n="b_title">Cele mai tari <span>Bancuri</span></h1>
+    <p class="page-subtitle" data-i18n="b_subtitle">Colectia suprema de umor romanesc. Gasesti aici bancuri cu de toate, pentru toti!</p>
+
+    <section style="margin-bottom:16px;">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px;">
+            <h2 style="font-family:Fredoka,sans-serif;font-size:clamp(20px,4vw,28px);font-weight:600;margin-right:auto;" data-i18n="b_top10">Top 10 Categorii</h2>
+            <div style="display:flex;gap:8px;align-items:center;">
+                <span style="font-family:Fredoka,sans-serif;font-size:13px;color:#555;" data-i18n="b_sort_by">Sorteaza:</span>
+                <select id="sort-order" style="padding:4px 8px;border:2px solid #ddd;border-radius:15px;font-family:Fredoka,sans-serif;font-size:12px;">
+                    <option value="default" data-i18n="b_sort_default">Default</option>
+                    <option value="newest" data-i18n="b_sort_newest">Cele mai noi</option>
+                    <option value="popular" data-i18n="b_sort_popular">Cele mai populare</option>
+                </select>
+            </div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <button class="filter-btn active" onclick="filterJokes('all')" data-i18n="b_cat_all">Toate</button>
+            <button class="filter-btn" onclick="filterJokes('La Doctor')" data-i18n="b_cat_doctor">La Doctor</button>
+            <button class="filter-btn" onclick="filterJokes('Cu Bula')" data-i18n="b_cat_bula">Cu Bula</button>
+            <button class="filter-btn" onclick="filterJokes('Sot si Sotie')" data-i18n="b_cat_husbandwife">Sot si Sotie</button>
+            <button class="filter-btn" onclick="filterJokes('La Scoala')" data-i18n="b_cat_school">La Scoala</button>
+            <button class="filter-btn" onclick="filterJokes('Animale')" data-i18n="b_cat_animals">Animale</button>
+            <button class="filter-btn" onclick="filterJokes('IT & Tech')" data-i18n="b_cat_it">IT & Tech</button>
+            <button class="filter-btn" onclick="filterJokes('Cu Politia')" data-i18n="b_cat_police">Cu Politia</button>
+            <button class="filter-btn" onclick="filterJokes('La Bar')" data-i18n="b_cat_bar">La Bar</button>
+            <button class="filter-btn" onclick="filterJokes('Banc Scurt')" data-i18n="b_cat_short">Banc Scurt</button>
+            <button class="filter-btn" onclick="filterJokes('Jocuri de Cuvinte')" data-i18n="b_cat_wordgames">Jocuri de Cuvinte</button>
+            <button class="filter-btn" onclick="filterJokes('Altele')" data-i18n="b_cat_other">Altele</button>
+        </div>
+    </section>
+
+    <div class="grid-2" id="jokes-grid">
+<div class="card" data-cat="La Doctor" style="transition:all 0.3s;">
     <span class="badge" style="background:#E53935;font-size:11px;padding:3px 10px;">La Doctor</span>
-    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Doctorul catre pacient: — De ce ati venit la mine?
-— Pai, doctore, ma doare capul.
-— Si ce vreti sa fac eu? Si pe mine ma doare!</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-0').style.display=document.getElementById('raspuns-0').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
-    <div id="raspuns-0" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #E53935;">— Pai atunci de ce sunteti doctor?
-— Ca sa nu ma doara buzunarul!</div>
-    <div class="vote-section">
-        <button class="vote-btn" onclick="vote(0,1)">&#128077;</button>
-        <button class="vote-btn" onclick="vote(0,-1)">&#128078;</button>
-        <span id="points-0" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
-    </div>
-</div>
-<div class="card" data-cat="Sot si Sotie" style="transition:all 0.3s;">
-    <span class="badge" style="background:#FF6F00;font-size:11px;padding:3px 10px;">Sot si Sotie</span>
-    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Sotia: — Draga, de ce nu-mi cumperi niciodata flori?
-— Pai, draga, nici tu nu mi-ai cumparat niciodata bere!</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-1').style.display=document.getElementById('raspuns-1').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
-    <div id="raspuns-1" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #FF6F00;">— Pai tu nu esti floare!
-— Si tu nu esti bere!</div>
+    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Un tip se duce la doctor:
+— Doctore, am o problema, ma dor toate oasele!
+Doctorul, dupa ce il consulta, ii spune:
+— Stati linistit, nu aveti nimic grav. Este doar o raceala la oase.</p>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-1').style.display=document.getElementById('raspuns-1').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
+    <div id="raspuns-1" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #E53935;">Tipul, mirat:
+— Si ce sa fac?
+Doctorul:
+— Luati un pulover pe sub piele!</div>
     <div class="vote-section">
         <button class="vote-btn" onclick="vote(1,1)">&#128077;</button>
         <button class="vote-btn" onclick="vote(1,-1)">&#128078;</button>
-        <span id="points-1" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+        <span id="points-1" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
     </div>
 </div>
 <div class="card" data-cat="Cu Bula" style="transition:all 0.3s;">
     <span class="badge" style="background:#7B1FA2;font-size:11px;padding:3px 10px;">Cu Bula</span>
-    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Profesoara: — Bula, de ce ai intarziat?
-— Pai, doamna profesoara, am citit ca somnul e important pentru sanatate.</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-2').style.display=document.getElementById('raspuns-2').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
-    <div id="raspuns-2" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #7B1FA2;">— Si ce legatura are?
-— Pai, m-am trezit sanatos!</div>
+    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Bula vine acasa de la scoala.
+— Tata, am o veste proasta si una si mai proasta.
+— Spune-o pe prima.
+— Am luat 4 la matematica.</p>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-2').style.display=document.getElementById('raspuns-2').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
+    <div id="raspuns-2" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #7B1FA2;">— Si cea si mai proasta?
+— Am luat si 3 la fizica!</div>
     <div class="vote-section">
         <button class="vote-btn" onclick="vote(2,1)">&#128077;</button>
         <button class="vote-btn" onclick="vote(2,-1)">&#128078;</button>
-        <span id="points-2" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+        <span id="points-2" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
     </div>
 </div>
-<div class="card" data-cat="La Scoala" style="transition:all 0.3s;">
-    <span class="badge" style="background:#1565C0;font-size:11px;padding:3px 10px;">La Scoala</span>
-    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Profesoara: — Bula, spune-mi un cuvant care incepe cu litera A.
-— Automobil!
-— Bravo! Acum unul cu B.
-— Bicicleta!</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-3').style.display=document.getElementById('raspuns-3').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
-    <div id="raspuns-3" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #1565C0;">— Excelent! Acum cu C.
-— Camion!
-— Dar asta incepe cu C, nu cu K!
-— Pai am zis Camion, nu Kamion!</div>
+<div class="card" data-cat="Sot si Sotie" style="transition:all 0.3s;">
+    <span class="badge" style="background:#FF6F00;font-size:11px;padding:3px 10px;">Sot si Sotie</span>
+    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Sotia: — Iubitule, ce ai face daca as castiga la loto?
+Sotul: — Ti-as lua jumatate si te-as parasi!</p>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-3').style.display=document.getElementById('raspuns-3').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
+    <div id="raspuns-3" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #FF6F00;">Sotia: — Perfect! Am castigat 10 lei. Ia-ti 5 lei si cara-te!</div>
     <div class="vote-section">
         <button class="vote-btn" onclick="vote(3,1)">&#128077;</button>
         <button class="vote-btn" onclick="vote(3,-1)">&#128078;</button>
-        <span id="points-3" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+        <span id="points-3" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
     </div>
 </div>
-<div class="card" data-cat="Cu Politia" style="transition:all 0.3s;">
-    <span class="badge" style="background:#2E7D32;font-size:11px;padding:3px 10px;">Cu Politia</span>
-    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Politistul opreste un sofer:
-— Buna ziua, ati baut ceva?
-— Da, un ceai.
-— Ceai? La ora asta?</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-4').style.display=document.getElementById('raspuns-4').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
-    <div id="raspuns-4" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #2E7D32;">— Da, ceai cu rom!
-— Aha, deci ati baut rom!
-— Nu, am baut ceai. Romul era in ceai!</div>
+<div class="card" data-cat="La Scoala" style="transition:all 0.3s;">
+    <span class="badge" style="background:#1565C0;font-size:11px;padding:3px 10px;">La Scoala</span>
+    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Invatatoarea: — Copii, ce este un erou?
+Bula: — Un om care a salvat o pisica din copac.
+Invatatoarea: — Bine, Bula. Dar un erou mai mare?</p>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-4').style.display=document.getElementById('raspuns-4').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
+    <div id="raspuns-4" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #1565C0;">Bula: — Un om care a salvat-o pe invatatoare din copac!</div>
     <div class="vote-section">
         <button class="vote-btn" onclick="vote(4,1)">&#128077;</button>
         <button class="vote-btn" onclick="vote(4,-1)">&#128078;</button>
-        <span id="points-4" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+        <span id="points-4" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
     </div>
 </div>
-<div class="card" data-cat="IT & Tech" style="transition:all 0.3s;">
-    <span class="badge" style="background:#00838F;font-size:11px;padding:3px 10px;">IT & Tech</span>
-    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">De ce programatorii prefera intunericul?
-— Pentru ca lumina atrage bug-uri!</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-5').style.display=document.getElementById('raspuns-5').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
-    <div id="raspuns-5" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #00838F;">Si de ce nu ies din casa?
-— Pentru ca au deja toate porturile ocupate!</div>
+<div class="card" data-cat="Animale" style="transition:all 0.3s;">
+    <span class="badge" style="background:#558B2F;font-size:11px;padding:3px 10px;">Animale</span>
+    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Doi tantari stau de vorba:
+— Ce faci, mai?
+— Uite, ma duc la un film.
+— Singur?</p>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-5').style.display=document.getElementById('raspuns-5').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
+    <div id="raspuns-5" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #558B2F;">— Nu, cu o lampa. Am auzit ca e cu ultraviolete!</div>
     <div class="vote-section">
         <button class="vote-btn" onclick="vote(5,1)">&#128077;</button>
         <button class="vote-btn" onclick="vote(5,-1)">&#128078;</button>
-        <span id="points-5" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
-    </div>
-</div>
-<div class="card" data-cat="La Bar" style="transition:all 0.3s;">
-    <span class="badge" style="background:#4E342E;font-size:11px;padding:3px 10px;">La Bar</span>
-    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Un barbat intra intr-un bar si comanda o bere.
-— Cat costa?
-— 10 lei.
-— Dar ieri era 5 lei!</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-6').style.display=document.getElementById('raspuns-6').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
-    <div id="raspuns-6" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #4E342E;">— Ieri era happy hour.
-— Si azi ce e?
-— Sad hour. De aia costa dublu!</div>
-    <div class="vote-section">
-        <button class="vote-btn" onclick="vote(6,1)">&#128077;</button>
-        <button class="vote-btn" onclick="vote(6,-1)">&#128078;</button>
-        <span id="points-6" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
-    </div>
-</div>
-<div class="card" data-cat="Jocuri de Cuvinte" style="transition:all 0.3s;">
-    <span class="badge" style="background:#AD1457;font-size:11px;padding:3px 10px;">Jocuri de Cuvinte</span>
-    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Ce face un crocodil cand vede o femeie frumoasa?</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-7').style.display=document.getElementById('raspuns-7').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
-    <div id="raspuns-7" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #AD1457;">O croco-dileaza!</div>
-    <div class="vote-section">
-        <button class="vote-btn" onclick="vote(7,1)">&#128077;</button>
-        <button class="vote-btn" onclick="vote(7,-1)">&#128078;</button>
-        <span id="points-7" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
-    </div>
-</div>
-<div class="card" data-cat="Banc Scurt" style="transition:all 0.3s;">
-    <span class="badge" style="background:#F57F17;font-size:11px;padding:3px 10px;">Banc Scurt</span>
-    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">— Tata, ce inseamna 'ipotetic'?
-— Pai, imagineaza-ti ca iti dau 1 milion de euro...</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-8').style.display=document.getElementById('raspuns-8').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
-    <div id="raspuns-8" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #F57F17;">— Ipotetic vorbind, sunt bogat!
-— Exact. Si ipotetic vorbind, eu sunt generos!</div>
-    <div class="vote-section">
-        <button class="vote-btn" onclick="vote(8,1)">&#128077;</button>
-        <button class="vote-btn" onclick="vote(8,-1)">&#128078;</button>
-        <span id="points-8" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
-    </div>
-</div>
-<div class="card" data-cat="Animale" style="transition:all 0.3s;">
-    <span class="badge" style="background:#558B2F;font-size:11px;padding:3px 10px;">Animale</span>
-    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">De ce nu joaca pestii tenis?</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-9').style.display=document.getElementById('raspuns-9').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
-    <div id="raspuns-9" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #558B2F;">Pentru ca le e frica de plasa!</div>
-    <div class="vote-section">
-        <button class="vote-btn" onclick="vote(9,1)">&#128077;</button>
-        <button class="vote-btn" onclick="vote(9,-1)">&#128078;</button>
-        <span id="points-9" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
-    </div>
-</div>
-<div class="card" data-cat="La Doctor" style="transition:all 0.3s;">
-    <span class="badge" style="background:#E53935;font-size:11px;padding:3px 10px;">La Doctor</span>
-    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">— Doctore, am o problema! Aud voci dar nu vad pe nimeni!
-— Cand se intampla asta?</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-10').style.display=document.getElementById('raspuns-10').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
-    <div id="raspuns-10" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #E53935;">— Cand vorbesc la telefon!</div>
-    <div class="vote-section">
-        <button class="vote-btn" onclick="vote(10,1)">&#128077;</button>
-        <button class="vote-btn" onclick="vote(10,-1)">&#128078;</button>
-        <span id="points-10" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
-    </div>
-</div>
-<div class="card" data-cat="Sot si Sotie" style="transition:all 0.3s;">
-    <span class="badge" style="background:#FF6F00;font-size:11px;padding:3px 10px;">Sot si Sotie</span>
-    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Sotul: — Draga, daca as fi bolnav, ai sta langa mine?
-Sotia: — Bineinteles, draga! Unde altundeva as mai gasi pe cineva care sa-mi dea telecomanda?</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-11').style.display=document.getElementById('raspuns-11').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
-    <div id="raspuns-11" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #FF6F00;">Sotul: — Multumesc pentru sinceritate...</div>
-    <div class="vote-section">
-        <button class="vote-btn" onclick="vote(11,1)">&#128077;</button>
-        <button class="vote-btn" onclick="vote(11,-1)">&#128078;</button>
-        <span id="points-11" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
-    </div>
-</div>
-<div class="card" data-cat="Cu Bula" style="transition:all 0.3s;">
-    <span class="badge" style="background:#7B1FA2;font-size:11px;padding:3px 10px;">Cu Bula</span>
-    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Bula vine acasa cu nota 2.
-Tatal: — Bula, de ce ai luat 2?
-Bula: — Pai, tata, n-am avut noroc.</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-12').style.display=document.getElementById('raspuns-12').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
-    <div id="raspuns-12" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #7B1FA2;">Tatal: — Cum adica noroc?
-Bula: — Am stat langa un prost si n-am putut copia!</div>
-    <div class="vote-section">
-        <button class="vote-btn" onclick="vote(12,1)">&#128077;</button>
-        <button class="vote-btn" onclick="vote(12,-1)">&#128078;</button>
-        <span id="points-12" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
-    </div>
-</div>
-<div class="card" data-cat="La Scoala" style="transition:all 0.3s;">
-    <span class="badge" style="background:#1565C0;font-size:11px;padding:3px 10px;">La Scoala</span>
-    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Profesoara: — Ionele, cate picioare are o vaca?
-Ionel: — Patru, doamna profesoara.
-— Bravo! Dar un paianjen?</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-13').style.display=document.getElementById('raspuns-13').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
-    <div id="raspuns-13" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #1565C0;">Ionel: — Doamna profesoara, eu sunt la ferma, nu la zoo!</div>
-    <div class="vote-section">
-        <button class="vote-btn" onclick="vote(13,1)">&#128077;</button>
-        <button class="vote-btn" onclick="vote(13,-1)">&#128078;</button>
-        <span id="points-13" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
-    </div>
-</div>
-<div class="card" data-cat="Cu Politia" style="transition:all 0.3s;">
-    <span class="badge" style="background:#2E7D32;font-size:11px;padding:3px 10px;">Cu Politia</span>
-    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">— Domnule agent, de ce m-ati oprit?
-— Ati trecut pe rosu!
-— Dar semaforul era galben!</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-14').style.display=document.getElementById('raspuns-14').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
-    <div id="raspuns-14" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #2E7D32;">— Da, dar masina din fata dumneavoastra era rosie si ati trecut pe langa ea!</div>
-    <div class="vote-section">
-        <button class="vote-btn" onclick="vote(14,1)">&#128077;</button>
-        <button class="vote-btn" onclick="vote(14,-1)">&#128078;</button>
-        <span id="points-14" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+        <span id="points-5" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
     </div>
 </div>
 <div class="card" data-cat="IT & Tech" style="transition:all 0.3s;">
     <span class="badge" style="background:#00838F;font-size:11px;padding:3px 10px;">IT & Tech</span>
-    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Un programator se duce la magazin. Sotia ii spune:
-— Cumpara o paine. Daca au oua, ia 6.</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-15').style.display=document.getElementById('raspuns-15').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
-    <div id="raspuns-15" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #00838F;">Programatorul se intoarce cu 6 paini.
-— De ce ai luat 6 paini?!
-— Pai aveau oua!</div>
+    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">De ce programatorii prefera intunericul?</p>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-6').style.display=document.getElementById('raspuns-6').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
+    <div id="raspuns-6" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #00838F;">Pentru ca lumina atrage bug-uri!</div>
     <div class="vote-section">
-        <button class="vote-btn" onclick="vote(15,1)">&#128077;</button>
-        <button class="vote-btn" onclick="vote(15,-1)">&#128078;</button>
-        <span id="points-15" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
-    </div>
-</div>
-<div class="card" data-cat="La Bar" style="transition:all 0.3s;">
-    <span class="badge" style="background:#4E342E;font-size:11px;padding:3px 10px;">La Bar</span>
-    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Chelnerul: — Ce doriti sa beti?
-Clientul: — Ceva rece si amar.
-Chelnerul: — Va aduc soacra-mea!</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-16').style.display=document.getElementById('raspuns-16').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
-    <div id="raspuns-16" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #4E342E;">Clientul: — Nu, multumesc, prefer ceva imbotteliat!</div>
-    <div class="vote-section">
-        <button class="vote-btn" onclick="vote(16,1)">&#128077;</button>
-        <button class="vote-btn" onclick="vote(16,-1)">&#128078;</button>
-        <span id="points-16" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
-    </div>
-</div>
-<div class="card" data-cat="Jocuri de Cuvinte" style="transition:all 0.3s;">
-    <span class="badge" style="background:#AD1457;font-size:11px;padding:3px 10px;">Jocuri de Cuvinte</span>
-    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Cum se numeste un magician care si-a pierdut magia?</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-17').style.display=document.getElementById('raspuns-17').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
-    <div id="raspuns-17" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #AD1457;">Ian!</div>
-    <div class="vote-section">
-        <button class="vote-btn" onclick="vote(17,1)">&#128077;</button>
-        <button class="vote-btn" onclick="vote(17,-1)">&#128078;</button>
-        <span id="points-17" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
-    </div>
-</div>
-<div class="card" data-cat="Banc Scurt" style="transition:all 0.3s;">
-    <span class="badge" style="background:#F57F17;font-size:11px;padding:3px 10px;">Banc Scurt</span>
-    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">— De ce alerga barbatul cu frigiderul?
-— Ca sa-i mearga rece!</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-18').style.display=document.getElementById('raspuns-18').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
-    
-    <div class="vote-section">
-        <button class="vote-btn" onclick="vote(18,1)">&#128077;</button>
-        <button class="vote-btn" onclick="vote(18,-1)">&#128078;</button>
-        <span id="points-18" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
-    </div>
-</div>
-<div class="card" data-cat="Animale" style="transition:all 0.3s;">
-    <span class="badge" style="background:#558B2F;font-size:11px;padding:3px 10px;">Animale</span>
-    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Doi melci se intalnesc pe drum.
-— Incotro mergi?
-— La piata.</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-19').style.display=document.getElementById('raspuns-19').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
-    <div id="raspuns-19" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #558B2F;">— Asteapta-ma si pe mine!
-— Nu pot, sunt in graba!</div>
-    <div class="vote-section">
-        <button class="vote-btn" onclick="vote(19,1)">&#128077;</button>
-        <button class="vote-btn" onclick="vote(19,-1)">&#128078;</button>
-        <span id="points-19" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
-    </div>
-</div>
-<div class="card" data-cat="La Doctor" style="transition:all 0.3s;">
-    <span class="badge" style="background:#E53935;font-size:11px;padding:3px 10px;">La Doctor</span>
-    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Pacientul: — Doctore, cand tusesc ma doare tot corpul!
-Doctorul: — Unde exact va doare?</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-20').style.display=document.getElementById('raspuns-20').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
-    <div id="raspuns-20" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #E53935;">Pacientul: — In portofel, cand vad factura!</div>
-    <div class="vote-section">
-        <button class="vote-btn" onclick="vote(20,1)">&#128077;</button>
-        <button class="vote-btn" onclick="vote(20,-1)">&#128078;</button>
-        <span id="points-20" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
-    </div>
-</div>
-<div class="card" data-cat="Sot si Sotie" style="transition:all 0.3s;">
-    <span class="badge" style="background:#FF6F00;font-size:11px;padding:3px 10px;">Sot si Sotie</span>
-    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Sotia: — Draga, ma iubesti?
-Sotul: — Da, desigur!
-Sotia: — M-ai insela vreodata?</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-21').style.display=document.getElementById('raspuns-21').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
-    <div id="raspuns-21" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #FF6F00;">Sotul: — De ce schimbam subiectul?</div>
-    <div class="vote-section">
-        <button class="vote-btn" onclick="vote(21,1)">&#128077;</button>
-        <button class="vote-btn" onclick="vote(21,-1)">&#128078;</button>
-        <span id="points-21" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
-    </div>
-</div>
-<div class="card" data-cat="Cu Bula" style="transition:all 0.3s;">
-    <span class="badge" style="background:#7B1FA2;font-size:11px;padding:3px 10px;">Cu Bula</span>
-    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Bula la ora de geografie:
-Profesorul: — Bula, arata-mi pe harta unde e America.
-Bula arata corect.</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-22').style.display=document.getElementById('raspuns-22').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
-    <div id="raspuns-22" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #7B1FA2;">Profesorul: — Bravo! Acum, cine a descoperit America?
-Clasa in cor: — Bula!</div>
-    <div class="vote-section">
-        <button class="vote-btn" onclick="vote(22,1)">&#128077;</button>
-        <button class="vote-btn" onclick="vote(22,-1)">&#128078;</button>
-        <span id="points-22" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
-    </div>
-</div>
-<div class="card" data-cat="La Scoala" style="transition:all 0.3s;">
-    <span class="badge" style="background:#1565C0;font-size:11px;padding:3px 10px;">La Scoala</span>
-    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Profesoara: — Copii, cine stie ce e apa?
-Bula: — E un lichid care devine negru cand iti speli mainile!</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-23').style.display=document.getElementById('raspuns-23').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
-    <div id="raspuns-23" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #1565C0;">Profesoara: — Bula, te rog sa te speli mai des pe maini!</div>
-    <div class="vote-section">
-        <button class="vote-btn" onclick="vote(23,1)">&#128077;</button>
-        <button class="vote-btn" onclick="vote(23,-1)">&#128078;</button>
-        <span id="points-23" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+        <button class="vote-btn" onclick="vote(6,1)">&#128077;</button>
+        <button class="vote-btn" onclick="vote(6,-1)">&#128078;</button>
+        <span id="points-6" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
     </div>
 </div>
 <div class="card" data-cat="Cu Politia" style="transition:all 0.3s;">
     <span class="badge" style="background:#2E7D32;font-size:11px;padding:3px 10px;">Cu Politia</span>
-    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Politistul: — Aveti permis de conducere?
-Soferul: — Da, dar nu-l am la mine.
-Politistul: — De ce?</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-24').style.display=document.getElementById('raspuns-24').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
-    <div id="raspuns-24" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #2E7D32;">Soferul: — Mi l-ati luat data trecuta!</div>
+    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Un politist opreste o masina.
+— Ati depasit viteza legala!
+— Stiu, dar ma grabeam sa ajung acasa inainte sa uit unde am parcat masina!</p>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-7').style.display=document.getElementById('raspuns-7').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
+    <div id="raspuns-7" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #2E7D32;">Politistul, confuz, il lasa sa plece.</div>
+    <div class="vote-section">
+        <button class="vote-btn" onclick="vote(7,1)">&#128077;</button>
+        <button class="vote-btn" onclick="vote(7,-1)">&#128078;</button>
+        <span id="points-7" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
+    </div>
+</div>
+<div class="card" data-cat="La Bar" style="transition:all 0.3s;">
+    <span class="badge" style="background:#4E342E;font-size:11px;padding:3px 10px;">La Bar</span>
+    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Un cal intra intr-un bar. Barmanul il intreaba:
+— De ce fata asa lunga?</p>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-8').style.display=document.getElementById('raspuns-8').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
+    <div id="raspuns-8" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #4E342E;">Calul nu raspunde, pentru ca este un cal si nu poate vorbi.</div>
+    <div class="vote-section">
+        <button class="vote-btn" onclick="vote(8,1)">&#128077;</button>
+        <button class="vote-btn" onclick="vote(8,-1)">&#128078;</button>
+        <span id="points-8" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
+    </div>
+</div>
+<div class="card" data-cat="Banc Scurt" style="transition:all 0.3s;">
+    <span class="badge" style="background:#F57F17;font-size:11px;padding:3px 10px;">Banc Scurt</span>
+    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Ce-i mic, negru si sta la usa?</p>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-9').style.display=document.getElementById('raspuns-9').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
+    <div id="raspuns-9" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #F57F17;">Un gandac in prag.</div>
+    <div class="vote-section">
+        <button class="vote-btn" onclick="vote(9,1)">&#128077;</button>
+        <button class="vote-btn" onclick="vote(9,-1)">&#128078;</button>
+        <span id="points-9" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
+    </div>
+</div>
+<div class="card" data-cat="Jocuri de Cuvinte" style="transition:all 0.3s;">
+    <span class="badge" style="background:#AD1457;font-size:11px;padding:3px 10px;">Jocuri de Cuvinte</span>
+    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">De ce a divortat calendarul?</p>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-10').style.display=document.getElementById('raspuns-10').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
+    <div id="raspuns-10" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #AD1457;">Pentru ca i-au trecut zilele!</div>
+    <div class="vote-section">
+        <button class="vote-btn" onclick="vote(10,1)">&#128077;</button>
+        <button class="vote-btn" onclick="vote(10,-1)">&#128078;</button>
+        <span id="points-10" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
+    </div>
+</div>
+<div class="card" data-cat="Altele" style="transition:all 0.3s;">
+    <span class="badge" style="background:#546E7A;font-size:11px;padding:3px 10px;">Altele</span>
+    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Un melc merge pe spatele unei broaste testoase. Ce zice melcul?</p>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-11').style.display=document.getElementById('raspuns-11').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
+    <div id="raspuns-11" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #546E7A;">Yuhuuu, ce viteza!</div>
+    <div class="vote-section">
+        <button class="vote-btn" onclick="vote(11,1)">&#128077;</button>
+        <button class="vote-btn" onclick="vote(11,-1)">&#128078;</button>
+        <span id="points-11" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
+    </div>
+</div>
+<div class="card" data-cat="La Doctor" style="transition:all 0.3s;">
+    <span class="badge" style="background:#E53935;font-size:11px;padding:3px 10px;">La Doctor</span>
+    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">— Doctore, am impresia ca sunt un caine.
+— De cand aveti impresia asta?
+— De cand eram catelus.</p>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-12').style.display=document.getElementById('raspuns-12').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
+    <div id="raspuns-12" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #E53935;">Doctorul: — Atunci, va rog sa va asezati pe canapea. Dar fara sa o murdariti!</div>
+    <div class="vote-section">
+        <button class="vote-btn" onclick="vote(12,1)">&#128077;</button>
+        <button class="vote-btn" onclick="vote(12,-1)">&#128078;</button>
+        <span id="points-12" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
+    </div>
+</div>
+<div class="card" data-cat="Cu Bula" style="transition:all 0.3s;">
+    <span class="badge" style="background:#7B1FA2;font-size:11px;padding:3px 10px;">Cu Bula</span>
+    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Bula catre tatal sau:
+— Tata, vreau si eu un ceas.
+— Bine, Bula, dar sa nu-l arati la nimeni!</p>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-13').style.display=document.getElementById('raspuns-13').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
+    <div id="raspuns-13" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #7B1FA2;">— De ce, tata?
+— Ca sa nu te intrebe cat e ceasul!</div>
+    <div class="vote-section">
+        <button class="vote-btn" onclick="vote(13,1)">&#128077;</button>
+        <button class="vote-btn" onclick="vote(13,-1)">&#128078;</button>
+        <span id="points-13" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
+    </div>
+</div>
+<div class="card" data-cat="Sot si Sotie" style="transition:all 0.3s;">
+    <span class="badge" style="background:#FF6F00;font-size:11px;padding:3px 10px;">Sot si Sotie</span>
+    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Sotul: — Draga, unde ai pus sticla de vin?
+Sotia: — Am aruncat-o.
+Sotul: — De ce?!</p>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-14').style.display=document.getElementById('raspuns-14').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
+    <div id="raspuns-14" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #FF6F00;">Sotia: — Era goala!</div>
+    <div class="vote-section">
+        <button class="vote-btn" onclick="vote(14,1)">&#128077;</button>
+        <button class="vote-btn" onclick="vote(14,-1)">&#128078;</button>
+        <span id="points-14" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
+    </div>
+</div>
+<div class="card" data-cat="La Scoala" style="transition:all 0.3s;">
+    <span class="badge" style="background:#1565C0;font-size:11px;padding:3px 10px;">La Scoala</span>
+    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Profesorul: — Bula, care este capitala Romaniei?
+Bula: — Bucuresti.
+Profesorul: — Foarte bine! Acum spune-mi, cine a fost Mihai Eminescu?</p>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-15').style.display=document.getElementById('raspuns-15').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
+    <div id="raspuns-15" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #1565C0;">Bula: — Un mare poet roman, care a locuit in Bucuresti.</div>
+    <div class="vote-section">
+        <button class="vote-btn" onclick="vote(15,1)">&#128077;</button>
+        <button class="vote-btn" onclick="vote(15,-1)">&#128078;</button>
+        <span id="points-15" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
+    </div>
+</div>
+<div class="card" data-cat="Animale" style="transition:all 0.3s;">
+    <span class="badge" style="background:#558B2F;font-size:11px;padding:3px 10px;">Animale</span>
+    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Ce ii spune un caine unui alt caine?</p>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-16').style.display=document.getElementById('raspuns-16').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
+    <div id="raspuns-16" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #558B2F;">Ham, ham!</div>
+    <div class="vote-section">
+        <button class="vote-btn" onclick="vote(16,1)">&#128077;</button>
+        <button class="vote-btn" onclick="vote(16,-1)">&#128078;</button>
+        <span id="points-16" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
+    </div>
+</div>
+<div class="card" data-cat="IT & Tech" style="transition:all 0.3s;">
+    <span class="badge" style="background:#00838F;font-size:11px;padding:3px 10px;">IT & Tech</span>
+    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Care este diferenta dintre un virus si Windows?</p>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-17').style.display=document.getElementById('raspuns-17').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
+    <div id="raspuns-17" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #00838F;">Virusul functioneaza!</div>
+    <div class="vote-section">
+        <button class="vote-btn" onclick="vote(17,1)">&#128077;</button>
+        <button class="vote-btn" onclick="vote(17,-1)">&#128078;</button>
+        <span id="points-17" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
+    </div>
+</div>
+<div class="card" data-cat="Cu Politia" style="transition:all 0.3s;">
+    <span class="badge" style="background:#2E7D32;font-size:11px;padding:3px 10px;">Cu Politia</span>
+    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Un politist opreste un betiv.
+— Ati baut?
+— Nu.
+— Atunci suflati in fiola.</p>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-18').style.display=document.getElementById('raspuns-18').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
+    <div id="raspuns-18" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #2E7D32;">— Nu pot, sunt racit la plamani!</div>
+    <div class="vote-section">
+        <button class="vote-btn" onclick="vote(18,1)">&#128077;</button>
+        <button class="vote-btn" onclick="vote(18,-1)">&#128078;</button>
+        <span id="points-18" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
+    </div>
+</div>
+<div class="card" data-cat="La Bar" style="transition:all 0.3s;">
+    <span class="badge" style="background:#4E342E;font-size:11px;padding:3px 10px;">La Bar</span>
+    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Un tip intra intr-un bar si striga:
+— Dau o bere la toata lumea!
+Toata lumea se bucura, inclusiv barmanul.</p>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-19').style.display=document.getElementById('raspuns-19').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
+    <div id="raspuns-19" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #4E342E;">Dupa ce toata lumea a baut, tipul striga:
+— Acum, toata lumea sa-i dea o bere barmanului!</div>
+    <div class="vote-section">
+        <button class="vote-btn" onclick="vote(19,1)">&#128077;</button>
+        <button class="vote-btn" onclick="vote(19,-1)">&#128078;</button>
+        <span id="points-19" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
+    </div>
+</div>
+<div class="card" data-cat="Banc Scurt" style="transition:all 0.3s;">
+    <span class="badge" style="background:#F57F17;font-size:11px;padding:3px 10px;">Banc Scurt</span>
+    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Ce-i mic, rosu si se catara pe perete?</p>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-20').style.display=document.getElementById('raspuns-20').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
+    <div id="raspuns-20" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #F57F17;">O capsuna alpinista.</div>
+    <div class="vote-section">
+        <button class="vote-btn" onclick="vote(20,1)">&#128077;</button>
+        <button class="vote-btn" onclick="vote(20,-1)">&#128078;</button>
+        <span id="points-20" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
+    </div>
+</div>
+<div class="card" data-cat="Jocuri de Cuvinte" style="transition:all 0.3s;">
+    <span class="badge" style="background:#AD1457;font-size:11px;padding:3px 10px;">Jocuri de Cuvinte</span>
+    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">De ce a cazut calul in fantana?</p>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-21').style.display=document.getElementById('raspuns-21').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
+    <div id="raspuns-21" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #AD1457;">Pentru ca nu a vazut-o!</div>
+    <div class="vote-section">
+        <button class="vote-btn" onclick="vote(21,1)">&#128077;</button>
+        <button class="vote-btn" onclick="vote(21,-1)">&#128078;</button>
+        <span id="points-21" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
+    </div>
+</div>
+<div class="card" data-cat="Altele" style="transition:all 0.3s;">
+    <span class="badge" style="background:#546E7A;font-size:11px;padding:3px 10px;">Altele</span>
+    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Un om intra intr-o cafenea, se asaza la masa si comanda o cafea.
+Chelnerul ii aduce cafeaua si ii spune:
+— Costa 5 lei.
+Omul ii da 10 lei si ii spune:</p>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-22').style.display=document.getElementById('raspuns-22').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
+    <div id="raspuns-22" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #546E7A;">— Pastreaza restul!</div>
+    <div class="vote-section">
+        <button class="vote-btn" onclick="vote(22,1)">&#128077;</button>
+        <button class="vote-btn" onclick="vote(22,-1)">&#128078;</button>
+        <span id="points-22" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
+    </div>
+</div>
+<div class="card" data-cat="Cu Politia" style="transition:all 0.3s;">
+    <span class="badge" style="background:#2E7D32;font-size:11px;padding:3px 10px;">Cu Politia</span>
+    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Un politist opreste o masina care mergea cu 20 km/h pe autostrada.
+— De ce mergeti asa incet?
+— Pai, scrie A20.
+— Domnule, A20 este numarul autostrazii, nu limita de viteza!</p>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-23').style.display=document.getElementById('raspuns-23').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
+    <div id="raspuns-23" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #2E7D32;">In dreapta, sotia soferului, palida la fata, sopteste:
+— Nu-l ascultati, domnule politist! Asa face mereu cand iesim de pe A180!</div>
+    <div class="vote-section">
+        <button class="vote-btn" onclick="vote(23,1)">&#128077;</button>
+        <button class="vote-btn" onclick="vote(23,-1)">&#128078;</button>
+        <span id="points-23" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
+    </div>
+</div>
+<div class="card" data-cat="Animale" style="transition:all 0.3s;">
+    <span class="badge" style="background:#558B2F;font-size:11px;padding:3px 10px;">Animale</span>
+    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Ce face un peste cand se plictiseste?</p>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-24').style.display=document.getElementById('raspuns-24').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
+    <div id="raspuns-24" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #558B2F;">Se uita la TV... pe canalul Discovery!</div>
     <div class="vote-section">
         <button class="vote-btn" onclick="vote(24,1)">&#128077;</button>
         <button class="vote-btn" onclick="vote(24,-1)">&#128078;</button>
-        <span id="points-24" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+        <span id="points-24" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
     </div>
 </div>
 <div class="card" data-cat="IT & Tech" style="transition:all 0.3s;">
     <span class="badge" style="background:#00838F;font-size:11px;padding:3px 10px;">IT & Tech</span>
     <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">De ce a plecat programatorul de la serviciu?</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-25').style.display=document.getElementById('raspuns-25').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-25').style.display=document.getElementById('raspuns-25').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
     <div id="raspuns-25" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #00838F;">Pentru ca nu a primit array (o raise - o marire)!</div>
     <div class="vote-section">
         <button class="vote-btn" onclick="vote(25,1)">&#128077;</button>
         <button class="vote-btn" onclick="vote(25,-1)">&#128078;</button>
-        <span id="points-25" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+        <span id="points-25" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
     </div>
 </div>
 <div class="card" data-cat="La Bar" style="transition:all 0.3s;">
     <span class="badge" style="background:#4E342E;font-size:11px;padding:3px 10px;">La Bar</span>
     <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Un om intra in bar si cere un pahar de apa.
 Barmanul scoate un pistol si trage in tavan.</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-26').style.display=document.getElementById('raspuns-26').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-26').style.display=document.getElementById('raspuns-26').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
     <div id="raspuns-26" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #4E342E;">Omul: — Multumesc, mi-a trecut sughitul!
 Barmanul: — Cu placere, 50 de lei!</div>
     <div class="vote-section">
         <button class="vote-btn" onclick="vote(26,1)">&#128077;</button>
         <button class="vote-btn" onclick="vote(26,-1)">&#128078;</button>
-        <span id="points-26" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+        <span id="points-26" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
     </div>
 </div>
 <div class="card" data-cat="Jocuri de Cuvinte" style="transition:all 0.3s;">
     <span class="badge" style="background:#AD1457;font-size:11px;padding:3px 10px;">Jocuri de Cuvinte</span>
     <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Ce i-a spus peretele coltului?</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-27').style.display=document.getElementById('raspuns-27').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-27').style.display=document.getElementById('raspuns-27').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
     <div id="raspuns-27" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #AD1457;">Ne vedem la colt!</div>
     <div class="vote-section">
         <button class="vote-btn" onclick="vote(27,1)">&#128077;</button>
         <button class="vote-btn" onclick="vote(27,-1)">&#128078;</button>
-        <span id="points-27" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+        <span id="points-27" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
     </div>
 </div>
 <div class="card" data-cat="Banc Scurt" style="transition:all 0.3s;">
     <span class="badge" style="background:#F57F17;font-size:11px;padding:3px 10px;">Banc Scurt</span>
     <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">— Ce face un informatician cand ii e frig?</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-28').style.display=document.getElementById('raspuns-28').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-28').style.display=document.getElementById('raspuns-28').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
     <div id="raspuns-28" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #F57F17;">Deschide Windows!</div>
     <div class="vote-section">
         <button class="vote-btn" onclick="vote(28,1)">&#128077;</button>
         <button class="vote-btn" onclick="vote(28,-1)">&#128078;</button>
-        <span id="points-28" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+        <span id="points-28" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
     </div>
 </div>
 <div class="card" data-cat="Animale" style="transition:all 0.3s;">
     <span class="badge" style="background:#558B2F;font-size:11px;padding:3px 10px;">Animale</span>
     <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">De ce poarta pestii coroana?</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-29').style.display=document.getElementById('raspuns-29').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-29').style.display=document.getElementById('raspuns-29').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
     <div id="raspuns-29" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #558B2F;">Pentru ca sunt din Regatul Marii!</div>
     <div class="vote-section">
         <button class="vote-btn" onclick="vote(29,1)">&#128077;</button>
         <button class="vote-btn" onclick="vote(29,-1)">&#128078;</button>
-        <span id="points-29" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+        <span id="points-29" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
     </div>
 </div>
 <div class="card" data-cat="La Doctor" style="transition:all 0.3s;">
     <span class="badge" style="background:#E53935;font-size:11px;padding:3px 10px;">La Doctor</span>
     <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">— Doctore, am inghitit un stilou!
 — Si ce ati facut pana acum?</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-30').style.display=document.getElementById('raspuns-30').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-30').style.display=document.getElementById('raspuns-30').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
     <div id="raspuns-30" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #E53935;">— Am scris cu creionul!</div>
     <div class="vote-section">
         <button class="vote-btn" onclick="vote(30,1)">&#128077;</button>
         <button class="vote-btn" onclick="vote(30,-1)">&#128078;</button>
-        <span id="points-30" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+        <span id="points-30" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
     </div>
 </div>
 <div class="card" data-cat="Sot si Sotie" style="transition:all 0.3s;">
@@ -574,13 +560,13 @@ Barmanul: — Cu placere, 50 de lei!</div>
     <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Sotul vine beat acasa.
 Sotia: — Iar ai baut! Cate pahare?
 Sotul: — Doua...</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-31').style.display=document.getElementById('raspuns-31').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-31').style.display=document.getElementById('raspuns-31').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
     <div id="raspuns-31" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #FF6F00;">Sotia: — Doua?!
 Sotul: — ...sticle!</div>
     <div class="vote-section">
         <button class="vote-btn" onclick="vote(31,1)">&#128077;</button>
         <button class="vote-btn" onclick="vote(31,-1)">&#128078;</button>
-        <span id="points-31" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+        <span id="points-31" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
     </div>
 </div>
 <div class="card" data-cat="Cu Bula" style="transition:all 0.3s;">
@@ -588,25 +574,25 @@ Sotul: — ...sticle!</div>
     <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Bula: — Tata, am o veste buna si una proasta.
 Tatal: — Spune-mi mai intai vestea buna.
 Bula: — Am luat 10 la mate!</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-32').style.display=document.getElementById('raspuns-32').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-32').style.display=document.getElementById('raspuns-32').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
     <div id="raspuns-32" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #7B1FA2;">Tatal: — Bravo! Si vestea proasta?
 Bula: — Am mintit!</div>
     <div class="vote-section">
         <button class="vote-btn" onclick="vote(32,1)">&#128077;</button>
         <button class="vote-btn" onclick="vote(32,-1)">&#128078;</button>
-        <span id="points-32" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+        <span id="points-32" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
     </div>
 </div>
 <div class="card" data-cat="La Scoala" style="transition:all 0.3s;">
     <span class="badge" style="background:#1565C0;font-size:11px;padding:3px 10px;">La Scoala</span>
     <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Profesorul: — Cine a inventat electricitatea?
 Elevul: — Nu stiu, dar cine a inventat temele merita pedeapsa!</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-33').style.display=document.getElementById('raspuns-33').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-33').style.display=document.getElementById('raspuns-33').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
     <div id="raspuns-33" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #1565C0;">Profesorul: — Esti pedepsit! Scrie de 100 de ori 'Voi respecta profesorii'!</div>
     <div class="vote-section">
         <button class="vote-btn" onclick="vote(33,1)">&#128077;</button>
         <button class="vote-btn" onclick="vote(33,-1)">&#128078;</button>
-        <span id="points-33" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+        <span id="points-33" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
     </div>
 </div>
 <div class="card" data-cat="Altele" style="transition:all 0.3s;">
@@ -614,48 +600,48 @@ Elevul: — Nu stiu, dar cine a inventat temele merita pedeapsa!</p>
     <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Un optimist si un pesimist se cearta.
 Pesimistul: — Lucrurile nu pot fi mai rele!
 Optimistul: — Ba da, pot!</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-34').style.display=document.getElementById('raspuns-34').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-34').style.display=document.getElementById('raspuns-34').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
     <div id="raspuns-34" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #546E7A;">Si amandoi aveau dreptate!</div>
     <div class="vote-section">
         <button class="vote-btn" onclick="vote(34,1)">&#128077;</button>
         <button class="vote-btn" onclick="vote(34,-1)">&#128078;</button>
-        <span id="points-34" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+        <span id="points-34" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
     </div>
 </div>
 <div class="card" data-cat="La Doctor" style="transition:all 0.3s;">
     <span class="badge" style="background:#E53935;font-size:11px;padding:3px 10px;">La Doctor</span>
     <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">— Doctore, toata lumea ma ignoreaza!
 Doctorul: — Urmatorul, va rog!</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-35').style.display=document.getElementById('raspuns-35').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-35').style.display=document.getElementById('raspuns-35').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
     
     <div class="vote-section">
         <button class="vote-btn" onclick="vote(35,1)">&#128077;</button>
         <button class="vote-btn" onclick="vote(35,-1)">&#128078;</button>
-        <span id="points-35" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+        <span id="points-35" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
     </div>
 </div>
 <div class="card" data-cat="Sot si Sotie" style="transition:all 0.3s;">
     <span class="badge" style="background:#FF6F00;font-size:11px;padding:3px 10px;">Sot si Sotie</span>
     <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Sotia: — Draga, am visat ca mi-ai cumparat un diamant!
 Sotul: — In visul de maine o sa afli cat a costat!</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-36').style.display=document.getElementById('raspuns-36').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-36').style.display=document.getElementById('raspuns-36').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
     
     <div class="vote-section">
         <button class="vote-btn" onclick="vote(36,1)">&#128077;</button>
         <button class="vote-btn" onclick="vote(36,-1)">&#128078;</button>
-        <span id="points-36" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+        <span id="points-36" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
     </div>
 </div>
 <div class="card" data-cat="Cu Bula" style="transition:all 0.3s;">
     <span class="badge" style="background:#7B1FA2;font-size:11px;padding:3px 10px;">Cu Bula</span>
     <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Bula: — Mama, la scoala toti imi spun ca sunt mincinos!
 Mama: — Bula, tu nici nu mergi la scoala!</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-37').style.display=document.getElementById('raspuns-37').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-37').style.display=document.getElementById('raspuns-37').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
     
     <div class="vote-section">
         <button class="vote-btn" onclick="vote(37,1)">&#128077;</button>
         <button class="vote-btn" onclick="vote(37,-1)">&#128078;</button>
-        <span id="points-37" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+        <span id="points-37" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
     </div>
 </div>
 <div class="card" data-cat="La Scoala" style="transition:all 0.3s;">
@@ -663,23 +649,23 @@ Mama: — Bula, tu nici nu mergi la scoala!</p>
     <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Profesoara: — Bula, conjugă verbul 'a merge'.
 Bula: — Eu merg, tu mergi, el merge...
 Profesoara: — Mai repede!</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-38').style.display=document.getElementById('raspuns-38').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-38').style.display=document.getElementById('raspuns-38').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
     <div id="raspuns-38" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #1565C0;">Bula: — Eu alerg, tu alergi, el alearga!</div>
     <div class="vote-section">
         <button class="vote-btn" onclick="vote(38,1)">&#128077;</button>
         <button class="vote-btn" onclick="vote(38,-1)">&#128078;</button>
-        <span id="points-38" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+        <span id="points-38" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
     </div>
 </div>
 <div class="card" data-cat="IT & Tech" style="transition:all 0.3s;">
     <span class="badge" style="background:#00838F;font-size:11px;padding:3px 10px;">IT & Tech</span>
     <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Cum isi sorteaza programatorii hainele?</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-39').style.display=document.getElementById('raspuns-39').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-39').style.display=document.getElementById('raspuns-39').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
     <div id="raspuns-39" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #00838F;">Cu bubble sort - cele mai usoare sus!</div>
     <div class="vote-section">
         <button class="vote-btn" onclick="vote(39,1)">&#128077;</button>
         <button class="vote-btn" onclick="vote(39,-1)">&#128078;</button>
-        <span id="points-39" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+        <span id="points-39" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
     </div>
 </div>
 <div class="card" data-cat="La Bar" style="transition:all 0.3s;">
@@ -687,80 +673,80 @@ Profesoara: — Mai repede!</p>
     <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">— Barman, dati-mi ceva special!
 — Avem cocktail 'Divort'.
 — Ce contine?</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-40').style.display=document.getElementById('raspuns-40').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-40').style.display=document.getElementById('raspuns-40').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
     <div id="raspuns-40" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #4E342E;">— Jumatate din tot ce avem!</div>
     <div class="vote-section">
         <button class="vote-btn" onclick="vote(40,1)">&#128077;</button>
         <button class="vote-btn" onclick="vote(40,-1)">&#128078;</button>
-        <span id="points-40" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+        <span id="points-40" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
     </div>
 </div>
 <div class="card" data-cat="Animale" style="transition:all 0.3s;">
     <span class="badge" style="background:#558B2F;font-size:11px;padding:3px 10px;">Animale</span>
     <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">De ce nu au pestii computer?</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-41').style.display=document.getElementById('raspuns-41').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-41').style.display=document.getElementById('raspuns-41').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
     <div id="raspuns-41" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #558B2F;">Le e frica sa nu ramana fara net!</div>
     <div class="vote-section">
         <button class="vote-btn" onclick="vote(41,1)">&#128077;</button>
         <button class="vote-btn" onclick="vote(41,-1)">&#128078;</button>
-        <span id="points-41" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+        <span id="points-41" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
     </div>
 </div>
 <div class="card" data-cat="Banc Scurt" style="transition:all 0.3s;">
     <span class="badge" style="background:#F57F17;font-size:11px;padding:3px 10px;">Banc Scurt</span>
     <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">— Care e cea mai lunga propozitie din lume?</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-42').style.display=document.getElementById('raspuns-42').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-42').style.display=document.getElementById('raspuns-42').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
     <div id="raspuns-42" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #F57F17;">— Inchisoarea pe viata!</div>
     <div class="vote-section">
         <button class="vote-btn" onclick="vote(42,1)">&#128077;</button>
         <button class="vote-btn" onclick="vote(42,-1)">&#128078;</button>
-        <span id="points-42" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+        <span id="points-42" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
     </div>
 </div>
 <div class="card" data-cat="Cu Politia" style="transition:all 0.3s;">
     <span class="badge" style="background:#2E7D32;font-size:11px;padding:3px 10px;">Cu Politia</span>
     <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Politistul: — De ce conduceti cu 150 km/h?
 Soferul: — Ma grabeam sa ajung acasa inainte sa mi se termine benzina!</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-43').style.display=document.getElementById('raspuns-43').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-43').style.display=document.getElementById('raspuns-43').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
     <div id="raspuns-43" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #2E7D32;">Politistul: — Si acum va grabiti sa ajungeti la sectie!</div>
     <div class="vote-section">
         <button class="vote-btn" onclick="vote(43,1)">&#128077;</button>
         <button class="vote-btn" onclick="vote(43,-1)">&#128078;</button>
-        <span id="points-43" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+        <span id="points-43" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
     </div>
 </div>
 <div class="card" data-cat="Jocuri de Cuvinte" style="transition:all 0.3s;">
     <span class="badge" style="background:#AD1457;font-size:11px;padding:3px 10px;">Jocuri de Cuvinte</span>
     <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">De ce nu se cearta ciupercile?</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-44').style.display=document.getElementById('raspuns-44').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-44').style.display=document.getElementById('raspuns-44').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
     <div id="raspuns-44" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #AD1457;">Pentru ca sunt fungi (fun guys)!</div>
     <div class="vote-section">
         <button class="vote-btn" onclick="vote(44,1)">&#128077;</button>
         <button class="vote-btn" onclick="vote(44,-1)">&#128078;</button>
-        <span id="points-44" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+        <span id="points-44" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
     </div>
 </div>
 <div class="card" data-cat="Altele" style="transition:all 0.3s;">
     <span class="badge" style="background:#546E7A;font-size:11px;padding:3px 10px;">Altele</span>
     <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Cum se numeste un dinozaur care doarme?</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-45').style.display=document.getElementById('raspuns-45').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-45').style.display=document.getElementById('raspuns-45').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
     <div id="raspuns-45" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #546E7A;">Dino-sforaie!</div>
     <div class="vote-section">
         <button class="vote-btn" onclick="vote(45,1)">&#128077;</button>
         <button class="vote-btn" onclick="vote(45,-1)">&#128078;</button>
-        <span id="points-45" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+        <span id="points-45" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
     </div>
 </div>
 <div class="card" data-cat="La Doctor" style="transition:all 0.3s;">
     <span class="badge" style="background:#E53935;font-size:11px;padding:3px 10px;">La Doctor</span>
     <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">— Doctore, cred ca sunt o perdea!
 Doctorul: — Trageti-va impreuna!</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-46').style.display=document.getElementById('raspuns-46').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-46').style.display=document.getElementById('raspuns-46').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
     
     <div class="vote-section">
         <button class="vote-btn" onclick="vote(46,1)">&#128077;</button>
         <button class="vote-btn" onclick="vote(46,-1)">&#128078;</button>
-        <span id="points-46" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+        <span id="points-46" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
     </div>
 </div>
 <div class="card" data-cat="Sot si Sotie" style="transition:all 0.3s;">
@@ -768,130 +754,219 @@ Doctorul: — Trageti-va impreuna!</p>
     <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Sotul: — Draga, arati ca un milion de dolari!
 Sotia: — Serios? Multumesc!
 Sotul: — Da, toata verde si sifonata!</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-47').style.display=document.getElementById('raspuns-47').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-47').style.display=document.getElementById('raspuns-47').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
     
     <div class="vote-section">
         <button class="vote-btn" onclick="vote(47,1)">&#128077;</button>
         <button class="vote-btn" onclick="vote(47,-1)">&#128078;</button>
-        <span id="points-47" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+        <span id="points-47" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
     </div>
 </div>
 <div class="card" data-cat="Cu Bula" style="transition:all 0.3s;">
     <span class="badge" style="background:#7B1FA2;font-size:11px;padding:3px 10px;">Cu Bula</span>
     <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Bula la examen: — Profesoare, nu merit nota 1!
 Profesorul: — Stiu, dar nu pot sa-ti dau mai putin!</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-48').style.display=document.getElementById('raspuns-48').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-48').style.display=document.getElementById('raspuns-48').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
     
     <div class="vote-section">
         <button class="vote-btn" onclick="vote(48,1)">&#128077;</button>
         <button class="vote-btn" onclick="vote(48,-1)">&#128078;</button>
-        <span id="points-48" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+        <span id="points-48" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
     </div>
 </div>
 <div class="card" data-cat="Banc Scurt" style="transition:all 0.3s;">
     <span class="badge" style="background:#F57F17;font-size:11px;padding:3px 10px;">Banc Scurt</span>
     <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">— Ce face un crocodil cand vede o fata frumoasa?</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-49').style.display=document.getElementById('raspuns-49').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
+    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-49').style.display=document.getElementById('raspuns-49').style.display==='none'?'block':'none'" data-i18n="b_show_answer">VEZI RASPUNSUL &#9660;</button>
     <div id="raspuns-49" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #F57F17;">O croco-dileaza!</div>
     <div class="vote-section">
         <button class="vote-btn" onclick="vote(49,1)">&#128077;</button>
         <button class="vote-btn" onclick="vote(49,-1)">&#128078;</button>
-        <span id="points-49" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+        <span id="points-49" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;" data-i18n="b_points">0 PUNCTE</span>
     </div>
 </div>
-<div class="card" data-cat="Animale" style="transition:all 0.3s;">
-    <span class="badge" style="background:#558B2F;font-size:11px;padding:3px 10px;">Animale</span>
-    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">De ce merg furnicile in sir indian?</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-50').style.display=document.getElementById('raspuns-50').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
-    <div id="raspuns-50" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #558B2F;">Pentru ca nu au bani de autobuz!</div>
-    <div class="vote-section">
-        <button class="vote-btn" onclick="vote(50,1)">&#128077;</button>
-        <button class="vote-btn" onclick="vote(50,-1)">&#128078;</button>
-        <span id="points-50" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
     </div>
-</div>
-<div class="card" data-cat="La Bar" style="transition:all 0.3s;">
-    <span class="badge" style="background:#4E342E;font-size:11px;padding:3px 10px;">La Bar</span>
-    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Un barbat intra in bar: — Un whisky, va rog!
-Barmanul: — Simplu sau dublu?
-Barbatul: — Dublu, ca am venit cu sotia!</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-51').style.display=document.getElementById('raspuns-51').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
-    
-    <div class="vote-section">
-        <button class="vote-btn" onclick="vote(51,1)">&#128077;</button>
-        <button class="vote-btn" onclick="vote(51,-1)">&#128078;</button>
-        <span id="points-51" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+</main>
+
+<footer style="background:#1a1a1a;color:#f5f5f0;padding:24px 12px;text-align:center;">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;text-align:left;">
+        <div>
+            <h3 style="font-family:Fredoka,sans-serif;font-size:16px;margin-bottom:12px;color:#E53935;" data-i18n="footer_nav_title">Navigare</h3>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+                <a href="/" style="color:#f5f5f0;text-decoration:none;" data-i18n="nav_home">Acasa</a>
+                <a href="/bancuri" style="color:#f5f5f0;text-decoration:none;" data-i18n="nav_jokes">Bancuri</a>
+                <a href="/meme" style="color:#f5f5f0;text-decoration:none;" data-i18n="nav_memes">Meme</a>
+                <a href="/reeluri" style="color:#f5f5f0;text-decoration:none;" data-i18n="nav_reels">Reeluri</a>
+                <a href="/noutati" style="color:#f5f5f0;text-decoration:none;" data-i18n="nav_news">Noutati</a>
+                <a href="/nostalgie" style="color:#f5f5f0;text-decoration:none;" data-i18n="nav_nostalgia">Nostalgie</a>
+                <a href="/despre" style="color:#f5f5f0;text-decoration:none;" data-i18n="nav_about">Despre</a>
+                <a href="/magazin" style="color:#f5f5f0;text-decoration:none;" data-i18n="nav_shop">Magazin</a>
+            </div>
+        </div>
+        <div>
+            <h3 style="font-family:Fredoka,sans-serif;font-size:16px;margin-bottom:12px;color:#E53935;" data-i18n="footer_social_title">Social Media</h3>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+                <a href="https://www.facebook.com/share/1CkszCSb6U/" target="_blank" style="color:#f5f5f0;text-decoration:none;">Facebook Pagina</a>
+                <a href="https://www.facebook.com/share/g/1CZAM1XhgS/" target="_blank" style="color:#f5f5f0;text-decoration:none;">Facebook Grup</a>
+                <a href="https://www.instagram.com/viorelochianu/" target="_blank" style="color:#f5f5f0;text-decoration:none;">Instagram</a>
+                <a href="https://www.youtube.com/@divertismentsiglumehaioase" target="_blank" style="color:#f5f5f0;text-decoration:none;">YouTube</a>
+                <a href="https://m.me/ViorelOchianu" target="_blank" style="color:#f5f5f0;text-decoration:none;">Messenger</a>
+            </div>
+        </div>
+        <div>
+            <h3 style="font-family:Fredoka,sans-serif;font-size:16px;margin-bottom:12px;color:#E53935;" data-i18n="footer_support_title">Suport</h3>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+                <a href="/sustine" style="color:#f5f5f0;text-decoration:none;" data-i18n="nav_support">Sustine-ne</a>
+                <a href="/contact" style="color:#f5f5f0;text-decoration:none;" data-i18n="footer_contact">Contact</a>
+            </div>
+        </div>
+        <div>
+            <h3 style="font-family:Fredoka,sans-serif;font-size:16px;margin-bottom:12px;color:#E53935;" data-i18n="footer_legal_title">Legal</h3>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+                <a href="/termeni" style="color:#f5f5f0;text-decoration:none;" data-i18n="footer_terms">Termeni si Conditii</a>
+                <a href="/confidentialitate" style="color:#f5f5f0;text-decoration:none;" data-i18n="footer_privacy">Confidentialitate</a>
+            </div>
+        </div>
     </div>
-</div>
-<div class="card" data-cat="IT & Tech" style="transition:all 0.3s;">
-    <span class="badge" style="background:#00838F;font-size:11px;padding:3px 10px;">IT & Tech</span>
-    <p style="margin-top:12px;font-size:15px;line-height:1.6;white-space:pre-line;">Care e diferenta dintre un programator si un designer?</p>
-    <button class="btn btn-red" style="margin-top:12px;font-size:13px;" onclick="document.getElementById('raspuns-52').style.display=document.getElementById('raspuns-52').style.display==='none'?'block':'none'">VEZI RASPUNSUL &#9660;</button>
-    <div id="raspuns-52" style="display:none;margin-top:12px;padding:12px;background:#FFF9C4;border-radius:6px;border-left:3px solid #00838F;">Programatorul face lucruri care functioneaza dar arata urat.
-Designerul face lucruri frumoase care nu functioneaza!</div>
-    <div class="vote-section">
-        <button class="vote-btn" onclick="vote(52,1)">&#128077;</button>
-        <button class="vote-btn" onclick="vote(52,-1)">&#128078;</button>
-        <span id="points-52" style="font-family:Fredoka,sans-serif;font-weight:600;color:#888;">0 PUNCTE</span>
+    <div style="margin-top:24px;padding-top:16px;border-top:1px solid #333;">
+        <p style="font-size:13px;color:#aaa;" data-i18n="footer_copyright">&copy; 2026 Glume Haioase. Toate drepturile rezervate.</p>
     </div>
+</footer>
 </div>
 
-    </div>
-</main><footer style="background:#1a1a1a;color:#fff;padding:40px 16px 20px;">
-    <div style="max-width:1200px;margin:0 auto;">
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px;margin-bottom:32px;">
-            <div>
-                <h3 style="font-family:Fredoka,sans-serif;font-size:18px;margin-bottom:12px;">Navigare</h3>
-                <div style="display:flex;flex-direction:column;gap:8px;">
-                    <a href="/" style="color:#ccc;text-decoration:none;">Acasa</a>
-                    <a href="/bancuri" style="color:#ccc;text-decoration:none;">Bancuri</a>
-                    <a href="/meme" style="color:#ccc;text-decoration:none;">Meme</a>
-                    <a href="/reeluri" style="color:#ccc;text-decoration:none;">Reeluri</a>
-                    <a href="/nostalgie" style="color:#ccc;text-decoration:none;">Nostalgie</a>
-                    <a href="/despre" style="color:#ccc;text-decoration:none;">Despre</a>
-                    <a href="/social" style="color:#ccc;text-decoration:none;">Social Media</a>
-                </div>
-            </div>
-            <div>
-                <h3 style="font-family:Fredoka,sans-serif;font-size:18px;margin-bottom:12px;">Social Media</h3>
-                <div style="display:flex;flex-direction:column;gap:8px;">
-                    <a href="https://www.facebook.com/profile.php?id=100010102273607" target="_blank" style="color:#ccc;text-decoration:none;">Pagina Facebook</a>
-                    <a href="https://www.instagram.com/viorelochianu" target="_blank" style="color:#ccc;text-decoration:none;">Instagram</a>
-                </div>
-            </div>
-            <div>
-                <h3 style="font-family:Fredoka,sans-serif;font-size:18px;margin-bottom:12px;">Legal</h3>
-                <div style="display:flex;flex-direction:column;gap:8px;">
-                    <a href="/confidentialitate" style="color:#ccc;text-decoration:none;">Confidentialitate</a>
-                    <a href="/termeni" style="color:#ccc;text-decoration:none;">Termeni si Conditii</a>
-                </div>
-            </div>
-        </div>
-        <div style="border-top:1px solid #333;padding-top:16px;text-align:center;color:#888;font-size:14px;">
-            &copy; 2025 Divertisment si Glume Haioase. Toate drepturile rezervate.
-        </div>
-    </div>
-</footer><script>
-var votes = JSON.parse(localStorage.getItem('bancuri_votes') || '{}');
-Object.keys(votes).forEach(function(k) {
-    var el = document.getElementById('points-' + k);
-    if (el) el.textContent = votes[k] + ' PUNCTE';
-});
-function vote(id, val) {
-    votes[id] = (votes[id] || 0) + val;
-    document.getElementById('points-' + id).textContent = votes[id] + ' PUNCTE';
-    localStorage.setItem('bancuri_votes', JSON.stringify(votes));
-}
-function filterBancuri(cat) {
-    var cards = document.querySelectorAll('[data-cat]');
-    var count = 0;
-    cards.forEach(function(c) {
-        if (cat === 'toate' || c.dataset.cat === cat) { c.style.display = ''; count++; }
-        else { c.style.display = 'none'; }
+<script>
+const translations = {
+    ro: {
+        nav_home: "ACASA",
+        nav_jokes: "BANCURI",
+        nav_memes: "MEME",
+        nav_reels: "REELURI",
+        nav_news: "NOUTATI",
+        nav_nostalgia: "NOSTALGIE",
+        nav_about: "DESPRE",
+        nav_shop: "MAGAZIN",
+        nav_social: "📱 SOCIAL",
+        nav_support: "Sustine-ne",
+        b_title: "Cele mai tari <span>Bancuri</span>",
+        b_subtitle: "Colectia suprema de umor romanesc. Gasesti aici bancuri cu de toate, pentru toti!",
+        b_top10: "Top 10 Categorii",
+        b_sort_by: "Sorteaza:",
+        b_sort_default: "Default",
+        b_sort_newest: "Cele mai noi",
+        b_sort_popular: "Cele mai populare",
+        b_cat_all: "Toate",
+        b_cat_doctor: "La Doctor",
+        b_cat_bula: "Cu Bula",
+        b_cat_husbandwife: "Sot si Sotie",
+        b_cat_school: "La Scoala",
+        b_cat_animals: "Animale",
+        b_cat_it: "IT & Tech",
+        b_cat_police: "Cu Politia",
+        b_cat_bar: "La Bar",
+        b_cat_short: "Banc Scurt",
+        b_cat_wordgames: "Jocuri de Cuvinte",
+        b_cat_other: "Altele",
+        b_show_answer: "VEZI RASPUNSUL &#9660;",
+        b_points: "{count} PUNCTE",
+        footer_nav_title: "Navigare",
+        footer_social_title: "Social Media",
+        footer_support_title: "Suport",
+        footer_legal_title: "Legal",
+        footer_contact: "Contact",
+        footer_terms: "Termeni si Conditii",
+        footer_privacy: "Confidentialitate",
+        footer_copyright: "&copy; 2026 Glume Haioase. Toate drepturile rezervate."
+    },
+    en: {
+        nav_home: "HOME",
+        nav_jokes: "JOKES",
+        nav_memes: "MEMES",
+        nav_reels: "REELS",
+        nav_news: "NEWS",
+        nav_nostalgia: "NOSTALGIA",
+        nav_about: "ABOUT",
+        nav_shop: "SHOP",
+        nav_social: "📱 SOCIAL",
+        nav_support: "Support Us",
+        b_title: "The Best <span>Jokes</span>",
+        b_subtitle: "The ultimate collection of Romanian humor. Find all kinds of jokes for everyone!",
+        b_top10: "Top 10 Categories",
+        b_sort_by: "Sort by:",
+        b_sort_default: "Default",
+        b_sort_newest: "Newest",
+        b_sort_popular: "Most Popular",
+        b_cat_all: "All",
+        b_cat_doctor: "At the Doctor",
+        b_cat_bula: "With Bula",
+        b_cat_husbandwife: "Husband and Wife",
+        b_cat_school: "At School",
+        b_cat_animals: "Animals",
+        b_cat_it: "IT & Tech",
+        b_cat_police: "With the Police",
+        b_cat_bar: "At the Bar",
+        b_cat_short: "Short Jokes",
+        b_cat_wordgames: "Word Games",
+        b_cat_other: "Other",
+        b_show_answer: "SHOW ANSWER &#9660;",
+        b_points: "{count} POINTS",
+        footer_nav_title: "Navigation",
+        footer_social_title: "Social Media",
+        footer_support_title: "Support",
+        footer_legal_title: "Legal",
+        footer_contact: "Contact",
+        footer_terms: "Terms and Conditions",
+        footer_privacy: "Privacy Policy",
+        footer_copyright: "&copy; 2026 Funny Jokes. All rights reserved."
+    }
+};
+
+function applyTranslations(lang) {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            if (key.startsWith('b_points')) {
+                const points = el.textContent.match(/\d+/)[0];
+                el.innerHTML = translations[lang][key].replace('{count}', points);
+            } else {
+                el.innerHTML = translations[lang][key];
+            }
+        }
     });
-    document.getElementById('count-text').textContent = count + ' bancuri gasite';
-    document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
-    event.target.classList.add('active');
+    document.documentElement.lang = lang;
 }
-function sortBancuri(type) { /* simplified sort */ }
-</script></div></body></html>
+
+function setLang(lang) {
+    localStorage.setItem('siteLang', lang);
+    applyTranslations(lang);
+    document.getElementById('langRO').classList.toggle('active', lang === 'ro');
+    document.getElementById('langEN').classList.toggle('active', lang === 'en');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const currentLang = localStorage.getItem('siteLang') || 'ro';
+    setLang(currentLang);
+});
+
+function filterJokes(category) {
+    const jokes = document.querySelectorAll('#jokes-grid .card');
+    jokes.forEach(joke => {
+        if (category === 'all' || joke.dataset.cat === category) {
+            joke.style.display = 'block';
+        } else {
+            joke.style.display = 'none';
+        }
+    });
+    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`.filter-btn[onclick="filterJokes('${category}')"]`).classList.add('active');
+}
+
+function vote(id, value) {
+    const pointsEl = document.getElementById(`points-${id}`);
+    let currentPoints = parseInt(pointsEl.textContent.match(/-?\d+/)[0]);
+    currentPoints += value;
+    const lang = localStorage.getItem('siteLang') || 'ro';
+    pointsEl.innerHTML = translations[lang]['b_points'].replace('{count}', currentPoints);
+}
+</script>
+</body>
+</html>
